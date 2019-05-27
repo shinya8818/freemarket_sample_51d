@@ -1,0 +1,43 @@
+%header.main-header
+  .main-header__inner
+    .main-header__inner-top
+      %h1
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag "mercari_logo_horizontal.png", width: 134
+        -# = link_to "https://www.mercari.com/jp/"
+          -# = image_tag 
+      -# = search_form_for @search do |f|
+      -#   = f.label :title_cont, 'タイトル'
+      -#   = f.text_field :title_cont
+      -#   %div
+      -#     = f.submit '検索する'
+    .main-header__inner-menu
+      %nav
+        %ul.serch-menu-list
+          %li
+            %h2
+              =link_to "https://www.mercari.com/jp/brand/" do
+                %i.fa.fa-bars
+                %span カテゴリーから探す
+          %li
+            %h2
+              =link_to "https://www.mercari.com/jp/brand/" do
+                %i.fa.fa-tag
+                %span ブランドから探す
+      .main-header__inner-menu--right
+        %ul
+          %li
+            %h2
+              =link_to "https://www.mercari.com/jp/mypage/notification/" do
+                %i.fa.fa-bell
+                %span お知らせ
+          %li
+            %h2
+              =link_to "https://www.mercari.com/jp/brand/" do
+                %i.fa.fa-check
+                %span やることリスト
+          %li
+            %h2
+              =link_to "https://www.mercari.com/jp/brand/" do
+                %i.fa.fa-user
+                %span マイページ
