@@ -1,7 +1,7 @@
 %footer.main-footer
   %nav.clearfix
     .footer-cel
-      %h2.footer-cel__title　メルカリについて
+      %h2.footer-cel__title メルカリについて
       %ul.footer-cel__list
         %li
           = link_to '会社概要(運勢会社)', "https://about.mercari.com/"
@@ -11,14 +11,14 @@
           = link_to 'プレスリリース', "https://about.mercari.com/press/news/"
         %li
           = link_to '公式ブログ', "https://jp-news.mercari.com/"
-        %li
+        %li.footer-cel__list--social
           = link_to "https://twitter.com/mercari_jp" do
-            %i.fab.fa-twitter
-        %li
+            %i.fab.fa-twitter 
+        %li.footer-cel__list--social
           = link_to "https://www.facebook.com/mercarijp" do
             %i.fab.fa-facebook-square
     .footer-cel
-      %h2.footer-cel__title　ヘルプ＆ガイド
+      %h2.footer-cel__title ヘルプ＆ガイド
       %ul.footer-cel__list
         %li
           = link_to 'メルカリガイド', "https://www.mercari.com/jp/help_center/"
@@ -68,6 +68,10 @@
         %li
           = link_to 'United States', "https://www.mercari.com/"
   .footer-bottom
-    = link_to "https://www.mercari.com/jp/", class: "footer-bottom__logo"
-    %span.footer--bottom__copyright
+    = link_to "https://www.mercari.com/jp/", class: "footer-bottom__logo" do
+      = image_tag "Logo_white.png", width:124, height:33
+    %span.footer-bottom__copyright
       %small © 2019 mercari
+=link_to "https://www.mercari.com/jp/sell/", class: "sell-btn" do
+  .sell-btn__title 出品 
+  %i.fas.fa-camera

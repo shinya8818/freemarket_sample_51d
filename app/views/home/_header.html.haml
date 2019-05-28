@@ -3,9 +3,11 @@
     .main-header__inner-top
       %h1
         = link_to "https://www.mercari.com/jp/" do
-          = image_tag "mercari_logo_horizontal.png", width: 134
-        -# = link_to "https://www.mercari.com/jp/"
-          -# = image_tag 
+          = image_tag "mercari_logo_horizontal.png", width: 150
+      %form.serch-form{action: "https://www.mercari.com/jp/search/"}
+        %input.serch-form__input{name:"keyword", placeholder:"何をお探しですか？", type:"serch", value:""}
+        %i.fas.fa-search
+      //Todo機能実装にうつったら以下gem:ransackと以下のような形式を使用
       -# = search_form_for @search do |f|
       -#   = f.label :title_cont, 'タイトル'
       -#   = f.text_field :title_cont
@@ -13,15 +15,15 @@
       -#     = f.submit '検索する'
     .main-header__inner-menu
       %nav
-        %ul.serch-menu-list
+        %ul.search-menu-list
           %li
             %h2
-              =link_to "https://www.mercari.com/jp/brand/" do
+              =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
                 %i.fa.fa-bars
                 %span カテゴリーから探す
           %li
             %h2
-              =link_to "https://www.mercari.com/jp/brand/" do
+              =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
                 %i.fa.fa-tag
                 %span ブランドから探す
       .main-header__inner-menu--right
