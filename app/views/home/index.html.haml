@@ -15,5 +15,6 @@
         = render partial: "root"
       %div
         .advertisement
-          %img.advertisement__1{src: "メルカリ2.jpg"}/
-          %img.advertisement__2{src: "メルカリ.jpg"}/
+          = image_tag '/メルカリ2.jpg',class:'advertisement__1'
+          = image_tag '/メルカリ.jpg',class:'advertisement__2'
+
