@@ -66,11 +66,8 @@ gem 'devise'
 gem "font-awesome-sass"
 gem 'haml-rails'
 gem 'erb2haml'
-<<<<<<< HEAD
-=======
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
->>>>>>> master
 
 
 group :production do
