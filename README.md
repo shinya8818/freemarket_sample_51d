@@ -3,10 +3,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |Nickname|string|null: false|
-|email|text|null: false,unique: true|
+|email|string|null: false,unique: true|
 |password|string|null: false|
 |password_confirmation|string|null: false|
-|sex|text||
+|sex|string||
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name(kana)|string|null: false|
@@ -14,7 +14,7 @@
 |birth_year|string|null: false|
 |birth_month|string|null: false|
 |birth_day|string|null: false|
-|cell_phone|text|null: false,unique: true|
+|cell_phone|string|null: false,unique: true|
 |avatar|string||
 |profile|text||
 
@@ -34,7 +34,7 @@ has_many :sns_credentials
 |prefecture|text|null: false|
 |municipalities|string|null: false|
 |address_number|integer|null: false|
-|building|text||
+|building|string||
 |user_id|references|null: false,foreign_key: true|
 
 ### Association
@@ -81,12 +81,12 @@ belongs_to :item
 |------|----|-------|
 |name|string|null: false|
 |description|string|null: false|
-|brand|text||
+|brand|string||
 |status|integer|null: false|
 |fee|integer|null: false|
 |condition|integer|null: false|
-|method|text|null: false|
-|prefecture|text|null: false|
+|method|string|null: false|
+|prefecture|string|null: false|
 |days|integer|null: false|
 |user_id|references|null: false,foreign_key: true|
 
