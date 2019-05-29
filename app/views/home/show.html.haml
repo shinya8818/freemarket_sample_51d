@@ -1,0 +1,124 @@
+.container
+  %section.item-container
+    %h1.item-container__name
+      ポロシャツ
+    .item-content
+      .item-content__photo
+        .owl-carousel
+          = image_tag '/photo.jpg',class:'owl-lazy'
+        .owl-dot
+          = image_tag '/photo.jpg',class:'sub-photo'
+        .owl-dot
+          = image_tag '/photo.jpg',class:'sub-photo'
+        .owl-dot
+          = image_tag '/photo.jpg',class:'sub-photo'
+        .owl-dot
+          = image_tag '/photo.jpg',class:'sub-photo'
+        .owl-dot
+          = image_tag '/photo.jpg',class:'sub-photo'
+    %table.item-detail
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to '',class: "div" do
+              樋野さん
+            %div
+              .item-user-ratings
+                %i.far.fa-smile-beam
+                %span 1
+              .item-user-ratings
+                %i.far.fa-grin
+                %span 1
+              .item-user-ratings
+                %i.far.fa-tired
+                %span 1
+        %tr
+          %th カテゴリー
+          %td
+            = link_to '',class: "div" do
+              メンズ
+        %tr
+          %th ブランド
+          %td
+            = link_to '',class: "div" do
+              UNIQLO
+        %tr
+          %th 商品のサイズ
+          %td M
+        %tr
+          %th 商品の状態
+          %td やや傷や汚れあり
+        %tr
+          %th 配送料の負担
+          %td 送料込み（出品者負担)
+        %tr
+          %th 配送の方法
+          %td 未定
+        %tr
+          %th 配送元地域
+          %td
+            = link_to '',class: "div" do
+              東京都
+        %tr
+          %th 配送日の目安
+          %td 2~3日で発送
+    .item-price-box
+      %span.item-fee ¥ 700
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    %a.item-btn{href: ""} 購入画面に進む
+    .item-description
+      %p.item-description__inner
+        ポロシャツをご覧いただきありがとうございます。
+        数回着用しました。
+        
+        サイズが４４とかいてあるのでSかMかわかりません。
+        
+        着丈約60cm
+        身幅約42cm
+    .item-button
+      .item-button__left
+        %button.like-button{type: "button"}
+          %i.far.fa-heart
+          %span.favorite いいね！
+          %span.favorite 0
+        = link_to '',class: "item-report" do
+          %i.far.fa-flag
+          %span.report 不適切な商品の報告
+      .item-button__right
+        = link_to '',class: "item-key" do
+          %i.fas.fa-lock
+          %span.key あんしん・あんぜんへの取り組み
+  .item-detail-message
+    .message-container
+      .message-content
+        %form.message-form
+          %input.detail-message{type: "hidden"}/
+          %p.input-p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.textarea-default{type: "text"}
+          %button.comment-submit{type: "submit"}
+            %span.comment コメントする
+  %ul.nav-item
+    %li.nav-item-link-prev
+      = link_to '',class: "nav-icon" do
+        %i.fas.fa-chevron-left
+        アウター
+    %li.nav-item-link-next
+      = link_to '',class: "nav-icon" do
+        パンツ
+        %i.fas.fa-chevron-right
+  .item-social-media-box
+    %ul.social-media-box
+      %li.media
+        = link_to '',class: "share-btn" do
+          %i.fab.fa-facebook-square
+      %li.media
+        = link_to '',class: "share-btn" do
+          %i.fab.fa-twitter-square
+      %li.media
+        = link_to '',class: "share-btn" do
+          %i.fab.fa-line
+      %li.media
+        = link_to '',class: "share-btn" do
+          %i.fab.fa-pinterest-square
