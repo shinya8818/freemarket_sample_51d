@@ -3,7 +3,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |Nickname|text|null: false|
-|email|text|unique: true|
+|email|text|null: false,unique: true|
 |password|string|null: false|
 |password_confirmation|string|null: false|
 |sex|text||
@@ -14,13 +14,12 @@
 |birth_year|text|null: false|
 |birth_month|text|null: false|
 |birth_day|text|null: false|
-|cell_phone|text|unique: true|
+|cell_phone|text|null: false,unique: true|
 |avatar|text||
 |profile|text||
 
 ### Association
-has_many :adresses
-has_many :creadits
+has_many :adresses  has_many :creadits
 has_many :likes
 has_many :comments
 has_many :items
@@ -35,7 +34,7 @@ has_many :sns_credentials
 |municipalities|text|null: false|
 |address_number|integer|null: false|
 |building|text||
-|user_id|string|null: false|
+|user_id|string|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -48,7 +47,7 @@ belongs_to :user
 |security|text|null: false|
 |deadline_year|integer|null: false|
 |deadline_month|integer|null: false|
-|user_id|integer|null :false|
+|user_id|integer|null :false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -57,8 +56,8 @@ belongs_to :user
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false|
-|user_id|integer|null: false|
+|item_id|integer|null: false,foreign_key: true|
+|user_id|integer|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -68,11 +67,12 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|item_id|integer|null: false|
-|user_id|integer|null: false|
+|item_id|integer|null: false,false,foreign_key: true|
+|user_id|integer|null: false,false,foreign_key: true|
 
 ### Association
 belongs_to :user
+belongs_to :item
 
 ## itemsテーブル
 
@@ -87,7 +87,7 @@ belongs_to :user
 |method|text|null: false|
 |prefecture|text|null: false|
 |days|integer|null: false|
-|user_id|integer|null: false|
+|user_id|integer|null: false、foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -101,7 +101,7 @@ has_many :likes
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|integer|null: false|
+|item_id|integer|null: false、foreign_key: true|
 
 ### Association
 belongs_to :items
@@ -111,7 +111,7 @@ belongs_to :items
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false|
-|item_id|integer|null: false|
+|item_id|integer|null: false、foreign_key: true|
 
 ### Association
 belongs_to :items
