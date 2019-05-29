@@ -2,7 +2,7 @@
   .single-container
     %header.single-header
       %h1.single-header__logo
-        %a.single-header__logo__link{:href => ""}
+        %a.single-header__logo__link{href: ""}
           %img.link_image{:src => "mercari_logo_horizontal.png"}/
     %main.single-main
       %section.single-main__container
@@ -10,12 +10,12 @@
         %section.buy-content__buy-item
           .buy-content-inner
             %h3.buy-item-image
-              %img.photo-link{:src => "buy.png"}/
+              %img.photo-link{src: "buy.png"}/
             %p.buy-item-name 写真
             %form.buy-form
-              %p.buy-price
+              %p.buy-form__price
                 ¥ 1,000
-                %span.item-tax 送料込み
+                %span.buy-form__tax 送料込み
               %ul.buy-point
                 %li.accordion-parent
                   .accordion-toggle
@@ -26,7 +26,7 @@
                     支払い金額
                   .buy-price__yen
                     %span ¥ 1,000
-              %button.buy-button{:type => "submit"} 購入する
+              %button.buy-button{type: "submit"} 購入する
         %section.buy-content__user-info
           .buy-content-inner
             %h3.shipping_address 配送先
@@ -38,7 +38,7 @@
               マンション100号室
               %br/
               田中太郎
-            %a.buy-user-info-fix{:href => ""}
+            %a.buy-user-info-fix{href: ""}
               %span 変更する
               %i.fas.fa-chevron-right
         %section.buy-content__credit
@@ -49,7 +49,7 @@
               %br/
               11/25
             %figure.pay
-              %img.credit-image{:src => "jcb.png"}/
-            %a.buy-user-info-right{:href => ""}
+              %img.credit-image{src: "jcb.png"}/
+            %a.buy-user-info-right{href: ""}
               %span 変更する
               %i.fas.fa-chevron-right

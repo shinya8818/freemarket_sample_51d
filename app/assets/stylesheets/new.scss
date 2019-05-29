@@ -66,12 +66,12 @@ html, body {
           background-repeat: no-repeat;
           margin: 0;
           padding: 0;
-          .buy-price {
+          &__price {
             font-size: 26px;
             margin-top: 8px;
             line-height: 1.5;
             font-weight: 600;
-            .item-tax {
+            &__tax {
               margin-left: 8px;
               font-size: 14px;
               font-weight: 400;
