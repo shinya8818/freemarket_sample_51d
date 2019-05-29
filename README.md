@@ -7,15 +7,15 @@
 |password|string|null: false|
 |password_confirmation|string|null: false|
 |sex|text||
-|last_name|text|null: false|
-|first_name|text|null: false|
-|last_name(kana)|text|null: false|
-|first_name(kana)|text|null: false|
-|birth_year|text|null: false|
-|birth_month|text|null: false|
-|birth_day|text|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name(kana)|string|null: false|
+|first_name(kana)|string|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_day|string|null: false|
 |cell_phone|text|null: false,unique: true|
-|avatar|text||
+|avatar|string||
 |profile|text||
 
 ### Association
@@ -32,7 +32,7 @@ has_many :sns_credentials
 |------|----|-------|
 |postal_code|integer|null: false|
 |prefecture|text|null: false|
-|municipalities|text|null: false|
+|municipalities|string|null: false|
 |address_number|integer|null: false|
 |building|text||
 |user_id|references|null: false,foreign_key: true|
