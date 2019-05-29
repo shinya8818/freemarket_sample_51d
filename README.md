@@ -88,7 +88,7 @@ belongs_to :item
 |method|text|null: false|
 |prefecture|text|null: false|
 |days|integer|null: false|
-|user_id|references|null: false、foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user  
@@ -102,17 +102,17 @@ has_many :likes
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|references|null: false、foreign_key: true|
+|item_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :item
 
-## categorisテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false|
-|item_id|references|null: false、foreign_key: true|
+|item_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :item
