@@ -33,7 +33,7 @@ has_many :sns_credentials
 |postal_code|integer|null: false|
 |prefecture|text|null: false|
 |municipalities|string|null: false|
-|address_number|integer|null: false|
+|address_number|string|null: false|
 |building|string||
 |user_id|references|null: false,foreign_key: true|
 
@@ -44,7 +44,7 @@ belongs_to :user
 
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
+|card_number|string|null: false|
 |security|text|null: false|
 |deadline_year|integer|null: false|
 |deadline_month|integer|null: false|
