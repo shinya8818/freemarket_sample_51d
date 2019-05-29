@@ -1,0 +1,135 @@
+.mypage
+  %main.mypage__main
+    .mypage__main__right
+      %section.mypage__main__right__top__profile
+        %a{href: "https://www.mercari.com/jp/u/318439257/"}
+          %figure
+            %img{alt: "", height: "60", src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "60"}/
+          %h2.mypage__main__right__top__profile--bold める カリオ
+          .mypage__main__ritht__top__profile__number
+            .mypage__main__right__top__profile__evaluation
+              評価
+              %span.mypage__main__right__top__profile--bold 0
+            .mypage__main__right__top__profile__exhibit
+              出品数
+              %span.mypage__main__right__top__profile--bold 0
+      %section.mypage__main__right__middle
+        %ul.mypage__main__right__middle__tabs
+          %li.mypage__main__right__middle__tabs--active
+            %h3
+              %a{href: ""}
+                お知らせ
+          %li
+            %h3
+              %a{href: ""}
+                やることリスト
+        .mypage__main__right__middle__content
+          %ul#mypage-tab-notification.mypage__main__right__middle__content__item-list.tab-pane.active
+            %li
+              %a.mypage__main__right__middle__content__item-list__link{"data-modal": "banner", "data-open": "modal", href: ""}
+                %figure
+                  %img.lazyloaded{alt: "", "data-src": "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", src: "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                .mypage__main__right__middle__contet__item-list__body
+                  .mypage__main__right__middle__contet__item-list__body__text 《参加ボタンを押すだけ》最大P1,000がもらえるキャンペーン開催中！
+                  %time
+                    %i.fa.fa-clock
+                    %span 3 日前
+            %li.mypage__main__right__middle__content__item-list__show
+              %a{href: "https://www.mercari.com/jp/mypage/notification/"} 一覧を見る
+          %ul#mypage-tab-todo
+            %li.mypage__main__right__middle__content__item-list--not-found.bold 現在、やることリストはありません
+      %section.mypage__main__right__bottom
+        %h2.mypage__main__right__bottom__tab-head 購入した商品
+        %ul.mypage__main__right__bottom__tabs
+          %li.mypage__main__right__bottom__tabs--active
+            %h3
+              %a{"data-toggle": "tab", href: "#mypage-tab-transaction-now"}
+                取引中
+          %li
+            %h3
+              %a{"data-toggle": "tab", href: "#mypage-tab-transaction-old"}
+                過去の取引
+        .mypage__main__right__bottom__content
+          %ul#mypage-tab-transaction-now.mypage__main__right__bottom__content__item-list.tab-pane.active
+            %li.mypage__main__right__bottom__content__item-list--not-found.bold 取引中の商品がありません
+          %ul#mypage-tab-transaction-old
+            %li.mypage__main__right__bottom__content__item-list--not-found.bold 過去に取引した商品がありません
+    .mypage__main__left
+      %nav.mypage__main__left__nav
+        %ul.mypage__main__left__nav__list
+          /サイドバー上
+          %li
+            = link_to "マイページ","#",class:"mypage__main__left__nav__list__item active"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "お知らせ","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "やることリスト","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "いいね一覧","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "出品する","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "出品した商品 - 出品中","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "出品した商品 - 取引中","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "出品した商品 - 売却済み","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "購入した商品 - 取引中","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "購入した商品 - 過去の取引","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "ニュース一覧","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "評価一覧","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "ガイド","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "お問い合わせ","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+        / サイドバー中
+        %h3.mypage__main__left__nav__head メルペイ
+        %ul.mypage__main__left__nav__list
+          %li
+            = link_to "売上・振込申請","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "ポイント","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+        / サイドバーshita
+        %h3.mypage__main__left__nav__head 設定
+        %ul.mypage__main__left__nav__list
+          %li
+            = link_to "プロフィール","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "住所変更","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "支払い方法","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "メール/パスワード","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "本人情報","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "電話番号の確認","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
+          %li
+            = link_to "ログアウト","#",class:"mypage__main__left__nav__list__item"
+            %i.fa.fa-angle-right
