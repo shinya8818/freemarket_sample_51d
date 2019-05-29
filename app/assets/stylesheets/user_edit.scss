@@ -1,0 +1,66 @@
+html, body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:#333333;
+  background: rgb(245, 245, 245);
+}
+
+.profile {
+  margin: 0 auto;
+  width: 700px;
+  height: 568px;
+  background-color: #fff;
+  &__header {
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__main {
+    padding: 72px 16px 24px;
+    background-image: url("/mypage.header.png");
+    text-align: center;
+    .icon {
+      border-radius: 100px;
+      height: 50px;
+      vertical-align: middle;
+    }
+    .profile-name {
+      width: 220px;
+      height: 48px;
+      border-radius: 4px;
+      background-color: white;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+  }
+  &__content {
+    padding: 40px 16px 0;
+    .profile-introduction {
+    border: 1px solid #ccc;
+    min-height: 216px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
+    }
+  }
+  &__footer {
+    margin: 16px 0 0;
+    .profile-btn{
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 680px;
+    line-height: 48px;
+    font-size: 14px;
+    margin: 0 auto;
+    }
+    .profile-btn:hover  {
+      cursor: pointer;
+    }
+  }
+}

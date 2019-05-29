@@ -71,7 +71,6 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 
-
 group :production do
   gem 'unicorn', '5.4.1'
 end
