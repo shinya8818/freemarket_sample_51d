@@ -1,0 +1,197 @@
+html, body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:#333333;
+  background: rgb(245, 245, 245);
+}
+
+.single-container {
+  padding-bottom: 220px;
+  .single-header {
+    height: 128px;
+    text-align: center;
+    &__logo {
+      margin-top: 30px;
+      display: inline-block;
+      &__link {
+        width: 230px;
+        height: 68px;
+        line-height: 68px;
+        text-decoration: none;
+        .link_image {
+          width: 230px;
+          height: 68px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.single-main {
+  display: block;
+  &__container {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    .single-head {
+      padding: 32px 16px;
+      font-size: 22px;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: bold;
+    }
+    .buy-content__buy-item {
+      text-align: center;
+      border-top: 1px solid #f5f5f5;
+      padding: 24px 12.5% 0;
+      .buy-content-inner {
+        max-width: 320px;
+        margin: 0 auto;
+        .buy-item-image {
+          font-size: 22px;
+          .photo-link {
+            width: 148px;
+          }
+        }
+        .buy-item-name {
+          margin-top: 8px;
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 600;
+        }
+        .buy-form {
+          background-repeat: no-repeat;
+          margin: 0;
+          padding: 0;
+          &__price  {
+            font-size: 26px;
+            margin-top: 8px;
+            line-height: 1.5;
+            font-weight: 600;
+            &__tax  {
+              margin-left: 8px;
+              font-size: 14px;
+              font-weight: 400;
+              display: inline-block;
+            }
+          }
+          .buy-point {
+            background: #ccc;
+            margin-top: 16px;
+            list-style: none;
+            .accordion-toggle {
+              cursor: default;
+              padding: 14px;
+              border: 1px solid #ccc;
+            }
+          }
+          .buy-price__table {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            list-style: none;
+            .buy-price-row {
+              font-size: 28px;
+              display: table-row;
+              font-weight: 600;
+              .buy-price__cell {
+                text-align: left;
+                display: table-cell;
+                padding: 16px 0;
+              }
+              .buy-price__yen {
+                display: table-cell;
+                padding: 16px 0;
+                text-align: right;
+              }
+            }
+          }
+          .buy-button {
+            margin-top: 16px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .buy-content__user-info {
+      margin: 40px 0 0;
+      padding: 24px 12.5% 0;
+      border-top: 1px solid #f5f5f5;
+      .buy-content-inner {
+        max-width: 320px;
+        margin: 0 auto;
+        .shipping_address {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .buy-user-info-text {
+          display: block;
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+          font-style: normal;
+        }
+        .buy-user-info-fix {
+          display: block;
+          text-align: right;
+          text-decoration: none;
+          color: #0099e8;
+          touch-action: manipulation;
+          .fa-chevron-right {
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+    }
+    .buy-content__credit {
+      padding: 40px 12.5%;
+      margin: 40px 0 0;
+      border-top: 1px solid #f5f5f5;
+      .buy-content-inner {
+        max-width: 320px;
+        margin: 0 auto;
+        .pay-way {
+          font-size: 14px;
+          margin: 0;
+          font-weight: bold;
+          display: block;
+        }
+        .buy-user-info-text {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+        .pay{
+          margin: 0;
+        .credit-image {
+            vertical-align: middle;
+            width: 26px;
+            height: 20px;
+            margin: 0;
+          } 
+        }
+        .buy-user-info-right {
+          display: block;
+          text-align: right;
+          color: #0099e8;
+          text-decoration: none;
+          .fa-chevron-right {
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.container
+  .pickup-container
+    %h2 ピックアップカテゴリー
+    .pickup-container__items-container
+      = render partial: "root"
+      = render partial: "root"
+      = render partial: "root"
+      = render partial: "root"
+    .pickup-container
+      %h2 ピックアップブランド
+      .pickup-container__items-container
+        = render partial: "root"
+        = render partial: "root"
+        = render partial: "root"
+        = render partial: "root"
+      %div
+        .advertisement
+          = image_tag '/メルカリ2.jpg',class:'advertisement__1'
+          = image_tag '/メルカリ.jpg',class:'advertisement__2'
+
