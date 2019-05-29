@@ -1,7 +1,9 @@
+## usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |Nickname|text|null: false|
-|email|text|null: false|
+|email|text|unique: true|
 |password|string|null: false|
 |password_confirmation|string|null: false|
 |sex|text||
@@ -12,10 +14,9 @@
 |birth_year|text|null: false|
 |birth_month|text|null: false|
 |birth_day|text|null: false|
-|cell_phone|text|null: false|
+|cell_phone|text|unique: true|
 |avatar|text||
 |profile|text||
-
 
 ### Association
 <!-- - has_many :messages
@@ -30,7 +31,7 @@
 |prefecture|text|null: false|
 |municipalities|text|null: false|
 |address_number|integer|null: false|
-|building|text|null: false|
+|building|text||
 
 ### Association
 <!-- - has_many :messages
@@ -86,6 +87,7 @@
 |method|text|null: false|
 |prefecture|text|null: false|
 |days|integer|null: false|
+|user_id|integer|null: false|
 
 ### Association
 <!-- - belongs_to :group
@@ -96,19 +98,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|integer|null: false|
-
-### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
-
-## evaluationテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|status|integer|null: false|
-|message|string|null: false|
-|to_user|text|null: false|
 |item_id|integer|null: false|
 
 ### Association
@@ -126,24 +115,3 @@
 <!-- - belongs_to :group
 - belongs_to :user -->
 
-## pointテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false|
-|point|integer|null: false|
-
-### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
-
-## moneyテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false|
-|money|integer|null: false|
-
-### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
