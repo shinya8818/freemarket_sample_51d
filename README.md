@@ -19,8 +19,8 @@
 |profile|text||
 
 ### Association
-has_many :adresses  
-has_many :creadits  
+has_one :adress  
+has_one :creadit  
 has_many :likes  
 has_many :comments  
 has_many :items  
@@ -67,7 +67,7 @@ belongs_to :user
 
 |Column|Type|Options|
 |------|----|-------|
-|comment|string|null: false|
+|content|string|null: false|
 |item_id|references|null: false,false,foreign_key: true|
 |user_id|references|null: false,false,foreign_key: true|
 
