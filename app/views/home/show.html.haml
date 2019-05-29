@@ -5,23 +5,24 @@
     .item-content
       .item-content__photo
         .owl-carousel
-          %img.owl-lazy{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'owl-lazy'
         .owl-dot
-          %img.sub-photo{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'sub-photo'
         .owl-dot
-          %img.sub-photo{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'sub-photo'
         .owl-dot
-          %img.sub-photo{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'sub-photo'
         .owl-dot
-          %img.sub-photo{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'sub-photo'
         .owl-dot
-          %img.sub-photo{src: "photo.jpg"}/
+          = image_tag '/photo.jpg',class:'sub-photo'
     %table.item-detail
       %tbody
         %tr
           %th 出品者
           %td
-            %a.div{href: ""} 樋野さん
+            = link_to '',class: "div" do
+              樋野さん
             %div
               .item-user-ratings
                 %i.far.fa-smile-beam
@@ -35,11 +36,13 @@
         %tr
           %th カテゴリー
           %td
-            %a.div{href: ""} メンズ
+            = link_to '',class: "div" do
+              メンズ
         %tr
           %th ブランド
           %td
-            %a.div{href: ""} しまむら
+            = link_to '',class: "div" do
+              UNIQLO
         %tr
           %th 商品のサイズ
           %td M
@@ -55,7 +58,8 @@
         %tr
           %th 配送元地域
           %td
-            %a.div{href: ""} 東京都
+            = link_to '',class: "div" do
+              東京都
         %tr
           %th 配送日の目安
           %td 2~3日で発送
@@ -79,11 +83,11 @@
           %i.far.fa-heart
           %span.favorite いいね！
           %span.favorite 0
-        %a.item-report{href: ""}
+        = link_to '',class: "item-report" do
           %i.far.fa-flag
           %span.report 不適切な商品の報告
       .item-button__right
-        %a.item-key{href: ""}
+        = link_to '',class: "item-key" do
           %i.fas.fa-lock
           %span.key あんしん・あんぜんへの取り組み
   .item-detail-message
@@ -97,24 +101,24 @@
             %span.comment コメントする
   %ul.nav-item
     %li.nav-item-link-prev
-      %a.nav-icon{href: ""}
+      = link_to '',class: "nav-icon" do
         %i.fas.fa-chevron-left
         アウター
     %li.nav-item-link-next
-      %a.nav-icon{href: ""}
+      = link_to '',class: "nav-icon" do
         パンツ
         %i.fas.fa-chevron-right
   .item-social-media-box
     %ul.social-media-box
       %li.media
-        %a.share-btn{href: ""}
+        = link_to '',class: "share-btn" do
           %i.fab.fa-facebook-square
       %li.media
-        %a.share-btn{href: ""}
+        = link_to '',class: "share-btn" do
           %i.fab.fa-twitter-square
       %li.media
-        %a.share-btn{href: ""}
+        = link_to '',class: "share-btn" do
           %i.fab.fa-line
       %li.media
-        %a.share-btn{href: ""}
+        = link_to '',class: "share-btn" do
           %i.fab.fa-pinterest-square
