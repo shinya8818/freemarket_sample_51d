@@ -24,4 +24,9 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
+<<<<<<< HEAD
 /config/master.key
+=======
+/config/master.key
+.DS_Store 
+>>>>>>> master

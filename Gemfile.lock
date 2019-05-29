@@ -104,6 +104,11 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.11.1)
+<<<<<<< HEAD
+=======
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
+>>>>>>> master
     font-awesome-sass (5.8.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -127,6 +132,7 @@ GEM
     io-like (0.3.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    json (2.2.0)
     kgio (2.11.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -187,6 +193,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    recaptcha (4.14.0)
+      json
     regexp_parser (1.5.1)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -271,6 +279,10 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erb2haml
+<<<<<<< HEAD
+=======
+  font-awesome-rails
+>>>>>>> master
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
@@ -278,6 +290,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   puma (~> 3.11)
   rails (~> 5.2.3)
+  recaptcha
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
