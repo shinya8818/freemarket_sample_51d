@@ -83,7 +83,7 @@
 |status|integer|null: false|
 |fee|integer|null: false|
 |condition|integer|null: false|
-<!-- |method|text|null: false| -->
+|method|text|null: false|
 |prefecture|text|null: false|
 |days|integer|null: false|
 
@@ -108,7 +108,7 @@
 |------|----|-------|
 |status|integer|null: false|
 |message|string|null: false|
-<!-- |to_user|text|null: false| -->
+|to_user|text|null: false|
 |item_id|integer|null: false|
 
 ### Association
