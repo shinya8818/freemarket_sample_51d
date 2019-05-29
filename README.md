@@ -35,7 +35,7 @@ has_many :sns_credentials
 |municipalities|text|null: false|
 |address_number|integer|null: false|
 |building|text||
-|user_id|string|null: false,foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -48,7 +48,7 @@ belongs_to :user
 |security|text|null: false|
 |deadline_year|integer|null: false|
 |deadline_month|integer|null: false|
-|user_id|integer|null :false,foreign_key: true|
+|user_id|references|null :false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -57,8 +57,8 @@ belongs_to :user
 
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null: false,foreign_key: true|
-|user_id|integer|null: false,foreign_key: true|
+|item_id|references|null: false,foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -68,8 +68,8 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|item_id|integer|null: false,false,foreign_key: true|
-|user_id|integer|null: false,false,foreign_key: true|
+|item_id|references|null: false,false,foreign_key: true|
+|user_id|references|null: false,false,foreign_key: true|
 
 ### Association
 belongs_to :user  
@@ -88,11 +88,11 @@ belongs_to :item
 |method|text|null: false|
 |prefecture|text|null: false|
 |days|integer|null: false|
-|user_id|integer|null: false、foreign_key: true|
+|user_id|references|null: false、foreign_key: true|
 
 ### Association
 belongs_to :user  
-has_many :category  
+has_many :categorys  
 has_many :images  
 has_many :comments  
 has_many :likes  
@@ -102,20 +102,20 @@ has_many :likes
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item_id|integer|null: false、foreign_key: true|
+|item_id|references|null: false、foreign_key: true|
 
 ### Association
-belongs_to :items
+belongs_to :item
 
 ## categoryテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false|
-|item_id|integer|null: false、foreign_key: true|
+|item_id|references|null: false、foreign_key: true|
 
 ### Association
-belongs_to :items
+belongs_to :item
 
 ## sns_credentialsテーブル
 
@@ -123,7 +123,7 @@ belongs_to :items
 |------|----|-------|
 |uid|string|null:false,unique:ture|
 |provider|string|null:false|
-|user_id|string|null:fase,foreign_key: true|
+|user_id|references|null:fase,foreign_key: true|
 
 ### Association
 belongs_to :user
