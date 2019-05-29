@@ -65,15 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
-<<<<<<< HEAD
-=======
 gem "font-awesome-sass"
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
-
->>>>>>> master
 
 group :production do
   gem 'unicorn', '5.4.1'
