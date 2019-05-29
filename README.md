@@ -19,9 +19,12 @@
 |profile|text||
 
 ### Association
-<!-- - has_many :messages
-- has_many :users_groups
-- has_many :groups, through: users_groups -->
+has_many :adresses
+has_many :creadits
+has_many :likes
+has_many :comments
+has_many :items
+has_many :sns_credentials
 
 ## addressesテーブル
 
@@ -32,11 +35,10 @@
 |municipalities|text|null: false|
 |address_number|integer|null: false|
 |building|text||
+|user_id|string|null: false|
 
 ### Association
-<!-- - has_many :messages
-- has_many :users_groups
-- has_many :users, through: users_groups -->
+belongs_to :user
 
 ## creditsテーブル
 
@@ -46,10 +48,10 @@
 |security|text|null: false|
 |deadline_year|integer|null: false|
 |deadline_month|integer|null: false|
+|user_id|integer|null :false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :user
 
 ## likesテーブル
 
@@ -59,8 +61,7 @@
 |user_id|integer|null: false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :user
 
 ## commentsテーブル
 
@@ -71,8 +72,7 @@
 |user_id|integer|null: false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :user
 
 ## itemsテーブル
 
@@ -90,8 +90,11 @@
 |user_id|integer|null: false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :user
+has_many :category
+has_many :images
+has_many :comments
+has_many :likes
 
 ## imagesテーブル
 
@@ -101,8 +104,7 @@
 |item_id|integer|null: false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :items
 
 ## categoryテーブル
 
@@ -112,8 +114,7 @@
 |item_id|integer|null: false|
 
 ### Association
-<!-- - belongs_to :group
-- belongs_to :user -->
+belongs_to :items
 
 ## sns_credentialsテーブル
 
