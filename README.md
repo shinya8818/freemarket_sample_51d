@@ -2,7 +2,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|Nickname|text|null: false|
+|Nickname|string|null: false|
 |email|text|null: false,unique: true|
 |password|string|null: false|
 |password_confirmation|string|null: false|
@@ -79,7 +79,7 @@ belongs_to :item
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |description|string|null: false|
 |brand|text||
 |status|integer|null: false|
@@ -111,7 +111,7 @@ belongs_to :item
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |item_id|references|null: false,foreign_key: true|
 
 ### Association
