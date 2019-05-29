@@ -19,11 +19,12 @@
 |profile|text||
 
 ### Association
-has_many :adresses  has_many :creadits
-has_many :likes
-has_many :comments
-has_many :items
-has_many :sns_credentials
+has_many :adresses  
+has_many :creadits  
+has_many :likes  
+has_many :comments  
+has_many :items  
+has_many :sns_credentials  
 
 ## addressesテーブル
 
