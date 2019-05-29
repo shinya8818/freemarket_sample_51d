@@ -115,3 +115,12 @@
 <!-- - belongs_to :group
 - belongs_to :user -->
 
+## sns_credentialsテーブル
+
+|Column|Type|Options|
+|uid|string|null:false,unique:ture|
+|provider|string|null:false|
+|user_id|string|null:fase,foreign_key: true|
+
+### Association
+belongs_to :user
