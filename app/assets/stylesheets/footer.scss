@@ -2,11 +2,18 @@ a{
   text-decoration: none;
 }
 .footer-container{
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
   .main-footer{
     background-color: #212121;
     padding: 0 20px 10px 20px;
     color: #fff;
-    & a{
+    a{
       color: #fff;
       font-size: 12px;
       line-height: 1.5em;
@@ -14,18 +21,18 @@ a{
       opacity: .7;
       text-decoration: none;
     }
-    & ul{
+    ul{
       list-style: none;    
     }
-    & li{
+    li{
       margin: 14px 0 0;
     }
-    & h2{
+    h2{
       color: #fff;
       font-size: 16px;
       font-weight: 100;
     }
-    & nav{
+    nav{
       width: 1020px;
     }
     .clearfix{
