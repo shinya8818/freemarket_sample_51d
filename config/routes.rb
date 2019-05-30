@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users, only: [:index,]
   get 'users/logout' => 'users#logout'
+  get 'users/new' => 'users#new'
 end

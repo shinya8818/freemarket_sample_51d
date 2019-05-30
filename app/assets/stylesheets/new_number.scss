@@ -1,0 +1,78 @@
+html, body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:#333333;
+  background-color: rgb(245, 245, 245);
+}
+
+.number-box {
+  display: block;
+  .number-container {
+    background: #fff;
+    width: 700px;
+    margin: 0 auto;
+    &__head {
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__inner {
+      padding: 64px;
+      border-top: 1px solid #f5f5f5;
+      .number-box {
+        width: 360px;
+        margin: 0 auto;
+        display: block;
+        .form-group {
+          margin: 0;
+          .cell_phone {
+            font-weight: 600;
+            display: inline-block;
+          }
+          .input-default {
+            width: 90%;
+            margin-top: 8px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        .cell-text {
+          margin-top: 8px;
+          line-height: 1.5;
+        }
+        .number-btn {
+          margin-top: 40px;
+          border: 1px solid #ea352d;
+          background: #ea352d;
+          display: block;
+          width: 100%;
+          color: #fff;
+          line-height: 48px;
+          font-size: 14px;
+        }
+        .btn-text {
+          margin-top: 8px;
+          line-height: 1.5;
+        }
+        .form-group__text {
+          margin-top: 40px;
+          text-align: right;
+          .text-note {
+            color: #0099e8;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
