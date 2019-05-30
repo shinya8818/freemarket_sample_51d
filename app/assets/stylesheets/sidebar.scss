@@ -4,6 +4,16 @@
   margin: 0 40px 0 0;
   &__list{
     margin-top: 8px;
+    &__item{
+      color: black;
+      text-align: left;
+      font-family: sans-serif;
+      min-height: 48px;
+      margin: 0;
+      line-height: 48px;
+      padding-left: 20px;
+      background-color: white;
+    }
     & li{
       background-color: white;
       list-style: none;
@@ -17,17 +27,6 @@
       }
     }
   }
-}
-
-.sideber__list__item{
-  color: black;
-  text-align: left;
-  font-family: sans-serif;
-  min-height: 48px;
-  margin: 0;
-  line-height: 48px;
-  padding-left: 20px;
-  background-color: white;
 }
 
 .sideber__list li:hover{
