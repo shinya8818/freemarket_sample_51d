@@ -1,0 +1,86 @@
+.new-user-content {
+  &__top {
+    background-color: white;
+    height: 97px;
+    width: 700px;
+    margin: 0 auto;
+    &--text{
+      text-align: center;
+      font-size: 22px;
+      line-height: 97px;
+      color: #333333;
+      font-weight: bold;
+    }
+  }
+  &__bottom {
+    background-color: white;
+    border-top: solid 1px #eeeeee;
+    width: 700px;
+    margin: 0 auto;
+    padding:60px 0;
+    &--link {
+      text-decoration: none;
+      &__box--mail {
+        position: relative;
+        background-color: #eee;
+        width: 320px;
+        height: 50px;
+        margin: 15px auto;
+        &-register {
+          text-align: center;
+          line-height: 50px;
+          font-size: 13px;
+          color: #000;
+          .fa {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #ccc;
+            font-size: 20px;
+          }
+        }
+      }
+      &__box--fb {
+        position: relative;
+        background-color: #385185;
+        width: 320px;
+        height: 50px;
+        margin: 15px auto;
+        &-register {
+          text-align: center;
+          color: white;
+          line-height: 50px;
+          font-size: 14px;
+        }
+        .fa {
+          position: absolute;
+          top: 10px;
+          left:14px;
+          font-size: 33px;
+          color: white;
+        }
+      }
+      &__box--google {
+        position: relative;
+        background-color: white;
+        width: 320px;
+        height: 50px;
+        margin: 15px auto;
+        &-register {
+          text-align: center;
+          line-height: 50px;
+          color: #000;
+          border: 0.5px solid #808080;
+          font-size: 14px;
+          &-icon {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }      
+    }
+  }
+}
