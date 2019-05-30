@@ -1,3 +1,4 @@
+= render partial: "shared/common-header"
 %main.sell-main__container
   %section.sell-item__container
     #sell-container
@@ -114,13 +115,13 @@
                       .fee-right
                         %div
                           %p ¥
-                          %input.input-default{placeholder: "例)300", value: ""}/
+                          %input#fee-input.input-default{placeholder: "例)300", value: ""}/
                   %li.clearfix
                     .display-left 販売手数料(10%)
-                    .display-right -
+                    #handling-fee__input.display-right -
                   %li.clearfix-bold
                     .display-left 販売利益
-                    .display-right -
+                    #profit__input.display-right -
             .modal{role: "dialog", tabindex: "-1"}
               .modal-inner
             .sell-content__sell-btn
@@ -143,3 +144,4 @@
               .return__btn--gray
                 %a もどる
           .overlay
+= render partial: "shared/common-footer"
