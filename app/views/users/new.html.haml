@@ -6,9 +6,9 @@
       .number-box
         .form-group
           %label.cell_phone 携帯番号の番号
-          %input.input-default{:placeholder => "電話番号の入力", :type => "tel"}/
+          %input.input-default{placeholder: "電話番号の入力", type: "tel"}/
         %p.cell-text 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-        %button.number-btn{:type => "submit"} SNSを送信する
+        %button.number-btn{type: "submit"} SNSを送信する
         %p.btn-text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .form-group__text
           = link_to '',class: "text-note" do
