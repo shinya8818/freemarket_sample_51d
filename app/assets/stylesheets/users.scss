@@ -1,0 +1,248 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mypage{
+  background-color: #eee;
+}
+.mypage-main{
+  padding: 40px 0 150px 0;
+  margin: 40px auto;
+  width: 1020px;
+  height: 1200px;
+  &__right{
+    width: 700px;
+    float: right;
+    &__top{
+      height: 200px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      background-image: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?78405350");
+    }
+  }
+}
+.mypage-main__right__top--bold{
+  color: black;
+}
+
+.mypage-main__right__top img{
+  border-radius: 50%;
+}
+
+.mypage-main__right__top-evaluation{
+  display: inline-block;
+  padding: 5px;
+  color: black;
+}
+
+.mypage-main__right__top-exhibit{
+  display: inline-block;
+  padding: 5px;
+  color: black;
+}
+
+
+// マイページ中
+.mypage-main__middle{
+  margin: 0;
+  background-color: #fff;
+  &__tabs{
+    border: 0;
+    font-size: 0;
+    background: #ddd;
+    & li{
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      & a{
+        position: relative;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        line-height: 72px;
+        font-weight: 600;
+      }
+    }
+    &--active{
+      background-color: #fff;
+      border-top: 3px solid #ea352d;
+    }
+  }
+}
+
+.mypage-main__middle__content ul{
+  display: none;
+}
+
+.mypage-main__middle__content ul.mypage-main__middle__list{
+  display: block;
+  list-style: none;
+}
+
+.mypage-main__middle__list__link{
+  position: relative;
+  display: block;
+  clear: both;
+  text-decoration: none;
+  font-size: 14px;
+  min-height: 80px;
+  padding: 16px;
+  color: #333;
+  border: 1px solid #f5f5f5;
+  &:hover{
+    background-color: #f9f9f9;
+  }
+  & figure{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 48px;
+  }
+  & img{
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+  }
+}
+
+.mypage-main__middle__list__body{
+  margin: 0 40px 0 60px;
+  &__text{
+    font-size: 13px;
+  }
+}
+
+.mypage-main__middle__list__show{
+  padding: 16px;
+  & a{
+    display: block;
+    height: 56px;
+    margin: 0 auto;
+    background-color: #eee;
+    color: #333;
+    line-height: 56px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.mypage-main__middle__list--not-found{
+  padding: 160px 0 60px;
+  background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?52408201);
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.fa.fa-clock{
+  font-size: 25px;
+  color: lightgray;
+}
+
+//  マイページ下
+.mypage-main__bottom{
+  margin-top: 40px;
+  background-color: #fff;
+  &__tabs{
+    border: 0;
+    font-size: 0;
+    background: #ddd;
+    & li{
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+  & a{
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: 600;
+  }
+  &__tab-head{
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: bold;
+  }
+}
+
+.mypage-main__bottom__tabs--active{
+  background-color: #fff;
+  border-top: 3px solid #ea352d;
+}
+
+.mypage-main__bottom__content ul{
+  display: none;
+}
+
+.mypage-main__bottom__content ul.mypage-main__bottom__list{
+  display: block;
+}
+
+.mypage-main__bottom__list--not-found{
+  padding: 160px 0 60px;
+  background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?52408201);
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.sideber{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  &__list{
+    margin-top: 8px;
+    & li{
+      background-color: white;
+      list-style: none;
+      border: 1px solid #f5f5f5;
+      width: 280px;
+      height: 48px;
+      position: relative;
+      & a {
+        text-decoration: none;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.sideber__list__item{
+  color: black;
+  text-align: left;
+  font-family: sans-serif;
+  min-height: 48px;
+  margin: 0;
+  line-height: 48px;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.sideber__list li:hover{
+  background-color: #f9f9f9;
+}
+
+.sideber__head{
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.fa.fa-angle-right{
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  float: right;
+}

@@ -1,0 +1,134 @@
+.mypage
+  %main.mypage-main
+    .mypage-main__right
+      %section.mypage-main__right__top
+        %a{href: "https://www.mercari.com/jp/u/318439257/"}
+          %figure
+            %img{alt: "", height: "60", src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "60"}/
+        %h2.mypage-main__right__top--bold める カリオ
+        .mypage-main__right__top__number
+          .mypage-main__right__top-evaluation
+            評価
+            %span.mypage-main__right__top--bold 0
+          .mypage-main__right__top-exhibit
+            出品数
+            %span.mypage-main__right__top--bold 0
+      %section.mypage-main__middle
+        %ul.mypage-main__middle__tabs
+          %li.mypage-main__middle__tabs--active
+            %h3
+              %a{href: ""}
+                お知らせ
+          %li.mypage-main__middle__tabs
+            %h3
+              %a{href: ""}
+                やることリスト
+        .mypage-main__middle__content
+          %ul#mypage-tab-notification.mypage-main__middle__list.tab-pane.active
+            %li
+              %a.mypage-main__middle__list__link{"data-modal": "banner", "data-open": "modal", href: ""}
+                %figure
+                  %img.lazyloaded{alt: "", "data-src": "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", src: "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                .mypage-main__middle__list__body
+                  .mypage-main__middle__list__body__text 《参加ボタンを押すだけ》最大P1,000がもらえるキャンペーン開催中！
+                  %time
+                    %i.fa.fa-clock
+                    %span 3 日前
+            %li.mypage-main__middle__list__show
+              %a{href: "https://www.mercari.com/jp/mypage/notification/"} 一覧を見る
+          %ul#mypage-tab-todo
+            %li.mypage-main__middle__list--not-found.bold 現在、やることリストはありません
+      %section.mypage-main__bottom
+        %h2.mypage-main__bottom__tab-head 購入した商品
+        %ul.mypage-main__bottom__tabs
+          %li.mypage-main__bottom__tabs--active
+            %h3
+              %a{"data-toggle": "tab", href: "#mypage-tab-transaction-now"}
+                取引中
+          %li.mypage-main__bottom__tabs
+            %h3
+              %a{"data-toggle": "tab", href: "#mypage-tab-transaction-old"}
+                過去の取引
+        .mypage-main__bottom__content
+          %ul#mypage-tab-transaction-now.mypage-main__bottom__list.tab-pane.active
+            %li.mypage-main__bottom__list--not-found.bold 取引中の商品がありません
+          %ul#mypage-tab-transaction-old
+            %li.mypage-main__bottom__list--not-found.bold 過去に取引した商品がありません
+    .sideber
+      %ul.sideber__list
+        /サイドバー上
+        %li
+          = link_to "マイページ","#",class:"sideber__list__item active"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "お知らせ","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "やることリスト","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "いいね一覧","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "出品する","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "出品した商品 - 出品中","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "出品した商品 - 取引中","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "出品した商品 - 売却済み","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "購入した商品 - 取引中","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "購入した商品 - 過去の取引","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "ニュース一覧","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "評価一覧","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "ガイド","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "お問い合わせ","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+      / サイドバー中
+      %h3.sideber__head メルペイ
+      %ul.sideber__list
+        %li
+          = link_to "売上・振込申請","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "ポイント","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+      / サイドバーshita
+      %h3.sideber__head 設定
+      %ul.sideber__list
+        %li
+          = link_to "プロフィール","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "住所変更","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "支払い方法","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "メール/パスワード","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "本人情報","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "電話番号の確認","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
+        %li
+          = link_to "ログアウト","#",class:"sideber__list__item"
+          %i.fa.fa-angle-right
