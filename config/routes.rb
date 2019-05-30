@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index,]
   get 'users/logout' => 'users#logout'
   get 'users/new' => 'users#new'
+  get 'users/show' => 'users#address'
 end
