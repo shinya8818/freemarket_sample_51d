@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %main.number-box
   %section.number-container
     %h2.number-container__head
@@ -14,3 +15,29 @@
           = link_to '',class: "text-note" do
             電話番号の確認が必要な理由
             %i.fas.fa-chevron-right
+=======
+= render './shared/common-header';
+
+.new-user-content
+  .new-user-content__top
+    %h2.new-user-content__top--text
+      新規会員登録
+  .new-user-content__bottom
+    = link_to "#", class:"new-user-content__bottom--link" do
+      .new-user-content__bottom--link__box--mail
+        %p.new-user-content__bottom--link__box--mail-register
+          =fa_icon 'envelope-o'
+          メールアドレスで登録
+    = link_to "#", class:"new-user-content__bottom--link" do
+      .new-user-content__bottom--link__box--fb
+        %p.new-user-content__bottom--link__box--fb-register
+          =fa_icon 'facebook-square'
+          Facebookで登録
+    = link_to "#", class:"new-user-content__bottom--link" do
+      .new-user-content__bottom--link__box--google
+        %p.new-user-content__bottom--link__box--google-register
+          = image_tag "https://img.icons8.com/color/48/000000/google-logo.png", class: "new-user-content__bottom--link__box--google-register-icon"
+          Googleで登録
+
+= render './shared/common-footer';
+>>>>>>> master
