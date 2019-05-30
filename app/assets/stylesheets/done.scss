@@ -1,0 +1,62 @@
+html, body {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:#333333;
+  background-color: rgb(245, 245, 245);
+}
+
+.done-container {
+  padding-bottom: 220px;
+  .done-main {
+    display: block;
+    &__single {
+      text-align: center;
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &__head {
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+      }
+      &__inner {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+        .inner-content {
+          max-width: 320px;
+          margin: 0 auto;
+          &__text {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          &__btn {
+            font-size: 16px;
+            margin-top: 40px;
+            display: block;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            line-height: 48px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+          }
+        }
+      }
+      &__footer {
+        display: block;
+        text-decoration: none;
+        .footer-content-image {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
