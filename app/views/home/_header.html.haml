@@ -38,9 +38,41 @@
               =link_to "https://www.mercari.com/jp/brand/" do
                 %i.fa.fa-check
                 %span やることリスト
-          %li
+          %li#transition__my-page
             %h2
               =link_to users_path do
                 %i.fa.fa-user
                 %span マイページ
-
+              .header-menu-bar__my-page
+                .header-menu-bar__my-page--text-center
+                  %figure
+                    .header-menu-bar__mine
+                      = image_tag "mercari_logo_horizontal.png", width: 60
+                    %figcaption username
+                  %ul.review-transition__my-page
+                    %li
+                      =link_to "評価:0", "https://www.mercari.com/jp/mypage/review/history/", class:"review-transition__my-page-link"
+                    %li
+                      =link_to "出品数:0", "https://www.mercari.com/jp/mypage/listings/listing/", class:"review-transition__my-page-link"
+                  %ul.sales-transition__my-page
+                    %li
+                      =link_to "https://www.mercari.com/jp/mypage/sales/", class:"transition-block__my-page-link--clearfix" do
+                        .header-innner__block--left 売上金
+                        .header-innner__block--right ¥ 0
+                    %li
+                      =link_to "https://www.mercari.com/jp/mypage/point/", class:"transition-block__my-page-link--clearfix" do
+                        .header-innner__block--left ポイント
+                        .header-innner__block--right P 0
+                  %ul.list-transition__my-page
+                    %li
+                      = link_to "いいね!一覧", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
+                    %li
+                      = link_to "出品した商品 - 出品中", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
+                    %li
+                      = link_to "出品した商品 - 取引中", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
+                    %li
+                      = link_to "出品した商品 - 出品中", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
+                    %li
+                      = link_to "購入した商品 - 取引中", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
+                    %li
+                      = link_to "購入した商品 - 過去の取引", "https://www.mercari.com/jp/mypage/point/", class:"list-transition__my-page--item"
