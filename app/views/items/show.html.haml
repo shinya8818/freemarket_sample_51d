@@ -1,28 +1,27 @@
 .container
   %section.item-container
     %h1.item-container__name
-      ポロシャツ
+      = @item.name
     .item-content
       .item-content__photo
         .owl-carousel
-          = image_tag '/photo.jpg',class:'owl-lazy'
+          = image_tag @item.images.first.image,class:'owl-lazy'
         .owl-dot
-          = image_tag '/photo.jpg',class:'sub-photo'
+          = image_tag @item.images.first.image,class:'sub-photo'
         .owl-dot
-          = image_tag '/photo.jpg',class:'sub-photo'
+          = image_tag @item.images.second.image,class:'sub-photo'
         .owl-dot
-          = image_tag '/photo.jpg',class:'sub-photo'
+          = image_tag @item.images.third.image,class:'sub-photo'
         .owl-dot
-          = image_tag '/photo.jpg',class:'sub-photo'
+          = image_tag @item.images.fourth.image,class:'sub-photo'
         .owl-dot
-          = image_tag '/photo.jpg',class:'sub-photo'
+          = image_tag @item.images.fifth.image,class:'sub-photo'
     %table.item-detail
       %tbody
         %tr
           %th 出品者
           %td
-            = link_to '',class: "div" do
-              樋野さん
+            = @item.user.nickname
             %div
               .item-user-ratings
                 %i.far.fa-smile-beam
@@ -36,47 +35,44 @@
         %tr
           %th カテゴリー
           %td
-            = link_to '',class: "div" do
-              メンズ
+            = @item.categories.first.name
         %tr
           %th ブランド
           %td
-            = link_to '',class: "div" do
-              UNIQLO
+            = @item.brand
         %tr
           %th 商品のサイズ
-          %td M
+          %td
+            = @item.size
         %tr
           %th 商品の状態
-          %td やや傷や汚れあり
+          %td
+            = @item.condition
         %tr
           %th 配送料の負担
-          %td 送料込み（出品者負担)
+          %td
+            = @item.shipping_fee
         %tr
           %th 配送の方法
-          %td 未定
+          %td
+            = @item.method
         %tr
           %th 配送元地域
           %td
-            = link_to '',class: "div" do
-              東京都
+            = @item.prefecture
         %tr
           %th 配送日の目安
-          %td 2~3日で発送
+          %td
+            = @item.days
     .item-price-box
-      %span.item-fee ¥ 700
+      %span.item-fee
+        ¥ #{@item.fee}
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     %a.item-btn{href: ""} 購入画面に進む
     .item-description
       %p.item-description__inner
-        ポロシャツをご覧いただきありがとうございます。
-        数回着用しました。
-        
-        サイズが４４とかいてあるのでSかMかわかりません。
-        
-        着丈約60cm
-        身幅約42cm
+        = @item.description
     .item-button
       .item-button__left
         %button.like-button{type: "button"}
