@@ -82,17 +82,71 @@ input[type="serch"]{
   }
   &__inner-menu--right{
     float: right;
-    & li:first-child{
+    li:first-child{
       padding-left: 0;
     }
-    & li:last-child{
+    li:last-child{
       padding-right: 0;
     }
-    & li{
+    li{
       padding: 0 14px;
     }
-    & i{
+    i{
       color:#ccc;
+    }
+    .header-menu-bar__my-page{
+      position: absolute;
+      top: 44px;
+      z-index: 1;
+      display: none;
+      width: 320px;
+      background: #fff;
+      -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+      font-size: 14px;
+      &--text-center{
+        text-align: center;
+      }
+      figure{
+        padding: 28px 0 0;
+        height: 80px;
+        background: url(/assets/img/mypage/user-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 320px 80px;
+         div{
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
+          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
+         }
+        figcaption{
+          margin: 8px 0 0;
+          padding: 0 8px;
+          font-size: 16px;
+        }
+      }
+      .review-transition__my-page{
+        margin: 40px 0 0;
+        padding: 8px 8px 0;
+        font-size: 0;
+        text-align: center;
+        li{
+          display: inline-block;
+          margin: 0 0 0 16px;
+          font-size: 14px;
+          :first-child{
+            margin: 0;
+          }
+        }
+        .review-transition__my-page-link{
+          display: block;
+          font-size: 14px;
+          color: #333;
+        }
+      }
     }
   }
 }
