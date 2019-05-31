@@ -1,6 +1,11 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
+set :default_env, {
+  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
+  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+}
+
 set :application, 'freemarket_sample_51d'
 set :repo_url,  'git@github.com:shinya8818/freemarket_sample_51d.git'
 
