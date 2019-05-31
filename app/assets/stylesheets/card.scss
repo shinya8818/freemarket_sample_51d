@@ -10,36 +10,29 @@
     width: 700px;
     float: right;
   }
-}
-
-.mypage-main__right {
-  width: 700px;
-  float: right;
-}
-
-.mypage-main__container{
-  margin: 0;
-  background-color: #fff;
-}
-
-.mypage-main__head{
-  font-size: 24px;
-  text-align: center;
-  border-bottom: 1px solid #f5f5f5;
-  padding: 8px 24px;
-  font-weight: 600;
-}
-.mypage-main__inner{
-  padding: 64px;
-    border-top: 1px solid #f5f5f5;
-}
-.mypage-main__content{
-  max-width: 320px;
-  margin: 0 auto;
-}
-.mypage-main__sub-head{
-  font-size: 16px;
-  font-weight: 600;
+  &__container{
+    margin: 0;
+    background-color: #fff;
+  }
+  &__head{
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 8px 24px;
+    font-weight: 600;
+  }
+  &__inner{
+    padding: 64px;
+      border-top: 1px solid #f5f5f5;
+  }
+  &__content{
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  &__sub-head{
+    font-size: 16px;
+    font-weight: 600;
+  }
 }
 
 .sets-add-card{

@@ -11,28 +11,25 @@
     width: 700px;
     float: right;
   }
-}
-
-.mypage-main__container{
-  margin: 0;
-  background-color: #fff;
-}
-
-.mypage-main__head{
-  font-size: 24px;
-  text-align: center;
-  border-bottom: 1px solid #f5f5f5;
-  padding: 8px 24px;
-  font-weight: bold;
-}
-
-.mypage-main__inner{
-  padding: 64px;
-    border-top: 1px solid #f5f5f5;
-}
-.mypage-main__content{
-  max-width: 320px;
-  margin: 0 auto;
+  &__container{
+    margin: 0;
+    background-color: #fff;
+  }
+  &__head{
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 8px 24px;
+    font-weight: 600;
+  }
+  &__inner{
+    padding: 64px;
+      border-top: 1px solid #f5f5f5;
+  }
+  &__content{
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 //カード番号
@@ -70,7 +67,7 @@
   margin: 8px 0 0;
   display: flex;
   vertical-align: middle;
-  & li{
+  li{
     padding: 0 5px;
   }
 }
@@ -123,11 +120,27 @@
 .signup-seqcode{
   position: relative;
   margin: 8px 0 0;
-}
-
-.signup-seqcode-text{
-  text-align: right;
-  color: #0099e8;
+  &-text{
+    text-align: right;
+    color: #0099e8;
+  }
+  &-info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 28px;
+    z-index: 1;
+    padding: 16px;
+    border-radius: 6px;
+    background: #eee;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 .form-example{
@@ -140,24 +153,6 @@
   line-height: 14px;
   font-size: 12px;
   text-align: center;
-}
-
-.signup-seqcode-info{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 28px;
-  z-index: 1;
-  padding: 16px;
-  border-radius: 6px;
-  background: #eee;
-  color: #333;
-  line-height: 1.5;
-  text-align: center;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
-  visibility: hidden;
-  opacity: 0;
 }
 
 .has-error-text{
