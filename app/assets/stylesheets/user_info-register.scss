@@ -1,0 +1,130 @@
+.form-content {
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+  &__top {
+    height: 97px;
+    &--text {
+      text-align: center;
+      font-weight: bold;
+      line-height: 97px;
+      font-size: 22px;
+    }
+  }
+
+  &__bottom {
+    border-top: solid 1px #eeeeee;
+    background-color: white;
+    height: 1559px;
+    padding-top: 40px;
+    padding-left: 183px;
+    &__box {
+      &--title {
+        &--text{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &--identification {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &--notice {
+          font-size: 14px;
+          width: 320px;
+          margin: 8px 0 40px;
+        }
+      }
+      &--require {
+        background-color: #ea352d;
+        color: white;
+        border-radius: 2px;
+        font-size: 13px;
+        padding: 3px 5px;
+      }
+      &--input {
+        &--name {
+          width: 320px;
+          height: 48px;
+          margin: 8px 0 40px 0;
+          padding-left: 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          font-size: 15px;
+        }
+      }
+      &--birthday{
+        display: flex;
+        width:100%;
+        &__select {
+          position: relative;
+          &--box {
+            width: 76px;
+            height:48px;
+            background-color: white;
+            -webkit-appearance: none;
+            padding-left: 10px;
+          }
+          &--text {
+            padding-right: 5px;
+            font-size: 14px;
+          }
+        }
+        &--text {
+          color: #888;
+          width: 320px;
+          text-align: center;
+          font-size: 14px;
+          padding-top: 10px;
+        }
+      }
+    }
+    &--next {
+      font-size: 14px;
+      text-align: center;
+      width: 320px;
+      &--link {
+        text-decoration: none;
+        color: blue;
+      }
+    }
+    &--button {
+      width: 320px;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: white;
+      height: 50px;
+      font-size: 14px;
+      margin: 20px 0 10px 0;
+    }
+    &--register {
+      margin-left: 155px;
+      font-size: 14px;
+      padding: 20px 0 40px 0;
+      &--link {
+        text-decoration: none;
+        color:#0099e8;
+      }
+    }
+  }
+}
+
+.g-recaptcha {
+  margin: 30px 0;
+}
+
+.fas.fa-angle-down{
+  position: absolute;
+  right: 32px;
+  top: 11px;
+  color: #888;
+  font-size: 25px;
+}
+
+#user_birth_year, #user_birth_month, #user_birth_day{
+  width: 76px;
+  height:48px;
+  padding-left: 10px;
+  background-color: white;
+  -webkit-appearance: none;
+  border: 1px solid #ccc;
+}
