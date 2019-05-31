@@ -61,7 +61,7 @@ belongs_to :user
 |user_id|references|null: false,foreign_key: true|
 
 ### Association
-belongs_to :user
+belongs_to :user  
 belongs_to :item
 
 ## commentsテーブル
@@ -90,6 +90,8 @@ belongs_to :item
 |prefecture|string|null: false|
 |days|integer|null: false|
 |user_id|references|null: false,foreign_key: true|
+|size|string||
+|shipping_fee|string|null: false|
 
 ### Association
 belongs_to :user  
