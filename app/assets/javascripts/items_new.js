@@ -10,3 +10,13 @@ $(function(){
     }
   })
 });
+$(function() {
+  console.log("dropzone")
+  // disable auto discover
+  Dropzone.autoDiscover = false;
+
+  $(".sell-upload__drop-box-0").dropzone({
+    maxFilesize: 1,
+    addRemoveLinks: true
+  });
+});

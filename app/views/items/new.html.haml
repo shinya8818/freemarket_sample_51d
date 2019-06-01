@@ -5,7 +5,7 @@
       %div
         .sell-inner__container
           %h2.sell-inner__container-title 商品の情報を入力
-          %form.sell-form
+          = form_for(@item, html: {class:"sell-form", multipart: true}) do |f|
             .item-image__box
               %h3.item-image__box-title
                 出品画像
@@ -139,8 +139,7 @@
                   また、出品をもちまして
                   = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/" 
                   に同意したことになります。
-              %button.sell__btn--red{type: "submit"}
-                出品する
+              = f.submit '出品する', class: 'sell__btn--red'
               .return__btn--gray
                 %a もどる
           .overlay
