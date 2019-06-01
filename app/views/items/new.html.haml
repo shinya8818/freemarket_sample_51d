@@ -16,24 +16,24 @@
                   .sell-upload__images-0
                     %ul
                 .sell-upload__drop-box-0
-                  %input.sell-upload__drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
+                  = f.file_field :image, class:"sell-upload__drop-file", multiple: true
                   %pre.visible-pc
                     :preserve
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
-                        %icon-camera
+                      投稿した画像は吸い込まれますが、よろしいですか？
             .sell-content
               .item-name__form-group
                 %label
                   商品名
                   %span.form-require 必須
                 %div
-                  %input.input-default{placeholder: "商品名(必須４０文字まで)", value: ""}/
+                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: ""
               .item-description__form-group
                 %label
                   商品の説明
                   %span.form-require 必須
-                %textarea.textarea-description{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                =f.text_area :description, class:"textarea-description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
             .sell-content.clearfix
               %h3.sell-sub__head 商品の詳細
               .sell-form__box
@@ -55,14 +55,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 新品、未使用
-                        %option{value: "2"} 未使用に近い
-                        %option{value: "3"} 目立った傷や汚れなし
-                        %option{value: "4"} やや傷や汚れあり
-                        %option{value: "5"} 傷や汚れあり
-                        %option{value: ""} 全体的に状態が悪い
+                      = f.select :condition, [["---", ""], ["新品、未使用", "1"], ["未使用に近い", "2"]], class:"select-default"
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 配送について

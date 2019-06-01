@@ -15,7 +15,7 @@ $(function() {
   // disable auto discover
   Dropzone.autoDiscover = false;
 
-  $(".sell-upload__drop-box-0").dropzone({
+  $(".sell-upload__drop-file").dropzone({
     maxFilesize: 1,
     addRemoveLinks: true
   });
