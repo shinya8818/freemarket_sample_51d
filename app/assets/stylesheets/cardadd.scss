@@ -89,16 +89,23 @@
   line-height: 1.5;
   cursor: pointer;
   width: 30%;
-  display: inline-flex;
-  margin: 8px 0 0;
+  margin: 8px 0;
+  display: inline-block;
 }
 
-.select-default{
-  touch-action: manipulation;
-  -webkit-appearance: none;
-  background: #fff;
+#page_select_default{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
   font-size: 16px;
-  width: 100%;
+  line-height: 1.5;
+  cursor: pointer;
+  width: -webkit-fill-available;
+  -webkit-appearance: none;
   border-style: none;
 }
 
@@ -107,9 +114,11 @@
   right: 16px;
   top: 50%;
   z-index: 2;
-  color: rgb(174, 171, 171);
-  font-size: 20px;
-  transform: translate(0, -50%);
+  color: #888;
+  font-size: 8px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);;
+  font-size: 15px;
 }
 
 //セキュリティーコード
@@ -123,6 +132,7 @@
   &-text{
     text-align: right;
     color: #0099e8;
+    width: 350px;
   }
   &-info{
     position: absolute;
@@ -172,59 +182,10 @@
   color: #fff;
   border: 1px solid #ea352d;
   display: block;
-  width: 100%;
+  width: 350px;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
 }
-
-.sideber{
-  float: left;
-  width: 280px;
-  margin: 0 40px 0 0;
-  &__list{
-    margin-top: 8px;
-    & li{
-      background-color: white;
-      list-style: none;
-      border: 1px solid #f5f5f5;
-      width: 280px;
-      height: 48px;
-      position: relative;
-      & a {
-        text-decoration: none;
-        background-color: white;
-      }
-    }
-  }
-}
-
-.sideber__list__item{
-  color: black;
-  text-align: left;
-  font-family: sans-serif;
-  min-height: 48px;
-  margin: 0;
-  line-height: 48px;
-  padding-left: 20px;
-  background-color: white;
-}
-
-.sideber__list li:hover{
-  background-color: #f9f9f9;
-}
-
-.sideber__head{
-  margin-top: 40px;
-  margin-left: 40px;
-}
-
-.fa.fa-angle-right{
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  float: right;
-}
-
