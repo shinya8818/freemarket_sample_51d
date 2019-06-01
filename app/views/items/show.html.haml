@@ -6,22 +6,16 @@
       .item-content__photo
         .owl-carousel
           = image_tag @item.images.first.image,class:'owl-lazy'
-        .owl-dot
-          = image_tag @item.images.first.image,class:'sub-photo'
-        .owl-dot
-          = image_tag @item.images.second.image,class:'sub-photo'
-        .owl-dot
-          = image_tag @item.images.third.image,class:'sub-photo'
-        .owl-dot
-          = image_tag @item.images.fourth.image,class:'sub-photo'
-        .owl-dot
-          = image_tag @item.images.fifth.image,class:'sub-photo'
+        - if @images
+          - @images.each do |image|
+            .owl-dot
+              = image_tag image.image, class:'sub-photo'
     %table.item-detail
       %tbody
         %tr
           %th 出品者
           %td
-            = @item.user.nickname
+            =  link_to @item.user.nickname, "", class:"div"
             %div
               .item-user-ratings
                 %i.far.fa-smile-beam
@@ -35,7 +29,7 @@
         %tr
           %th カテゴリー
           %td
-            = @item.categories.first.name
+            = link_to @categories.first.name, "", class: "div"
         %tr
           %th ブランド
           %td
