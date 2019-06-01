@@ -1,0 +1,191 @@
+.mypage{
+  background-color: #eee;
+}
+
+.mypage-main{
+  padding: 40px 0 150px 0;
+  margin: 40px auto;
+  width: 1020px;
+  height: 1200px;
+  &__right{
+    width: 700px;
+    float: right;
+  }
+  &__container{
+    margin: 0;
+    background-color: #fff;
+  }
+  &__head{
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 8px 24px;
+    font-weight: 600;
+  }
+  &__inner{
+    padding: 64px;
+      border-top: 1px solid #f5f5f5;
+  }
+  &__content{
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+//カード番号
+.form-group{
+  & label{
+    font-weight: 600;
+  }
+}
+
+.form-require{
+  background-color: #ea352d;
+  color: #fff;
+  font-size: 12px;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+}
+
+.input-default{
+  margin: 8px 0 0;
+  width: 100%;
+  height: 35px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  touch-action: manipulation;
+}
+
+.signup-card-list{
+  list-style: none;
+  margin: 8px 0 0;
+  display: flex;
+  vertical-align: middle;
+  li{
+    padding: 0 5px;
+  }
+}
+
+//有効期限
+.form-group__signup-expire{
+  margin: 40px 0 0;
+}
+
+.choice-wrap{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 30%;
+  margin: 8px 0;
+  display: inline-block;
+}
+
+#page_select_default{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: -webkit-fill-available;
+  -webkit-appearance: none;
+  border-style: none;
+}
+
+.fa.fa-chevron-down{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 8px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);;
+  font-size: 15px;
+}
+
+//セキュリティーコード
+.form-group__signup-seq{
+  margin: 40px 0 0;
+}
+
+.signup-seqcode{
+  position: relative;
+  margin: 8px 0 0;
+  &-text{
+    text-align: right;
+    color: #0099e8;
+    width: 350px;
+  }
+  &-info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 28px;
+    z-index: 1;
+    padding: 16px;
+    border-radius: 6px;
+    background: #eee;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.form-example{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.has-error-text{
+  color: #ea352d;
+  line-height: 1.5;
+  font-size: 14px;
+  list-style: none;
+}
+
+//追加
+.sets-add-card{
+  margin: 40px 0 0;
+}
+
+.btn-red{
+  background: #ea352d;
+  color: #fff;
+  border: 1px solid #ea352d;
+  display: block;
+  width: 350px;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
