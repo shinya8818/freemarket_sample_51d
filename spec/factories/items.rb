@@ -12,5 +12,6 @@ FactoryBot.define do
     user_id       { 1 }
     size          { "S" } 
     shipping_fee  { 1 }
+    user
   end
 end
