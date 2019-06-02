@@ -15,13 +15,13 @@
                 .sell-upload__dropbox-container
                   .sell-upload__images-0
                     %ul
-                .sell-upload__drop-box-0
-                  = f.file_field :image, class:"sell-upload__drop-file", multiple: true
-                  %pre.visible-pc
-                    :preserve
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                      投稿した画像は吸い込まれますが、よろしいですか？
+                #item.sell-upload__drop-box-0
+                  = fields_for :images do |fimage|
+                    = fimage.file_field :image, class:"sell-upload__drop-file", multiple: true
+                    %pre.visible-pc
+                      :preserve
+                        ドラッグアンドドロップ
+                        またはクリックしてファイルをアップロード
             .sell-content
               .item-name__form-group
                 %label
@@ -55,7 +55,9 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :condition, [["---", ""], ["新品、未使用", "1"], ["未使用に近い", "2"]], class:"select-default"
+                      = f.select :condition, [["---", ""], ["新品、未使用", "1"], ["未使用に近い", "2"]], {}, {class:"select-default"}
+                      -# = f.select :condition, :name, Item.conditions.keys.to_a
+                      -# = f.select :condition, :name, Item.conditions.s.to_a
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 配送について
@@ -108,7 +110,7 @@
                       .fee-right
                         %div
                           %p ¥
-                          %input#fee-input.input-default{placeholder: "例)300", value: ""}/
+                          = f.text_field :fee, id: "fee-input", class: "input-default", placeholder: "例)300", value: ""
                   %li.clearfix
                     .display-left 販売手数料(10%)
                     #handling-fee__input.display-right -
@@ -136,4 +138,7 @@
               .return__btn--gray
                 %a もどる
           .overlay
+          = form_for(@item, html: {multipart: true, class: "dropzone"}) do |fimage|
+            .fallback
+              = fimage.file_field :file_name, multiple: true
 = render partial: "shared/common-footer"

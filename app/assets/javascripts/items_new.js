@@ -11,11 +11,18 @@ $(function(){
   })
 });
 $(function() {
-  console.log("dropzone")
-  // disable auto discover
+  //ドロップゾーンを明示的にインスタンス化
   Dropzone.autoDiscover = false;
 
-  $(".sell-upload__drop-file").dropzone({
+  // //formタグ以外なので明示的に
+  var myDropzone = new Dropzone ( "div#item" , {
+     url : "/items/index",
+     maxFiles: 6,
+     dictMaxFilesExceeded: "ファイルは6ファイルまで追加が可能です。"
+    });
+
+
+  $(".dropzone").dropzone({
     maxFilesize: 1,
     addRemoveLinks: true
   });
