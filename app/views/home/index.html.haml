@@ -6,15 +6,47 @@
   .pickup-container
     %h2 ピックアップカテゴリー
     .pickup-container__items-container
-      = render partial: "root"
-      = render partial: "root"
-      = render partial: "root"
-      = render partial: "root"
-    .pickup-container
-      %h2 ピックアップブランド
-      .pickup-container__items-container
-        = render partial: "root"
-        = render partial: "root"
-        = render partial: "root"
-        = render partial: "root"
+      %h3.category
+        = link_to "新着アイテム", "", class:"index"
+      - @items.each do |item|
+        = link_to "/items/#{item.id}" do
+          .items-box-content
+            .items-box-content__box__photo
+              = image_tag item.images.first.image,class:"tops"
+            .items-box-content__box__body
+              %h3.items-name
+                = item.name
+              .items-num
+                .items-num__price
+                  ¥ #{item.fee}
+                .items-num__likes
+                  %i.fa.fa-heart
+                  %span.like 1
+                %p (税込)
+      .items-all
+        = link_to '',class: "items-all" do
+          全ての商品を見る
+  .pickup-container
+    %h2 ピックアップブランド
+    .pickup-container__items-container
+      %h3.category
+        = link_to "新着アイテム", "", class:"index"
+      - @items.each do |item|
+        = link_to "/items/#{item.id}" do
+          .items-box-content
+            .items-box-content__box__photo
+              = image_tag item.images.first.image,class:"tops"
+            .items-box-content__box__body
+              %h3.items-name
+                = item.name
+              .items-num
+                .items-num__price
+                  ¥ #{item.fee}
+                .items-num__likes
+                  %i.fa.fa-heart
+                  %span.like 1
+                %p (税込)
+      .items-all
+        = link_to '',class: "items-all" do
+          全ての商品を見る
 =render partial: "footer"
