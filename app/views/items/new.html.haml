@@ -6,6 +6,10 @@
         .sell-inner__container
           %h2.sell-inner__container-title 商品の情報を入力
           = form_for(@item, html: {class:"sell-form", multipart: true}) do |f|
+            //Todo ログイン機能実装後削除
+            = f.hidden_field :user_id, value: "1"
+            = f.hidden_field :status, value: "1"
+            = f.hidden_field :method, value: "1"
             .item-image__box
               %h3.item-image__box-title
                 出品画像
@@ -66,7 +70,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :shipping_fee,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
+                      = f.select :method,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -82,11 +86,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 1~2日で発送
-                        %option{value: "2"} 2~3日で発送
-                        %option{value: "3"} 4~7日で発送
+                      = f.select :days, [["---", ""],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]], {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 販売価格(300~9,999,999)
