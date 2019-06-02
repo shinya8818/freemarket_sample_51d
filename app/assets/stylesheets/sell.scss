@@ -124,6 +124,8 @@ Sell.scss
             cursor: pointer;
             .sell-upload__drop-file{
               display: none;
+              height: 100%;
+              width: 100%;
             }
             pre{
               position: absolute;

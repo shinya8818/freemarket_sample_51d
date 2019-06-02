@@ -7,10 +7,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @image = Image.new(image_params)
-    @category = Category.new(category_params)
     binding.pry
-    if @item.save && @image.save && @category.save
+    if @item.save
     else
       render :new
     end
@@ -18,6 +16,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :status, :fee, :condition, :method, :prefecture, :days, :user_id, :size, :shipping_fee)
+    params.require(:item).permit(:name, :description, :brand, :status, :fee, :condition, :method, :prefecture, :days, :user_id, :size, :shipping_fee, categories_attributes:[:name], images_attributes:[:image])
   end
 end

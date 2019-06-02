@@ -48,7 +48,7 @@
                   %div
                     .select-wrap
                       = fields_for :categories do |fcategory|
-                        = fcategory.select(:name, [["---", ""], ["レディース", 1]], {}, class:"select-default")
+                        = fcategory.select(name: "", [["---", ""], ["レディース", 1]], {}, class:"select-default")
                         %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -70,7 +70,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :method,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
+                      = f.select :shipping_fee,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
