@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    @item.categories.build
   end
 
   def create
