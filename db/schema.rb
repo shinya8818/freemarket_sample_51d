@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_01_083140) do
+ActiveRecord::Schema.define(version: 2019_06_02_053706) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2019_06_01_083140) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_categories_on_item_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 2019_06_01_083140) do
     t.integer "shipping_fee", null: false
     t.integer "status", default: 0, null: false
     t.integer "delivery", null: false
+    t.bigint "category_id_id", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["category_id_id"], name: "index_items_on_category_id_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -122,11 +126,11 @@ ActiveRecord::Schema.define(version: 2019_06_01_083140) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "categories", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
