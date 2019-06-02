@@ -66,10 +66,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "2"} 送料込み（出品者負担）
-                        %option{value: "1"} 着払い（購入者負担）
+                      = f.select :shipping_fee,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -77,10 +74,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 北海道
-                        %option{value: "2"} 青森
+                      = f.select :prefecture, [["---", ""],["北海道", 1],["青森", 2]], {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -135,7 +129,4 @@
               .return__btn--gray
                 %a もどる
           .overlay
-          = form_for(@item, html: {multipart: true, class: "dropzone"}) do |fimage|
-            .fallback
-              = fimage.file_field :file_name, multiple: true
 = render partial: "shared/common-footer"
