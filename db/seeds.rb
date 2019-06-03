@@ -36,7 +36,7 @@ mens_wear.children.create([{name:"トップス"},{name:"アウター"},{name:"�
 
 mens_shoes.children.create([{name:"スニーカー"},{name:"サンダル"},{name:"ブーツ"},{name:"その他"}])
 
-mens_accessory.create([{name:"ネックレス"},{name:"時計"},{name:"帽子"},{name:"その他"}])
+mens_accessory.children.create([{name:"ネックレス"},{name:"時計"},{name:"帽子"},{name:"その他"}])
 
 baby = Category.create(name: "ベビー・キッズ")
 
