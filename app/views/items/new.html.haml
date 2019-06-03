@@ -48,7 +48,7 @@
                   %div
                     .select-wrap
                       = fields_for :categories do |fcategory|
-                        = fcategory.select(name: "", [["---", ""], ["レディース", 1]], {}, class:"select-default")
+                        = fcategory.select(:name, [["---", ""], ["レディース", 1]], {}, class:"select-default")
                         %i.fas.fa-angle-down
                 .form-group
                   %label
