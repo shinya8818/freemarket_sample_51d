@@ -72,6 +72,7 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'jquery-rails'
+gem 'ancestry'
 
 group :production do
   gem 'unicorn', '5.4.1'

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :categories, dependent: :destroy
+  belongs_to :category
   has_many :images, dependent: :destroy
   has_many :comments
   has_many :likes
