@@ -20,8 +20,9 @@
                   .sell-upload__images-0
                     %ul
                 #item.sell-upload__drop-box-0
-                  = fields_for :images do |fimage|
-                    = fimage.file_field :image, class:"sell-upload__drop-file", multiple: true
+                  = f.fields_for :images do |fimage|
+                    = fimage.label :image do
+                      = fimage.file_field :image, class:"sell-upload__drop-file", multiple: true
                     %pre.visible-pc
                       :preserve
                         ドラッグアンドドロップ
@@ -47,7 +48,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = fields_for :categories do |fcategory|
+                      = f.fields_for :categories do |fcategory|
                         = fcategory.select(:name, [["---", ""], ["レディース", 1]], {}, class:"select-default")
                         %i.fas.fa-angle-down
                 .form-group

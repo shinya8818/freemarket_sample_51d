@@ -122,10 +122,17 @@ Sell.scss
             font-size: 0;
             text-align: center;
             cursor: pointer;
-            .sell-upload__drop-file{
-              display: none;
-              height: 100%;
-              width: 100%;
+            label{
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              display: block;
+              .sell-upload__drop-file{
+                display: none;
+                -webkit-appearance: none;
+              }
             }
             pre{
               position: absolute;

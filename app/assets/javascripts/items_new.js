@@ -16,7 +16,7 @@ $(function() {
 
   // //formタグ以外なので明示的に
   var myDropzone = new Dropzone ( "div#item" , {
-     url : "/items/index",
+     url : "/images/upload",
      maxFiles: 6,
      dictMaxFilesExceeded: "ファイルは6ファイルまで追加が可能です。"
     });
