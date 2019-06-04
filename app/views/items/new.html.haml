@@ -19,7 +19,7 @@
                 .sell-upload__dropbox-container
                   .sell-upload__images-0
                     %ul
-                #item.sell-upload__drop-box-0
+                #dropzone.sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
                       = fimage.file_field :image,  multiple: true, type: "file", name: "item_images[name][]"
@@ -87,7 +87,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :days, [["---", ""],["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]], {}, {class:"select-default"}
+                      = f.select :days, Item.days.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 販売価格(300~9,999,999)

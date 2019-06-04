@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      # respond_to do |format|
+      #   format.json
+      # end
       params[:item_images]['name'].each do |i|
         @item_image =  @item.images.create!(image: i)
       end
