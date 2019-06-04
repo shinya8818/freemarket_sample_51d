@@ -22,7 +22,7 @@
                 #item.sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
-                      = fimage.file_field :image, class:"sell-upload__drop-file", multiple: true
+                      = fimage.file_field :image,  multiple: true, type: "file", name: "item_images[name][]"
                     %pre.visible-pc
                       :preserve
                         ドラッグアンドドロップ
