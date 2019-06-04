@@ -30,11 +30,16 @@ has_many :sns_credentials
 
 |Column|Type|Options|
 |------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture|text|null: false|
 |municipalities|string|null: false|
 |address_number|string|null: false|
 |building|string||
+|cell_phone|string|
 |user_id|references|null: false,foreign_key: true|
 
 ### Association

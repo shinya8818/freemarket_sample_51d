@@ -4,7 +4,7 @@
   .account__top
     %p.account__top--text
       アカウントをお持ちでない方はこちら
-    = link_to new_user_session_path, class:"account__top--text--link" do
+    = link_to new_user_registration_path, class:"account__top--text--link" do
       .account__top--text--link__box
         %p.account__top--text--link__box--text
           新規会員登録
@@ -20,7 +20,7 @@
           = image_tag "https://img.icons8.com/color/48/000000/google-logo.png", class: "account__bottom--link__box--google-login-icon"
           Googleでログイン
 
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: login_path(resource_name)) do |f|
     .form
       .form__box
         = f.email_field :email, placeholder: "メールアドレス", type: "text", name: "email", value: "", class: "form__box--input"
