@@ -12,7 +12,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :nickname, placeholder: "例)メルカリ太郎", type: "text", value:"test",class: "form-content__bottom__box--input--name"
+            = f.text_field :nickname, placeholder: "例)メルカリ太郎", type: "text",class: "form-content__bottom__box--input--name"
         -# メールアドレス
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -21,7 +21,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "text", value:"test@yahoo.co.jp", class: "form-content__bottom__box--input--name"
+            = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "text", class: "form-content__bottom__box--input--name"
         -# パスワード
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -30,7 +30,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.password_field :password, placeholder: "6文字以上", type: "text",value: "password", class: "form-content__bottom__box--input--name"
+            = f.password_field :password, placeholder: "6文字以上", type: "text", class: "form-content__bottom__box--input--name"
         -# パスワード(確認)
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -39,7 +39,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.password_field :password_confirmation, placeholder: "6文字以上", type: "text", value: "password",class: "form-content__bottom__box--input--name"  
+            = f.password_field :password_confirmation, placeholder: "6文字以上", type: "text", class: "form-content__bottom__box--input--name"  
         -# 本人確認メッセージ
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -55,7 +55,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :last_name, placeholder: "例)山田", type: "text",value: "password",  class: "form-content__bottom__box--input--name"
+            = f.text_field :last_name, placeholder: "例)山田", type: "text", class: "form-content__bottom__box--input--name"
         -# 名(全角)
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -64,7 +64,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :first_name, placeholder: "例)彩", type: "text",value: "password", class: "form-content__bottom__box--input--name"
+            = f.text_field :first_name, placeholder: "例)彩", type: "text", class: "form-content__bottom__box--input--name"
         -# 姓カナ(全角) 
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -73,7 +73,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :last_name_kana, placeholder: "例)ヤマダ", type: "text",value: "password", class: "form-content__bottom__box--input--name"
+            = f.text_field :last_name_kana, placeholder: "例)ヤマダ", type: "text", class: "form-content__bottom__box--input--name"
         -# 名カナ(全角)
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -82,7 +82,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :first_name_kana, placeholder: "例)アヤ", type: "text",value: "password" , class: "form-content__bottom__box--input--name"
+            = f.text_field :first_name_kana, placeholder: "例)アヤ", type: "text", class: "form-content__bottom__box--input--name"
         -# 生年月日
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -93,17 +93,17 @@
           %br
           .form-content__bottom__box--birthday
             .form-content__bottom__box--birthday__select
-              =f.select :birth_year, options_for_select(1900..2019), {prompt: "--", autofocus: "true",value: "1990",  class: "form-content__bottom__box--birthday__select--box"}
+              =f.select :birth_year, options_for_select(1900..2019), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 年
             .form-content__bottom__box--birthday__select
-              =f.select :birth_month, options_for_select(1..12), {prompt: "--", autofocus: "true",value: "1", class: "form-content__bottom__box--birthday__select--box"}
+              =f.select :birth_month, options_for_select(1..12), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 月
             .form-content__bottom__box--birthday__select
-              =f.select :birth_day, options_for_select(1..31), {prompt: "--", autofocus: "true",default: "2", class: "form-content__bottom__box--birthday__select--box"}
+              =f.select :birth_day, options_for_select(1..31), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 日
