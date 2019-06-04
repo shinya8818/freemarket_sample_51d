@@ -57,7 +57,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :condition, [["---", ""], ["新品、未使用", "1"], ["未使用に近い", "2"]], {}, {class:"select-default"}
+                      = f.select :condition, Item.conditions.keys, {}, {class:"select-default"}
                       -# = f.select :condition, :name, Item.conditions.keys.to_a
                       -# = f.select :condition, :name, Item.conditions.s.to_a
                       %i.fas.fa-angle-down
@@ -71,7 +71,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :shipping_fee,  [["---", ""],["送料込み（出品者負担）", "送料込み（出品者負担）"], ["着払い（購入者負担）", "着払い（購入者負担）"]], {}, {class:"select-default"}
+                      = f.select :shipping_fee, Item.shipping_fees.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -79,7 +79,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :prefecture, [["---", ""],["北海道", 1],["青森", 2]], {}, {class:"select-default"}
+                      = f.collection_select :prefecture, Prefecture.all, :id, :name
                       %i.fas.fa-angle-down
                 .form-group
                   %label
