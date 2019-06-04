@@ -91,7 +91,7 @@ belongs_to :item
 |status|integer|null: false|
 |fee|integer|null: false|
 |condition|integer|null: false|
-|method|integer|null: false|
+|delivery|integer|null: false|
 |prefecture|string|null: false|
 |days|integer|null: false|
 |user_id|references|null: false,foreign_key: true|
