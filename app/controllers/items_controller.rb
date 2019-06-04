@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def new
     @item = Item.new
     @item.images.build
@@ -24,4 +25,10 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :brand, :status, :fee, :condition, :method, :prefecture, :days, :user_id, :size, :shipping_fee, categories_attributes:[:name], images_attributes:[:image])
   end
+
+  def show
+    @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
 end
