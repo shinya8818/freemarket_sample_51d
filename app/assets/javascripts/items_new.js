@@ -26,24 +26,23 @@ $(document).on('turbolinks:load', function() {
       }
     })
   });
-  //画像のドラッグ＆ドロップ処理(dropzone)
-  $(function() {
+  //Todo 画像のドラッグ＆ドロップ処理(dropzoneの構造を理解してから追記)
+  // $(function() {
     //ドロップゾーンを明示的にインスタンス化
-    Dropzone.autoDiscover = false;
+    // Dropzone.autoDiscover = false;
+    // Dropzone.options.itemImagesAttributes0Image = {}  
+    //formタグ以外なので明示的に
+    // var myDropzone = new Dropzone ( "div#dropzone", {
+    //    url : "/items",
+    //    maxFiles: 10,
+    //    dataType: 'json',
+    //    autoProcessQueue: false,
+      // });
   
-    Dropzone.options.itemImagesAttributes0Image = {}
   
-    // //formタグ以外なので明示的に
-    var myDropzone = new Dropzone ( "div#dropzone", {
-       url : "/items",
-       maxFiles: 10,
-       dataType: 'json'
-      });
-  
-  
-    $(".dropzone").dropzone({
-      maxFilesize: 1,
-      addRemoveLinks: true
-    });
-  });
+    // $("#dropzone").dropzone({
+    //   maxFilesize: 1,
+    //   addRemoveLinks: true
+    // });
+  // });
 });
