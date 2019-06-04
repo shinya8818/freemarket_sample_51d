@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_one :adress
-  has_one :creadit
+  has_one :address
+  has_one :credit
   has_many :likes
   has_many :comments
   has_many :items

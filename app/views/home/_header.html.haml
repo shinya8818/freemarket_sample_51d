@@ -20,27 +20,38 @@
             %h2
               =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
                 %i.fa.fa-bars
-                %span カテゴリーから探す
+                %span.search-menu__list-parent-text カテゴリーから探す
           %li
             %h2
               =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
                 %i.fa.fa-tag
                 %span ブランドから探す
-      .main-header__inner-menu--right
-        %ul
-          %li
-            %h2
-              =link_to "https://www.mercari.com/jp/mypage/notification/" do
-                %i.fa.fa-bell
-                %span お知らせ
-          %li
-            %h2
-              =link_to "https://www.mercari.com/jp/brand/" do
-                %i.fa.fa-check
-                %span やることリスト
-          %li
-            %h2
-              =link_to users_path do
-                %i.fa.fa-user
-                %span マイページ
-
+      -if user_signed_in?
+        .main-header__inner-menu--right
+          %ul
+            %li
+              %h2
+                =link_to "https://www.mercari.com/jp/mypage/notification/" do
+                  %i.fa.fa-bell
+                  %span お知らせ
+            %li
+              %h2
+                =link_to "https://www.mercari.com/jp/brand/" do
+                  %i.fa.fa-check
+                  %span やることリスト
+            %li
+              %h2
+                =link_to users_path do
+                  %i.fa.fa-user
+                  %span マイページ
+      -else
+        .main-header__inner-menu--right
+          %ul
+            %li
+              %h2
+                =link_to new_user_path do
+                  %span.main-header__inner-menu--right__new-user-register-btn 新規会員登録
+            %li
+              %h2
+                =link_to new_user_session_path do
+                  %span.main-header__inner-menu--right__new-user-login-btn ログイン
