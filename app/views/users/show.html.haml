@@ -1,0 +1,48 @@
+=render partial: "home/header"
+.mypage-container
+  %section.user-details
+    .user-details__image
+      .user-details__image__text
+        %a.avatar-box{:href => ""}
+          %img.my-avatar{:src => "/mercari.icon.png"}/
+          %h2.users-detail-title
+            太郎
+        .users_score
+          %span.users_score__left 評価 100
+          %span.users_score__right 出品数 100
+    .user-details__white
+      .user-details__white__ratings
+        .users-ratings
+          .users-ratings__detail
+            %i.far.fa-smile-beam
+            .users-ratings__detail__score
+              100
+        .users-ratings
+          .users-ratings__detail
+            %i.far.fa-grin
+            .users-ratings__detail__score
+              10
+        .users-ratings__left
+          .users-ratings__detail
+            %i.far.fa-tired
+            .users-ratings__detail__score
+              5
+      .user-details__white__description
+        %p.user-description
+          よろしくお願いします。
+    .user-details__media
+      %ul.social-media-box
+        %li.mypage-media
+          %a{:href => ""}
+            %i.fab.fa-facebook-square
+        %li.mypage-media
+          %a{:href => ""}
+            %i.fab.fa-twitter-square
+        %li.mypage-media
+          %a{:href => ""}
+            %i.fab.fa-line
+    %section.user-details__items
+      %h2.my-items-head
+        この出品者の商品
+      .user-details__items__content
+=render partial: "home/footer"
