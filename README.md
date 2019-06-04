@@ -91,15 +91,17 @@ belongs_to :item
 |status|integer|null: false|
 |fee|integer|null: false|
 |condition|integer|null: false|
-|method|string|null: false|
+|method|integer|null: false|
 |prefecture|string|null: false|
 |days|integer|null: false|
 |user_id|references|null: false,foreign_key: true|
 |size|string||
-|shipping_fee|string|null: false|
+|shipping_fee|integer|null: false|
+|category_id|references|null: false,foreign_key: true|
 
 ### Association
 belongs_to :user  
+belongs_to :category  
 has_many :categories  
 has_many :images  
 has_many :comments  
@@ -120,10 +122,10 @@ belongs_to :item
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references|null: false,foreign_key: true|
 
 ### Association
-belongs_to :item
+has_many :items
+has_ancestry
 
 ## sns_credentialsテーブル
 

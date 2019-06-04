@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def done
   end
 
-  def phone
+  def show
   end
+
 end
