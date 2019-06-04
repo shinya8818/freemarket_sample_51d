@@ -47,7 +47,7 @@
       - @items.each do |item|
         .user-details__items__content
           %section.my-item__box
-            = link_to item_path, class:"my-item__box__link" do
+            = link_to "/items/#{item.id}", class:"my-item__box__link" do
               = image_tag item.images.first.image, class:"my-item-image"
               .my-item-body
                 %h3.my-item-name
