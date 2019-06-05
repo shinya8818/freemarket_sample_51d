@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -21,6 +25,7 @@ class ItemsController < ApplicationController
   def buy
     @item = Item.find(params[:id])
     @images = @item.images
+    @users = @item.user
   end
 
   private
