@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  //Todo入力エラー(選択なしや値のエラー)
+  //FixMe入力エラー(選択なしや値のエラー)
   // $(function(){
   //   (".sell__btn--red").click(function(){
 
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function() {
       }
     })
   });
-  //Todo 画像のドラッグ＆ドロップ処理(dropzoneの構造を理解してから追記)
+  //FixMe 画像のドラッグ＆ドロップ処理(dropzoneの構造を理解してから追記)
   // $(function() {
     //ドロップゾーンを明示的にインスタンス化
     // Dropzone.autoDiscover = false;
