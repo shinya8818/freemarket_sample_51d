@@ -97,7 +97,7 @@
                     = comment.content
       .message-content
         - if current_user
-          = form_tag(item_comments_path, method: :post,class:"message-form") do
+          = form_tag("/items/#{@item.id}/comments", method: :post,class:"message-form") do
             %input.detail-message{type: "hidden"}/
             %p.input-p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %textarea.textarea-default{type: "text",name:"content"}
