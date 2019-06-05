@@ -1,0 +1,164 @@
+@mixin progress-bar() {
+  position: absolute;
+  background-color:gray;
+  top: 26px;
+  display: block;
+  height: 2px;
+  opacity: 0.7;
+}
+// 進捗バーの丸部分
+@mixin progress-status() {
+  .progress-status {
+    background-color: red;
+  }
+}
+.signup-header--logo {
+  text-align: center;
+  height: 128px;
+  margin-left: 20px;
+  &--image {
+    height:49px;
+    width:185px;
+    margin-top: 40px;
+  } 
+}
+.progress {
+  padding: 40px 0 0 44px;
+  display: inline-block;
+  vertical-align: top;
+  &--bar{
+    margin:0;
+    li{
+      margin: 0 40px 0 0;
+      position: relative;
+      display: inline-block;
+      font-size: 12px;
+      color: gray;
+      .progress-status{
+        color: gray;
+        opacity: 0.8;
+        background-color: gray;
+        position: absolute;
+        left: 40%;
+        width: 12px;
+        height: 12px;
+        margin: 4px auto 0;
+        border-radius: 50%;
+        z-index: 30;
+      }
+    }
+  }
+}
+.progress-status_user-info {
+  @include progress-bar;
+  left: 65%;
+  width: 90px;
+}
+.progress-status_phone {
+  @include progress-bar;
+  left: 55%;
+  width: 118px;
+}
+.progress-status_address {
+  @include progress-bar;
+  left: 50%;
+  width: 118px;
+}
+.progress-status_credit {
+  @include progress-bar;
+  left: 60%;
+  width: 80px;
+}
+// *************************************************
+// フォームごとに使う親要素のクラス名を分けてステータスを制御
+// *************************************************
+// 会員情報入力画面
+.form-user-entrypage .user-info {
+  color: red;
+  font-weight: bold;
+  @include progress-status;
+}
+// 電話番号の確認画面
+.form-phone-entrypage .user-info {
+  @include progress-status;
+  .progress-status_user-info {
+    background-color: red;
+  }
+}
+.form-phone-entrypage .phone {
+  color: red;
+  font-weight: bold;
+  @include progress-status;
+}
+// 住所入力画面
+.form-address-entrypage .user-info {
+  @include progress-status;
+  .progress-status_user-info {
+    background-color: red;
+  }
+}
+.form-address-entrypage .phone {
+  @include progress-status;
+  .progress-status_phone {
+    background-color: red;
+  }
+}
+.form-address-entrypage .address {
+  color: red;
+  font-weight: bold;
+  @include progress-status;
+}
+// 支払い方法画面
+.form-credit-entrypage .user-info {
+  @include progress-status;
+  .progress-status_user-info {
+    background-color: red;
+  }
+}
+.form-credit-entrypage .phone {
+  @include progress-status;
+  .progress-status_phone {
+    background-color: red;
+  }
+}
+.form-credit-entrypage .address {
+  @include progress-status;
+  .progress-status_address {
+    background-color: red;
+  }
+}
+.form-credit-entrypage .credit {
+  color: red;
+  font-weight: bold;
+  @include progress-status;
+}
+// 会員登録完了画面
+.form-register-done .user-info {
+  @include progress-status;
+  .progress-status_user-info {
+    background-color: red;
+  }
+}
+.form-register-done .phone {
+  @include progress-status;
+  .progress-status_phone {
+    background-color: red;
+  }
+}
+.form-register-done .address {
+  @include progress-status;
+  .progress-status_address {
+    background-color: red;
+  }
+}
+.form-register-done .credit {
+  @include progress-status;
+  .progress-status_credit {
+    background-color: red;
+  }
+}
+.form-register-done .done {
+  color: red;
+  font-weight: bold;
+  @include progress-status;
+}
