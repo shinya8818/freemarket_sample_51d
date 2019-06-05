@@ -48,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -72,6 +73,8 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'jquery-rails'
+gem 'dropzonejs-rails', '~> 0.7.3'
+gem 'carrierwave'
 gem 'ancestry'
 
 group :production do
