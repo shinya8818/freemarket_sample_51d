@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 2019_06_05_033458) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.string "size"
-    t.integer "shipping_fee", null: false
     t.integer "delivery", null: false
     t.integer "shipping_fee"
     t.index ["category_id"], name: "index_items_on_category_id"
