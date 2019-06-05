@@ -5,7 +5,9 @@
       %div
         .sell-inner__container
           %h2.sell-inner__container-title 商品の情報を入力
-          %form.sell-form
+          = form_for(@item, html: {class:"sell-form", multipart: true}) do |f|
+            //Todo ログイン機能実装後削除
+            = f.hidden_field :user_id, value: 1
             .item-image__box
               %h3.item-image__box-title
                 出品画像
@@ -15,25 +17,26 @@
                 .sell-upload__dropbox-container
                   .sell-upload__images-0
                     %ul
-                .sell-upload__drop-box-0
-                  %input.sell-upload__drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
-                  %pre.visible-pc
-                    :preserve
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                        %icon-camera
+                #dropzone.sell-upload__drop-box-0
+                  = f.fields_for :images do |fimage|
+                    = fimage.label :image do
+                      = fimage.file_field :image,  multiple: true, type: "file", name: "item_images[name][]"
+                    %pre.visible-pc
+                      :preserve
+                        ドラッグアンドドロップ
+                        またはクリックしてファイルをアップロード
             .sell-content
               .item-name__form-group
                 %label
                   商品名
                   %span.form-require 必須
                 %div
-                  %input.input-default{placeholder: "商品名(必須４０文字まで)", value: ""}/
+                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: ""
               .item-description__form-group
                 %label
                   商品の説明
                   %span.form-require 必須
-                %textarea.textarea-description{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                =f.text_area :description, class:"textarea-description", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
             .sell-content.clearfix
               %h3.sell-sub__head 商品の詳細
               .sell-form__box
@@ -43,11 +46,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} レディース
-                        %option{value: "2"} メンズ
-                        %option{value: "3"} ベビー
+                      = f.select(:category_id, [["---", ], ["レディース", 49]], {}, class:"select-default")
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -55,14 +54,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 新品、未使用
-                        %option{value: "2"} 未使用に近い
-                        %option{value: "3"} 目立った傷や汚れなし
-                        %option{value: "4"} やや傷や汚れあり
-                        %option{value: "5"} 傷や汚れあり
-                        %option{value: ""} 全体的に状態が悪い
+                      = f.select :condition, Item.conditions.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 配送について
@@ -74,10 +66,15 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "2"} 送料込み（出品者負担）
-                        %option{value: "1"} 着払い（購入者負担）
+                      = f.select :shipping_fee, Item.shipping_fees.keys, {}, {class:"select-default"}
+                      %i.fas.fa-angle-down
+                .form-group
+                  %label
+                    配送料の負担
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      = f.select :delivery, Item.deliveries.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -85,10 +82,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 北海道
-                        %option{value: "2"} 青森
+                      = f.collection_select :prefecture, Prefecture.all, :id, :name, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -96,11 +90,8 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 1~2日で発送
-                        %option{value: "2"} 2~3日で発送
-                        %option{value: "3"} 4~7日で発送
+                      = f.select :days, Item.days.keys, {}, {class:"select-default"}
+                      -# = f.select :days, Item.days.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 販売価格(300~9,999,999)
@@ -115,7 +106,7 @@
                       .fee-right
                         %div
                           %p ¥
-                          %input#fee-input.input-default{placeholder: "例)300", value: ""}/
+                          = f.text_field :fee, id: "fee-input", class: "input-default", placeholder: "例)300", value: ""
                   %li.clearfix
                     .display-left 販売手数料(10%)
                     #handling-fee__input.display-right -
@@ -139,9 +130,8 @@
                   また、出品をもちまして
                   = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/" 
                   に同意したことになります。
-              %button.sell__btn--red{type: "submit"}
-                出品する
+              = f.submit '出品する', class: 'sell__btn--red'
               .return__btn--gray
-                %a もどる
+                = link_to "もどる"
           .overlay
 = render partial: "shared/common-footer"
