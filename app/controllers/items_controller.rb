@@ -8,9 +8,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      # respond_to do |format|
-      #   format.json
-      # end
+      # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
         @item_image =  @item.images.create!(image: i)
       end
@@ -22,12 +20,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :status, :fee, :condition, :method, :prefecture, :days, :user_id, :size, :shipping_fee, categories_attributes:[:name], images_attributes:[:image])
+    params.require(:item).permit(:name, :description, :brand, :delivery, :status, :fee, :condition, :prefecture, :days,  :user_id, :size, :shipping_fee, :category_id, images_attributes:[:image])
   end
-
-  def show
-    @item = Item.find(params[:id])
-    @images = @item.images
-  end
-
 end

@@ -4,9 +4,6 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :comments
   has_many :likes
-  # active_hash
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :prefecture
 
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
 
