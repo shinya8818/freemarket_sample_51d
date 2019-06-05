@@ -18,8 +18,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def buy
+    @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :brand, :delivery, :status, :fee, :condition, :prefecture, :days,  :user_id, :size, :shipping_fee, :category_id, images_attributes:[:image])
   end
+
 end
