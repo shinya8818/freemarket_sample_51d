@@ -194,9 +194,66 @@ html, body {
   width: 780px;
   margin: 8px auto;
   background-color: #fff;
+
+  .message-content-comment {
+    padding: 24px 7.5%;
+    background: #fff;
+    .comment-items {
+      margin: 0;
+      list-style: none;
+      &__body {
+        margin-top: 1.5em;
+        .comment-user {
+          float: left;
+          position: relative;
+          top: -20px;
+          display: inline-block;
+          color: #333;
+          &__unknown {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+            background: #eee;
+            text-align: center;
+            .comment-avatar {
+              width: 40px;
+              height: 40px;
+              vertical-align: bottom;
+            }
+          }
+          .bold {
+            overflow: hidden;
+            position: absolute;
+            top: 10px;
+            left: 56px;
+            max-width: 100%;
+            min-width: 214px;
+            height: 1.2em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: 600;
+          }
+        }
+        .comment-body {
+          float: right;
+          position: relative;
+          width: calc(100% - 150px);
+          padding: 16px;
+          background: #eef0f4;
+          border-radius: 15px;
+          line-height: 1.5;
+          word-break: break-all;
+          &__text {
+          }
+        }
+      }
+    }
+  }
   .message-content {
     padding: 24px;
     background: #fff;
+    margin-top: 20px;
     .detail-message {
       border: 0;
       outline: 0;

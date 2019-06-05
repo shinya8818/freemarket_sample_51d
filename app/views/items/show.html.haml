@@ -82,13 +82,28 @@
           %span.key あんしん・あんぜんへの取り組み
   .item-detail-message
     .message-container
+      - if @comments
+        - @comments.each do |comment|
+          .message-content-comment
+            %ul.comment-items
+              %li.comment-items__body
+                .comment-user
+                  .comment-user__unknown
+                    = image_tag("/mercari.icon.png",class:"comment-avatar")
+                  %figcaption.bold
+                    名前
+                .comment-body
+                  .comment-body__text
+                    = comment.content
       .message-content
         %form.message-form
           %input.detail-message{type: "hidden"}/
           %p.input-p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %textarea.textarea-default{type: "text"}
-          %button.comment-submit{type: "submit"}
-            %span.comment コメントする
+          - if current_user
+            = form_tag("items/#{@item.id}/comments", method: :post) do
+              %textarea.textarea-default{name:"content"}
+              %button.comment-submit{type: "submit"}
+                %span.comment コメントする
   %ul.nav-item
     %li.nav-item-link-prev
       = link_to '',class: "nav-icon" do
