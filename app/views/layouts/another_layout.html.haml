@@ -2,7 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title= content_for?(:title) ? yield(:title) : "FreemarketSample51d"
+    %title FreemarketSample51d
     = csrf_meta_tags
     = csp_meta_tag
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
@@ -10,12 +10,4 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header
-    = render partial: 'home/header'
-    %nav.bread-crumbs
-      %ul
-        %li= breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
-    %main
     = yield
-    %footer
-    = render partial: 'home/footer'

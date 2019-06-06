@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_063655) do
     t.string "name", null: false
     t.string "description", null: false
     t.string "brand"
+    t.integer "status", null: false
     t.integer "fee", null: false
     t.integer "condition", null: false
     t.string "prefecture", null: false
@@ -77,10 +78,9 @@ ActiveRecord::Schema.define(version: 2019_06_04_063655) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "size"
     t.integer "shipping_fee", null: false
-    t.integer "status", default: 0, null: false
     t.integer "delivery", null: false
+    t.string "size"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"

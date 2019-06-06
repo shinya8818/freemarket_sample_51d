@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    render layout: 'another_layout'
   end
 
   def address
@@ -22,6 +23,12 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def card
+  end
+
+  def cardadd
   end
 
 end
