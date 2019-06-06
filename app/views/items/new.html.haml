@@ -15,8 +15,8 @@
               %p 最大10枚までアップロードできます
               .sell-upload__dropbox-container--clearfix
                 .sell-upload__dropbox-container
-                  .sell-upload__images-0
-                    %ul
+                  %ul.sell-upload__images-0
+                    
                 #dropzone.sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
@@ -46,7 +46,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select(:category_id, [["---", ], ["レディース", 49]], {}, class:"select-default")
+                      = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, autofocus: true, class:"select-default"
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -54,27 +54,27 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :condition, Item.conditions.keys, {}, {class:"select-default"}
+                      = f.select :condition, Item.conditions.keys, { prompt: '---' }, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 配送について
               = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", target: "_blank", class: "form-question"
               .sell-form__box
-                .form-group
+                #shipping_fee.form-group
                   %label
                     配送料の負担
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :shipping_fee, Item.shipping_fees.keys, {}, {class:"select-default"}
+                      = f.select :shipping_fee, Item.shipping_fees.keys, { prompt: '---' }, {class:"select-default"}
                       %i.fas.fa-angle-down
-                .form-group
+                #delivery.form-group
                   %label
                     配送料の負担
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :delivery, Item.deliveries.keys, {}, {class:"select-default"}
+                      = f.select :delivery, Item.deliveries.keys, { prompt: '---' }, {class:"select-default"}
                       %i.fas.fa-angle-down
                 .form-group
                   %label
@@ -90,7 +90,7 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.select :days, Item.days.keys, {}, {class:"select-default"}
+                      = f.select :days, Item.days.keys, { prompt: '---' }, {class:"select-default"}
                       -# = f.select :days, Item.days.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
