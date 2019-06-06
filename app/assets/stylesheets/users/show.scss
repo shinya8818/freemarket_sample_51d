@@ -168,14 +168,61 @@ html, body {
       font-size: 22px;
       line-height: 1.4;
       font-weight: bold;
+      margin-left: 10px;
     }
     &__content {
       padding: 0;
       width: auto;
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: nowrap;
       margin: 0 auto;
+      .my-item__box {
+        margin: 0 6px 20px 6px ;
+        float: left;
+        display: block;
+        width: 220px;
+        &__link {
+          display: block;
+          color: #333;
+          .my-item-image {
+              width: 220px;
+              height: 220px;
+              overflow: hidden;
+          }
+          .my-item-body {
+            padding: 16px;
+            height: 110px;
+            .my-item-name {
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+              font-size: 16px;
+              color: #333;
+            }
+            .my-item-num {
+              margin: 8px 0 0;
+              justify-content: space-between;
+              align-items: center;
+              display: flex;
+              &__price {
+                font-size: 16px;
+                font-weight: 600;
+                color: #333;
+              }
+              .font-my {
+                font-size: 16px;
+                font-weight: 400;
+                color: #333;
+              }
+            }
+            .my-item-tax {
+              font-size: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }

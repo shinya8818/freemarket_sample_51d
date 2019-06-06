@@ -194,6 +194,39 @@ html, body {
   width: 780px;
   margin: 8px auto;
   background-color: #fff;
+  .comment-content {
+    padding: 24px;
+    background: #fff;
+    margin-bottom: 30px;
+    .comment-items {
+      margin: 0;
+      list-style: none;
+      &__box {
+        margin-top: 20px;
+        .comment-avatar {
+          float: left;
+          display: inline-block;
+          color: #333;
+          .comment-img {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+          }
+        }
+        .comment-user-name {
+          vertical-align: top;
+        }
+        .comment-body {
+          float: right;
+          padding: 16px;
+          background: #eef0f4;
+          border-radius: 15px;
+          width: 600px;
+        }
+      }
+    }
+  }
   .message-content {
     padding: 24px;
     background: #fff;
