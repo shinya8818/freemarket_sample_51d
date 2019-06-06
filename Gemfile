@@ -74,6 +74,7 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'gretel'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
