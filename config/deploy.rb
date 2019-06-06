@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
-  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
