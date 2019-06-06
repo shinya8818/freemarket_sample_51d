@@ -76,6 +76,7 @@ gem 'jquery-rails'
 gem 'dropzonejs-rails', '~> 0.7.3'
 gem 'carrierwave'
 gem 'ancestry'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
