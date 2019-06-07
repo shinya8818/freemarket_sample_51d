@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout 'another_layout'
 
   def user_info_keep
     session[:nickname] = params[:nickname]
@@ -61,7 +62,7 @@ class SessionsController < ApplicationController
       birth_day: session[:birth_day],
       cell_phone: session[:cell_phone]
     )
- 
+
     user = User.find_by(email: session[:email])
     Address.create(
       last_name: session[:addr_last_name],
@@ -77,7 +78,7 @@ class SessionsController < ApplicationController
       user_id: user.id
     )
     sign_in user
-    
+
     redirect_to new_register_done_path
   end
 

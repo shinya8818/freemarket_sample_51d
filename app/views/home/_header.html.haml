@@ -2,7 +2,7 @@
   .main-header__inner
     .main-header__inner-top
       %h1
-        = link_to "https://www.mercari.com/jp/" do
+        = link_to root_path do
           = image_tag "mercari_logo_horizontal.png", width: 150
       %form.serch-form{action: "https://www.mercari.com/jp/search/"}
         %input.serch-form__input{name:"keyword", placeholder:"何をお探しですか？", type:"serch", value:""}

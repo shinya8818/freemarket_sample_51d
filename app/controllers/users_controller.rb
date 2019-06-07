@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    render layout: 'another_layout'
   end
 
   def address
@@ -25,6 +26,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @items = @user.items
+  end
+
+  def card
+  end
+
+  def cardadd
   end
 
 end

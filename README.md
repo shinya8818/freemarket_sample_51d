@@ -20,7 +20,6 @@
 
 ### Association
 has_one :adress  
-has_one :creadit  
 has_many :likes  
 has_many :comments  
 has_many :items  
@@ -41,19 +40,6 @@ has_many :sns_credentials
 |building|string||
 |cell_phone|string|
 |user_id|references|null: false,foreign_key: true|
-
-### Association
-belongs_to :user
-
-## creditsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|card_number|string|null: false|
-|security|text|null: false|
-|deadline_year|integer|null: false|
-|deadline_month|integer|null: false|
-|user_id|references|null :false,foreign_key: true|
 
 ### Association
 belongs_to :user

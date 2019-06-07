@@ -6,6 +6,12 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil).order("id ASC")
     # Todo 以下インスタンスは仮決めのため後ほど削除
     @children = Category.where(id: 30..32)
+    render layout: 'another_layout'
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:user)
   end
 
   def create
@@ -22,8 +28,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def buy
+    @item = Item.find(params[:id])
+    @images = @item.images
+    @users = @item.user
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :brand, :delivery, :status, :fee, :condition, :prefecture, :days,  :user_id, :size, :shipping_fee, :category_id, images_attributes:[:image])
   end
+
 end

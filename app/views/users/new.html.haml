@@ -1,5 +1,4 @@
-= render './shared/common-header';
-
+= render partial: './shared/common-header'
 .new-user-content
   .new-user-content__top
     %h2.new-user-content__top--text
@@ -20,5 +19,4 @@
         %p.new-user-content__bottom--link__box--google-register
           = image_tag "https://img.icons8.com/color/48/000000/google-logo.png", class: "new-user-content__bottom--link__box--google-register-icon"
           Googleで登録
-
-= render './shared/common-footer';
+= render partial: 'shared/common-footer'
