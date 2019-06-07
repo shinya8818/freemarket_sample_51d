@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    render layout: 'another_layout'
   end
 
   def show
