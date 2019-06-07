@@ -312,6 +312,9 @@ Sell.scss
         width: 45%;
         margin: 24px auto 0;
         a{
+          height: 100%;
+          width: 100%;
+          display: block;
           color: white;
         }
       }
