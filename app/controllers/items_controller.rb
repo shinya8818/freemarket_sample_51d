@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
     if @item.save
       # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
