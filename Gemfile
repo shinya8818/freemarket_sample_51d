@@ -77,7 +77,11 @@ gem 'dropzonejs-rails', '~> 0.7.3'
 gem 'carrierwave'
 gem 'ancestry'
 gem 'fog-aws'
+
+gem 'gretel'
+
 gem 'pry-rails'
+
 
 group :production do
   gem 'unicorn', '5.4.1'

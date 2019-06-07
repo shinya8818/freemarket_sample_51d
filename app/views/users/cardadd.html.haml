@@ -1,11 +1,13 @@
-.mypage
-  %main.mypage-main
-    .mypage-main__right
-      %section.mypage-main__container
-        %h2.mypage-main__head クレジットカード情報入力
-        .mypage-main__inner
+- breadcrumb :cardadd
+
+.card
+  %main.card-main
+    .card-main__right
+      %section.card-main__container
+        %h2.card-main__head クレジットカード情報入力
+        .card-main__inner
           %section
-            .mypage-main__content
+            .card-main__content
               .form-group
                 .form-group__signup-num
                   %label{for: "pay-card-no"}カード番号
@@ -58,6 +60,8 @@
                       %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?3856598694", width: "240"}/
                     %ul.sets-pay-list
                   %section.sets-add-card
-                    .mypage-main__content
+                    .card-main__content
                       = link_to "#",class:"btn-red" do
                         %span 追加する
+
+    = render partial: 'shared/sidebar'
