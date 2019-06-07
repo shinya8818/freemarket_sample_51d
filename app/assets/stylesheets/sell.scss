@@ -207,9 +207,18 @@ Sell.scss
         float: right;
         width: 400px;
         margin: 0;
+        #delivery{
+          display: none;
+        }
         .form-group label{
           font-weight: 600;
           display: inline-block;
+        }
+        #second-category{
+          display: none;
+        }
+        #third-category{
+          display:none;
         }
         .select-wrap{
           margin-top: 8px;

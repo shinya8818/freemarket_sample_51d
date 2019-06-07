@@ -73,9 +73,9 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'jquery-rails'
-gem 'dropzonejs-rails', '~> 0.7.3'
 gem 'carrierwave'
 gem 'ancestry'
+gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'gretel'

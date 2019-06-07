@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    @parents = Category.where(ancestry: nil).order("id ASC")
+    # Todo 以下インスタンスは仮決めのため後ほど削除
+    @children = Category.where(id: 30..32)
     render layout: 'another_layout'
   end
 
