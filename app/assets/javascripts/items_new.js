@@ -33,16 +33,10 @@ $(document).on('turbolinks:load', function() {
   //   Dropzone.options.itemImagesAttributes0Image = {}  
   //   // formタグ以外なので明示的に
   //   var myDropzone = new Dropzone ( "div#dropzone", {
-  //      url : url,
+  //      url : "items/new",
   //      maxFiles: 10,
   //      dataType: 'json',
-  //      autoProcessQueue: false,
-  //     });
-  
-  
-  //   $("#dropzone").dropzone({
-  //     maxFilesize: 1,
-  //     addRemoveLinks: true
+  //      autoProcessQueue: false
   //   });
   // });
 });

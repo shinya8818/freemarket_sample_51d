@@ -19,18 +19,19 @@ $(document).on('turbolinks:load', function() {
     let firstCategory = document.getElementById("first-category-input");
     let result = firstCategory.value;
     blockDisplay('second-category', result);
-    console.log(result);
-    subCategory = Category.
-    let html = buildOptionHTML(100, "あいあいあい");
-    $("#second-category-input").append(html);
+    // })
+
+    // console.log(result);
+    // let html = buildOptionHTML(100, "あいあいあい");
+    // $("#second-category-input").append(html);
   })
   //カテゴリー2に値が入った場合,動的に追加した要素のためdocument
   $(document).change('#second-category-input',function() {
     let secondCategory = document.getElementById("second-category-input");
     let result = secondCategory.value;
     blockDisplay('third-category', result);
-    let html = buildOptionHTML(100, "あいあいあい");
-    $("#third-category-input").append(html);
+    // let html = buildOptionHTML(100, "あいあいあい");
+    // $("#third-category-input").append(html);
   })
   //配送料の表示
   $('#item_shipping_fee').change(function() {
