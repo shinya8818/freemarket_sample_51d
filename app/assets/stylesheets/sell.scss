@@ -107,9 +107,16 @@ Sell.scss
           margin: 16px auto 0;
           .sell-upload__dropbox-container{
             display: inline;
-            .sell-upload_images-0{
-              float: left;
-              display: block;
+            .sell-upload__images-0{
+              display: inline-block;
+              height: 100px;
+              width: 100%;
+              li{
+                img{
+                  float: left;
+                  width: 50%;
+                } 
+              }
             }
           }
           .sell-upload__drop-box-0{
