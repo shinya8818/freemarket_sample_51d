@@ -2,11 +2,17 @@ $(document).on('turbolinks:load', function() {
   function build_image(alt, src){
     var html = `<li>
                   <img alt="${alt}" src="${src}">
+                  <div class="upload-btn">
+                    <a class="item-image__btn-edit">編集</a>
+                    <a class="item-image__btn-delete">削除</a>
+                  </div>
                </li>`
     return html;
     }
+    var files_array= []
     var count = 1;
     var image_tag;
+    var inputId = "#item_images_attributes_0_image"
     // // ファイル選択
     // $('#item_images_attributes_0_image').on('click', function() {
     //   $('#item_images_attributes_0_image').children('input[name="images[name][' + count + ']"]')[0].click();
@@ -14,12 +20,6 @@ $(document).on('turbolinks:load', function() {
     // image_file.on('click', function() {
     //   image_file.children('input[name="images[name][' + image_count + ']"]')[0].click();
     // })
-    //画像の
-    var inputId = "#item_images_attributes_0_image"
-    function build_file_tag(num) {
-      var html = `<input name="images[name][${num}]" style="display: none;" type="file" id="image${num}">`
-      return html;
-    }
     // プレビュー
     $(inputId).change( $('inputId').children('input[name="images[name][' + count + ']"]'), function (e) {
       // ファイルオブジェクト取得
@@ -27,6 +27,8 @@ $(document).on('turbolinks:load', function() {
       for (var i=0; i<files.length; i++) {
         var file = e.target.files[i];
         var file_reader = new FileReader();
+        //
+        files_array.push(files[i]);
         // 選択画像プレビュー操作
         file_reader.onload = (function () {
           return function (e) {
@@ -39,6 +41,16 @@ $(document).on('turbolinks:load', function() {
         })(file);
         file_reader.readAsDataURL(file);
       }
+  });
+  //削除機能
+  $(document).on('click','.item-image__btn-delete', function(){
+    // index関数を利用して、クリックされたaタグが、div内で何番目のものか特定する。
+    var index = $(".item-image__btn-delete").index(this);
+    console.log(index)
+    // クリックされたaタグの順番から、削除すべき画像を特定し、配列から削除する。
+    files_array.splice(index - 1, 1);
+    // クリックされたaタグが含まれるli要素をHTMLから削除する。
+    $(this).parent().parent().remove();
   });
     //ajax通信
     // $.ajax({
