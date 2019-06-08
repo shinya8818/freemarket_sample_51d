@@ -1,10 +1,4 @@
 $(document).on('turbolinks:load', function() {
-  //FixMe入力エラー(選択なしや値のエラー)
-  // $(function(){
-  //   (".sell__btn--red").click(function(){
-
-  //   })
-  // })
   //入力された値から販売手数料と販売利益を計算
   $(function(){
     $("#fee-input").on("keyup",function(e){

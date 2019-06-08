@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :show, :create, :index] do
     resources :images, only: [:create]
   end
-  resources :categories, only: [:create, :index]
+  resources :categories, only: [:create, :index, :new]
   resources :users, only: [:index, :new, :show]
   resource :user_info_keep, to: "sessions#user_info_keep", only: :create
   resource :phone_entrypage, to: "sessions#phone_entrypage", only: :new
