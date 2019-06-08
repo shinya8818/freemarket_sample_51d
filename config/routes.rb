@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   resource :phone_info_keep, to: "sessions#phone_info_keep", only: :create
   resource :address_entrypage, to: "sessions#address_entrypage", only: :new
   resource :address_info_keep, to: "sessions#address_info_keep", only: :create
-  resource :credit_entrypage, to: "sessions#credit_entrypage", only: :new
+  resources :credit_entrypage, to: "sessions#credit_entrypage", only: :new
   resource :register, to: "sessions#register", only: :create
-  resource :register_done, to: "sessions#register_done", only: :new
+  resource :register_done, to: "sessions#register_done", only: :show
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
   resource :card, to:"users#card"

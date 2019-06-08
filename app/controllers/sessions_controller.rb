@@ -41,13 +41,6 @@ class SessionsController < ApplicationController
     session[:building] = params[:building]
     session[:addr_cell_phone] = params[:addr_cell_phone]
 
-    redirect_to new_credit_entrypage_path
-  end
-
-  def credit_entrypage
-  end
-
-  def register
     User.create!(
       nickname: session[:nickname],
       email: session[:email],
@@ -79,7 +72,42 @@ class SessionsController < ApplicationController
     )
     sign_in user
 
-    redirect_to new_register_done_path
+    redirect_to new_credit_entrypage_path
+  end
+
+  require "payjp"
+
+  def credit_entrypage
+  end
+
+  def register
+    Payjp.api_key = "sk_test_543d657d3b55ce90bfcb0bc8"
+    if params['payjp-token'].blank?
+      redirect_to new_credit_entrypage_path
+    else
+      customer = Payjp::Customer.create(
+      card: params['payjp-token'],
+      metadata: {user_id: current_user.id}
+      )
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      if @card.save
+        redirect_to register_done_path
+      else
+        redirect_to register_path
+      end
+    end
+  end
+
+  def delete
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+    else
+      Payjp.api_key = "sk_test_543d657d3b55ce90bfcb0bc8"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to new_credit_entrypage_path
   end
 
   def register_done

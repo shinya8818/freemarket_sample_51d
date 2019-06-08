@@ -5,13 +5,13 @@
   -# 部分テンプレート化する
   %section.mypage-main__container
     %h2.mypage-main__head クレジットカード情報入力
-    = form_with url:register_path,class: "mypage-main__inner" do |f|
+    = form_tag(register_path, method: :post, id: 'charge-form',  name: "inputForm", class: "mypage-main__inner") do
       .mypage-main__content
         .form-group
           .form-group__signup-num
             %label{for: "pay-card-no"}カード番号
             %span.form-require 必須
-            %input#pay-card-no.input-default{"data-input-type": "card", maxlength: "19", placeholder: "半角数字のみ", type: "text", value: ""}/
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
             %ul#card-no-error-wrapper.has-error-text
             %ul.signup-card-list
               %li
@@ -33,19 +33,44 @@
             %span.form-require 必須
             %br/
             .choice-wrap
-              = select :page, :select_default, options_for_select(1..12), selected: "", autofocus: 'true'
+              %select#exp_month{name: "exp_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
               %i.fa.fa-chevron-down
             %span 月
             %ul.expire-mm-error-wrapper.has-error-text
             .choice-wrap
-              = select :page, :select_default, options_for_select(19..29), selected: "", autofocus: 'true'
+              %select#exp_year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
               %i.fa.fa-chevron-down
             %span 年
             %ul.expire-mm-error-wrapper.has-error-text
             .form-group__signup-seq
               %label{for: "pay-card-seq-code"}セキュリティーコード
               %span.form-require 必須
-              %input#pay-card-seq-code.input-default{placeholder: "カード背面4桁もしくは3桁の番号", type: "number", value: ""}/
+              = text_field_tag "cvc", "", class: "input-default", placeholder: "カード背面3もしくは4桁の番号", maxlength: "4", id: "cvc"
               %ul#seq-code-error-wrapper.has-error-text
             .signup-seqcode
               .signup-seqcode-text{"data-js": "show-tips-toggle"}
@@ -57,5 +82,5 @@
                 %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/signup/seq-card.png?3856598694", width: "240"}/
               %ul.sets-pay-list
             %section.sets-add-card
-              .mypage-main__content
-                %button.btn-red{type: "submit"} 次へ進む
+              .mypage-main__content#card_token
+                = submit_tag "次へ進む", class:"btn-red" ,id: "token_submit"
