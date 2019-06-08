@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resource :register_done, to: "sessions#register_done", only: :new
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
-  resource :card, to:"users#card"
+  resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
 
 end
