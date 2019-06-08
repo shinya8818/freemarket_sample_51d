@@ -45,14 +45,14 @@
                     %span.form-require 必須
                   %div
                     .select-wrap
-                      = f.collection_select :category_id, @children, :id, :name, { prompt: '---' }, {class:"select-default", id:"first-category-input"}
+                      = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"first-category-input"}
                       %i.fas.fa-angle-down
-                    -# #second-category.select-wrap
-                    -#   = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"second-category-input"}
-                    -#   %i.fas.fa-angle-down
-                    -# #third-category.select-wrap
-                    -#   = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"third-category-input"}
-                    -#   %i.fas.fa-angle-down
+                    #second-category.select-wrap
+                      = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"second-category-input"}
+                      %i.fas.fa-angle-down
+                    #third-category.select-wrap
+                      = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"third-category-input"}
+                      %i.fas.fa-angle-down
                 .form-group
                   %label
                     商品の状態
