@@ -152,7 +152,9 @@ Sell.scss
               left: 0;
               display: block;
               input{
-                display: none;
+                opacity: 0;
+                height: 100%;
+                width: 100%;
               }
               .sell-upload__drop-file{
                 display: none;
