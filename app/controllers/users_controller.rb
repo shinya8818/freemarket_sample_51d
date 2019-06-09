@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:listings]
 
   def index
     @user = User.find(current_user.id)
@@ -32,6 +33,15 @@ class UsersController < ApplicationController
   end
 
   def cardadd
+  end
+
+  def listings
+
+  end
+
+  private
+  def set_user
+    @user = User.find(params[id])
   end
 
 end

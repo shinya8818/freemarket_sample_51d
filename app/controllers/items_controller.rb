@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :delete]
+  before_action :set_item, only: [:edit, :destroy]
 
   def new
     @item = Item.new
@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
     render layout: 'another_layout'
   end
 
-  def show
-    @item = Item.find(params[:id])
-    @comments = @item.comments.includes(:user)
-  end
+  # def show
+  #   @item = Item.find(params[:id])
+  #   @comments = @item.comments.includes(:user)
+  # end
 
   def create
     @item = Item.new(item_params)
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def buy
@@ -40,7 +40,9 @@ class ItemsController < ApplicationController
 
   private
   def set_item
-    @item = Item.find(params[:id])
+    #Todo itemのidがとれるようになったらコメントアウトのものに変更
+    @item = Item.find(1)
+    #@item = Item.find(params[:id])
   end
 
   def item_params
