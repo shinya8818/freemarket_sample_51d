@@ -28,15 +28,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy if item.user_id == current_user.id
-  end
-
   def show
   end
 
