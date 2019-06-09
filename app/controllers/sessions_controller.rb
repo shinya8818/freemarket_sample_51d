@@ -41,13 +41,6 @@ class SessionsController < ApplicationController
     session[:building] = params[:building]
     session[:addr_cell_phone] = params[:addr_cell_phone]
 
-    redirect_to new_credit_entrypage_path
-  end
-
-  def credit_entrypage
-  end
-
-  def register
     User.create!(
       nickname: session[:nickname],
       email: session[:email],
@@ -79,6 +72,13 @@ class SessionsController < ApplicationController
     )
     sign_in user
 
+    redirect_to new_card_path
+  end
+
+  def credit_entrypage
+  end
+
+  def register
     redirect_to new_register_done_path
   end
 
