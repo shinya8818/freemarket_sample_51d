@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
     render layout: 'another_layout'
   end
 
-  # def show
-  #   @item = Item.find(params[:id])
-  #   @comments = @item.comments.includes(:user)
-  # end
+  def show
+    @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:user)
+  end
 
   def create
     @item = Item.new(item_params)
@@ -30,6 +30,13 @@ class ItemsController < ApplicationController
 
   def edit
     @parents = Category.where(ancestry: nil).order("id ASC")
+  end
+
+  def update
+    binding.pry
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    end
   end
 
   def buy
