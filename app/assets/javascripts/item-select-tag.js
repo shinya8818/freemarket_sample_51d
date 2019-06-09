@@ -31,19 +31,18 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json',
     })
     .done(function(categories) {
-      console.log("success")
-    if(categories.length !== 0){
-      //初期値
-      let html = buildOptionHTML("", "---");
-      categories.forEach(function(category){
-        html += buildOptionHTML(category.id, category.name);
-      });
+      if(categories.length !== 0){
+        //初期値
+        let html = buildOptionHTML("", "---");
+        categories.forEach(function(category){
+          html += buildOptionHTML(category.id, category.name);
+        });
       html = buildSelectHTML(html, id)
       $(targetBlock).append(html);
-    }
-    }).
-    fail(function() {
-    alert('error');
+      }
+    })
+    .fail(function() {
+      alert('error');
     });
   };
   //カテゴリー1に値が入った場合
@@ -56,17 +55,8 @@ $(document).on('turbolinks:load', function() {
   $(document).on('change','#second-category-input', function() {
     let secondCategory = document.getElementById("second-category-input");
     let valueSelect2 = secondCategory.value;
-    console.log(valueSelect2)
     appendCategory(valueSelect2, ".categories", "third-category");
   })
-  // //カテゴリー2に値が入った場合,動的に追加した要素のためdocument
-  // $(document).change('#second-category-input',function() {
-  //   let secondCategory = document.getElementById("second-category-input");
-  //   let valueSelect2 = secondCategory.value;
-  //   blockDisplay(valueSelect2, 'third-category');
-  //   appendOption(valueSelect2, "#third-category-input");
-  // })
-  //配送料の表示
   $('#item_shipping_fee').change(function() {
     let ShippingFee = document.getElementById("item_shipping_fee");
     let resultShippingFee = ShippingFee.value;

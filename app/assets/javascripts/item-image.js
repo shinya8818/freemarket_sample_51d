@@ -40,7 +40,6 @@ $(document).on('turbolinks:load', function() {
   $(document).on('click','.item-image__btn-delete', function(){
     // index関数を利用して、クリックされたaタグが、div内で何番目のものか特定する。
     var index = $(".item-image__btn-delete").index(this);
-    console.log(index)
     // クリックされたaタグの順番から、削除すべき画像を特定し、配列から削除する。
     files_array.splice(index - 1, 1);
     // クリックされたaタグが含まれるli要素をHTMLから削除する。
@@ -56,44 +55,4 @@ $(document).on('turbolinks:load', function() {
       inputArea.files = e.dataTransfer.files;
     });
   })
-
-  $(".sell-upload__drop-box-0").change(function(e){
-    e.preventDefault
-    dropp
-  })
-  function dropp(){
-    const droparea = document.getElementById('.sell-upload__drop-box-0');
-    droparea.addEventListener('drop', function(evt) {
-      console.log('dropしたよ');
-      /** 以下、drop後の処理 */
-    }, true);
-  }
-    //ajax通信
-    // $.ajax({
-    //   url: url,
-    //   type: "POST",
-    //   data: formData,
-    //   dataType: 'json',
-    //   processData: false,
-    //   contentType: false
-    // })
-
-    // $('#item_images_attributes_0_image').change(function() {
-    //   var preview = document.querySelector('sell-upload__images-0');
-    //   var file = document.querySelector('input[type=file]').files[0];
-    //   var formData = new FormData($(this).get(0));
-    //   console.log($(this))
-    //   //ajax通信
-    //   $.ajax({
-    //     url: window.location.href,
-    //     type: "POST",
-    //     data: formData,
-    //     dataType: 'json',
-    //     processData: false,
-    //     contentType: false
-    //   })
-    //   .done(function(){
-    //     console.log("OK")
-    //   })
-  // })
 });
