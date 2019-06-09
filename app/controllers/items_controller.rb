@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :delete]
 
   def new
     @item = Item.new
@@ -27,7 +28,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
+  def edit
+    
   end
 
   def buy
@@ -37,6 +39,10 @@ class ItemsController < ApplicationController
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:name,
                               :description,
@@ -55,5 +61,4 @@ class ItemsController < ApplicationController
                               # Todo ログイン機能実装後
                               # .merge(user_id: current_user.id)
   end
-
 end
