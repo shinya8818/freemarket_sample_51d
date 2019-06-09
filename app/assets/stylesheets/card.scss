@@ -1,9 +1,9 @@
-.mypage{
+.card{
   background-color: #eee;
 }
-.mypage-main{
+.card-main{
   padding: 40px 0 150px 0;
-  margin: 40px auto;
+  margin: auto;
   width: 1020px;
   height: 1200px;
   &__right{
@@ -73,53 +73,4 @@
 
 .fa.fa-chevron-right{
   margin: 0 0 0 8px;
-}
-
-
-.sideber{
-  float: left;
-  width: 280px;
-  margin: 0 40px 0 0;
-  &__list{
-    margin-top: 8px;
-    & li{
-      background-color: white;
-      list-style: none;
-      border: 1px solid #f5f5f5;
-      width: 280px;
-      height: 48px;
-      position: relative;
-      & a {
-        text-decoration: none;
-        background-color: white;
-      }
-    }
-  }
-}
-
-.sideber__list__item{
-  color: black;
-  text-align: left;
-  font-family: sans-serif;
-  min-height: 48px;
-  margin: 0;
-  line-height: 48px;
-  padding-left: 20px;
-  background-color: white;
-}
-
-.sideber__list li:hover{
-  background-color: #f9f9f9;
-}
-
-.sideber__head{
-  margin-top: 40px;
-  margin-left: 40px;
-}
-
-.fa.fa-angle-right{
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  float: right;
 }

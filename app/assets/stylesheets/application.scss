@@ -4,7 +4,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "home";
-@import "new";
+@import "buy";
 @import "./common-header";
 @import "./common-footer";
 @import "./sessions";
@@ -24,6 +24,9 @@
 @import "cardadd";
 @import "users/show";
 @import "cardadd";
+@import "signup-header";
+@import "breadcrumbs";
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

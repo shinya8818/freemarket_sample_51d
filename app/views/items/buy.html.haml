@@ -3,19 +3,21 @@
     %header.single-header
       %h1.single-header__logo
         %a.single-header__logo__link{href:  ""}
-          %img.link_image{:src => "mercari_logo_horizontal.png"}/
+          = image_tag("/mercari_logo_horizontal.png", class:"link_image")
     %main.single-main
       %section.single-main__container
         %h2.single-head 購入内容の確認
         %section.buy-content__buy-item
           .buy-content-inner
             %h3.buy-item-image
-              %img.photo-link{src: "buy.png"}/
-            %p.buy-item-name 写真
+              = image_tag(@item.images.first.image, class:"photo-link")
+            %p.buy-item-name
+              = @item.name
             %form.buy-form
               %p.buy-form__price
-                ¥ 1,000
-                %span.buy-form__tax 送料込み
+                ¥ #{@item.fee}
+                %span.buy-form__tax
+                  = @item.shipping_fee
               %ul.buy-point
                 %li.accordion-parent
                   .accordion-toggle
@@ -25,19 +27,20 @@
                   .buy-price__cell
                     支払い金額
                   .buy-price__yen
-                    %span ¥ 1,000
+                    %span
+                      ¥ #{@item.fee}
               %button.buy-button{type: "submit"} 購入する
         %section.buy-content__user-info
           .buy-content-inner
             %h3.shipping_address 配送先
             %address.buy-user-info-text
-              〒000-0000
+              〒 #{@users.address.postal_code}
               %br/
-              東京都◯◯区◯◯
-              ◯◯1-10-100
-              マンション100号室
+              #{@users.address.prefecture}#{@users.address.municipalities}#{@users.address.address_number}
               %br/
-              田中太郎
+              #{@users.address.building}
+              %br/
+              #{@users.last_name}#{@users.first_name}
             %a.buy-user-info-fix{href: ""}
               %span 変更する
               %i.fas.fa-chevron-right
@@ -49,7 +52,7 @@
               %br/
               11/25
             %figure.pay
-              %img.credit-image{src: "jcb.png"}/
+              = image_tag("/jcb.png",class:"credit-image")
             %a.buy-user-info-right{href: ""}
               %span 変更する
               %i.fas.fa-chevron-right

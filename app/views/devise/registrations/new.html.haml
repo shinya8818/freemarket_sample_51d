@@ -1,3 +1,6 @@
+.form-user-entrypage
+  = render 'sessions/signup-header'
+
 .form-content
   = form_with url: user_info_keep_path do |f|
     .form-content__top
@@ -109,7 +112,7 @@
                 日
           %p.form-content__bottom__box--birthday--text
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          -# = recaptcha_tags
+          = recaptcha_tags
         .form-content__bottom--next      
           %span.form-content__bottom--next-text
             「次へ進む」のボタンを押すことにより、
@@ -123,5 +126,4 @@
           =link_to "https://www.mercari.com/jp/help_center/article/423/", class: "form-content__bottom--register--link" do
             本人情報の登録について
             %i.fas.fa-chevron-right
-            
-      = render './shared/common-footer';
+      = render partial: 'shared/common-footer'

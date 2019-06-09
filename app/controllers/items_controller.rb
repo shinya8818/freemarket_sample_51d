@@ -4,6 +4,14 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @parents = Category.where(ancestry: nil).order("id ASC")
+    # Todo 以下インスタンスは仮決めのため後ほど削除
+    @children = Category.where(id: 30..32)
+    render layout: 'another_layout'
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:user)
   end
 
   def create
@@ -32,7 +40,11 @@ class ItemsController < ApplicationController
   def show
   end
 
-  
+  def buy
+    @item = Item.find(params[:id])
+    @images = @item.images
+    @users = @item.user
+  end
 
   private
   def item_params
@@ -53,4 +65,5 @@ class ItemsController < ApplicationController
                               # Todo ログイン機能実装後
                               # .merge(user_id: current_user.id)
   end
+
 end

@@ -76,6 +76,12 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'ancestry'
 gem 'mini_magick'
+gem 'fog-aws'
+
+gem 'gretel'
+
+gem 'pry-rails'
+
 
 group :production do
   gem 'unicorn', '5.4.1'

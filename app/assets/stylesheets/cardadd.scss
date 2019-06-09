@@ -1,13 +1,12 @@
-.mypage{
+.card{
   background-color: #eee;
 }
 
-.mypage-main{
+.card-main{
   padding: 40px 0 150px 0;
-  margin: 40px auto;
+  margin: auto;
   width: 1020px;
   height: 1200px;
-
   &__right{
     // マイページのクレジットカード画面
     width: 700px;

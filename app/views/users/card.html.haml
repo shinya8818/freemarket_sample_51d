@@ -1,19 +1,23 @@
-.mypage
-  %main.mypage-main
-    .mypage-main__right
-      %section.mypage-main__container
-        %h2.mypage-main__head 支払い方法
-        .mypage-main__inner
+- breadcrumb :card
+
+.card
+  %main.card-main
+    .card-main__right
+      %section.card-main__container
+        %h2.card-main__head 支払い方法
+        .card-main__inner
           %section
-            .mypage-main__content
-              %h3.mypage-main__sub-head クレジットカード一覧
+            .card-main__content
+              %h3.card-main__sub-head クレジットカード一覧
             %ul.sets-pay-list
           %section.sets-add-card
-            .mypage-main__content
-              = link_to "#",class:"btn-red" do
+            .card-main__content
+              = link_to cardadd_path,class:"btn-red" do
                 %i.fa.fa-credit-card-alt
                 %span クレジットカードを追加する
           .sets-not-regist
             = link_to "#" do
               %span 支払い方法について
               %i.fa.fa-chevron-right
+
+    = render partial: 'shared/sidebar'
