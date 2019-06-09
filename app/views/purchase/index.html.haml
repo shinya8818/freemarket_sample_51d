@@ -29,7 +29,7 @@
                   .buy-price__yen
                     %span
                       ¥ #{@item.fee}
-              = link_to("/purchase/pay/items/#{@item.id}", method: :post) do
+              = link_to("/purchase/pay/items/#{@item.id}" , method: :post) do
                 %button.buy-button
                   購入する
         %section.buy-content__user-info
