@@ -1,58 +1,58 @@
-%body
-  .single-container
-    %header.single-header
-      %h1.single-header__logo
-        %a.single-header__logo__link{href:  ""}
-          = image_tag("/mercari_logo_horizontal.png", class:"link_image")
-    %main.single-main
-      %section.single-main__container
-        %h2.single-head 購入内容の確認
-        %section.buy-content__buy-item
-          .buy-content-inner
-            %h3.buy-item-image
-              = image_tag(@item.images.first.image, class:"photo-link")
-            %p.buy-item-name
-              = @item.name
-            %form.buy-form
-              %p.buy-form__price
-                ¥ #{@item.fee}
-                %span.buy-form__tax
-                  = @item.shipping_fee
-              %ul.buy-point
-                %li.accordion-parent
-                  .accordion-toggle
-                    ポイントはありません
-              %ul.buy-price__table
-                %li.buy-price-row
-                  .buy-price__cell
-                    支払い金額
-                  .buy-price__yen
-                    %span
-                      ¥ #{@item.fee}
-              %button.buy-button{type: "submit"} 購入する
-        %section.buy-content__user-info
-          .buy-content-inner
-            %h3.shipping_address 配送先
-            %address.buy-user-info-text
-              〒 #{@users.address.postal_code}
-              %br/
-              #{@users.address.prefecture}#{@users.address.municipalities}#{@users.address.address_number}
-              %br/
-              #{@users.address.building}
-              %br/
-              #{@users.last_name}#{@users.first_name}
-            %a.buy-user-info-fix{href: ""}
-              %span 変更する
-              %i.fas.fa-chevron-right
-        %section.buy-content__credit
-          .buy-content-inner
-            %h3.pay-way お支払い方法
-            %p.buy-user-info-text
-              ************0000
-              %br/
-              11/25
-            %figure.pay
-              = image_tag("/jcb.png",class:"credit-image")
-            %a.buy-user-info-right{href: ""}
-              %span 変更する
-              %i.fas.fa-chevron-right
+-# %body 
+-#   .single-container
+-#     %header.single-header
+-#       %h1.single-header__logo
+-#         %a.single-header__logo__link{href:  ""}
+-#           = image_tag("/mercari_logo_horizontal.png", class:"link_image")
+-#     %main.single-main
+-#       %section.single-main__container
+-#         %h2.single-head 購入内容の確認
+-#         %section.buy-content__buy-item
+-#           .buy-content-inner
+-#             %h3.buy-item-image
+-#               = image_tag(@item.images.first.image, class:"photo-link")
+-#             %p.buy-item-name
+-#               = @item.name
+-#             %form.buy-form
+-#               %p.buy-form__price
+-#                 ¥ #{@item.fee}
+-#                 %span.buy-form__tax
+-#                   = @item.shipping_fee
+-#               %ul.buy-point
+-#                 %li.accordion-parent
+-#                   .accordion-toggle
+-#                     ポイントはありません
+-#               %ul.buy-price__table
+-#                 %li.buy-price-row
+-#                   .buy-price__cell
+-#                     支払い金額
+-#                   .buy-price__yen
+-#                     %span
+-#                       ¥ #{@item.fee}
+-#               %button.buy-button{type: "submit"} 購入する
+-#         %section.buy-content__user-info
+-#           .buy-content-inner
+-#             %h3.shipping_address 配送先
+-#             %address.buy-user-info-text
+-#               〒 #{@users.address.postal_code}
+-#               %br/
+-#               #{@users.address.prefecture}#{@users.address.municipalities}#{@users.address.address_number}
+-#               %br/
+-#               #{@users.address.building}
+-#               %br/
+-#               #{@users.last_name}#{@users.first_name}
+-#             %a.buy-user-info-fix{href: ""}
+-#               %span 変更する
+-#               %i.fas.fa-chevron-right
+-#         %section.buy-content__credit
+-#           .buy-content-inner
+-#             %h3.pay-way お支払い方法
+-#             %p.buy-user-info-text
+-#               ************0000
+-#               %br/
+-#               11/25
+-#             %figure.pay
+-#               = image_tag("/jcb.png",class:"credit-image")
+-#             %a.buy-user-info-right{href: ""}
+-#               %span 変更する
+-#               %i.fas.fa-chevron-right
