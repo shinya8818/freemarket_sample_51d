@@ -1,8 +1,26 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
+  get 'purchase/done'
+  get 'card/new'
+  get 'card/show'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
-  get 'buy/items/:id' => 'items#buy'
+  # get 'buy/items/:id' => 'items#buy'
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index/items/:id', to: 'purchase#index'
+      post 'pay/items/:id', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
 
   resources :items, only: [:new, :show, :create, :index] do
     resources :images, only: [:create]
