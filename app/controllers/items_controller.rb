@@ -24,6 +24,21 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :delivery, :status, :fee, :condition, :prefecture, :days,  :user_id, :size, :shipping_fee, :category_id, images_attributes:[:image])
+    params.require(:item).permit(:name,
+                              :description,
+                              :category_id,
+                              :size,
+                              :brand,
+                              :delivery,
+                              :status,
+                              :condition,
+                              :prefecture, 
+                              :shipping_fee,
+                              :days,  
+                              :fee,
+                              :user_id,
+                              images_attributes:[:image])
+                              # Todo ログイン機能実装後
+                              # .merge(user_id: current_user.id)
   end
 end
