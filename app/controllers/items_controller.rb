@@ -27,9 +27,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def buy
     @item = Item.find(params[:id])
     @images = @item.images
