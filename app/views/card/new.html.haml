@@ -1,12 +1,12 @@
 .form-credit-entrypage
   = render 'sessions/signup-header'
 
-.mypage-main__center
+.card-main__center
   -# 部分テンプレート化する
-  %section.mypage-main__container
-    %h2.mypage-main__head クレジットカード情報入力
-    = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm", class: "mypage-main__inner") do
-      .mypage-main__content
+  %section.card-main__container
+    %h2.card-main__head クレジットカード情報入力
+    = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm", class: "card-main__inner") do
+      .card-main__content
         .form-group
           .form-group__signup-num
             %label{for: "pay-card-no"}カード番号
@@ -84,3 +84,4 @@
             %section.sets-add-card
               .mypage-main__content#card_token
                 = submit_tag "次へ進む", class:"btn-red" ,id: "token_submit"
+= render './shared/common-footer';
