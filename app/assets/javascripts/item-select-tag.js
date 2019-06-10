@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function() {
   }
 //   //selectタグ以下にappendするoptionタグ
   function buildOptionHTML(id, name){
-    let html = `<option value= ${id}>${name}</option>`
+    let html = '<option value= ${id}>${name}</option>'
     return html;
   }
   //表示と非表示の切り替え
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function() {
   function appendCategory(value, targetBlock,  id){
     $.ajax({
       type: 'GET',
-      url: `/categories/new`,
+      url: '/categories/new',
       data: {id: value},
       dataType: 'json',
     })
