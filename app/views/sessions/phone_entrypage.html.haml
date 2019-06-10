@@ -11,6 +11,8 @@
           = f.label :cell_phone, class: "cell_phone" do
             携帯電話の番号
           = f.text_field :cell_phone, placeholder: "携帯電話の番号を入力", class: "input-default", autofocus: true
+          -# エラーメッセージ表示
+          .err_phone
         %p.number-container__inner__number-box__cell-text 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         %button{type: "submit", class: "number-container__inner__number-box__number-btn"}
           SMSを送信する

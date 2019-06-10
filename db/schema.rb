@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_094625) do
     t.string "name", null: false
     t.string "description", null: false
     t.string "brand"
-    t.integer "status", null: false
+    t.integer "status", default: 0, null: false
     t.integer "fee", null: false
     t.integer "condition", null: false
     t.integer "prefecture", null: false

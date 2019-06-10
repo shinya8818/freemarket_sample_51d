@@ -19,18 +19,25 @@
         %p.account__bottom--link__box--google-login
           = image_tag "https://img.icons8.com/color/48/000000/google-logo.png", class: "account__bottom--link__box--google-login-icon"
           Googleでログイン
+    .account__bottom--err
+    - if flash[:need_new_account]
+      .account__bottom--err--dupl-email
+        = flash[:need_new_account]
 
   = form_for(resource, as: resource_name, url: login_path(resource_name)) do |f|
     .form
       .form__box
-        = f.email_field :email, placeholder: "メールアドレス", type: "text", name: "email", value: "", class: "form__box--input"
+        = f.email_field :email, placeholder: "メールアドレス", type: "text", name: "email", value: "", class: "form__box--input-email"
+      -# エラーメッセージ表示
+      .err_email-login
       .form__box
-        = f.password_field :password, placeholder: "パスワード", type: "text", name: "password", value: "", class: "form__box--input"
+        = f.password_field :password, placeholder: "パスワード", type: "text", name: "password", value: "", class: "form__box--input-password"
+      -# エラーメッセージ表示
+      .err_password-login
       = recaptcha_tags
-      = f.submit "ログイン", class: "form__btn" do
-        ログイン
+      %button.form__btn{type: "submit"} ログイン
       = link_to "#", class: "form__link" do
-        %P.form__link--text
+        %p.form__link--text
           パスワードをお忘れの方
 
 = render './shared/common-footer';
