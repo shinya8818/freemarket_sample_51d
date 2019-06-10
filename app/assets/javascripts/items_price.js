@@ -1,10 +1,4 @@
 $(document).on('turbolinks:load', function() {
-  //FixMe入力エラー(選択なしや値のエラー)
-  // $(function(){
-  //   (".sell__btn--red").click(function(){
-
-  //   })
-  // })
   //入力された値から販売手数料と販売利益を計算
   $(function(){
     $("#fee-input").on("keyup",function(e){
@@ -26,17 +20,4 @@ $(document).on('turbolinks:load', function() {
       }
     })
   });
-  // //FixMe 画像のドラッグ＆ドロップ処理(dropzoneの構造を理解してから追記)
-  // $(function() {
-  //   // ドロップゾーンを明示的にインスタンス化
-  //   Dropzone.autoDiscover = false;
-  //   Dropzone.options.itemImagesAttributes0Image = {}  
-  //   // formタグ以外なので明示的に
-  //   var myDropzone = new Dropzone ( "div#dropzone", {
-  //      url : "items/new",
-  //      maxFiles: 10,
-  //      dataType: 'json',
-  //      autoProcessQueue: false
-  //   });
-  // });
 });

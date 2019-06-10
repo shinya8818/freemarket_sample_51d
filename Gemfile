@@ -77,6 +77,7 @@ gem 'carrierwave'
 gem 'ancestry'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'payjp'
 
 gem 'gretel'
 

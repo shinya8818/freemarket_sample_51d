@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :item do
     name          { "item" }
     description   { "オススメ" }
+    category_id   { 32 }
     brand         { "UNIQLO" }
     status        { 1 }
     fee           { 100 }
