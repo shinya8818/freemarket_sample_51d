@@ -6,6 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Userダミーデータ
+# User.create!(
+#   email: 'abc@gmail.com',
+#   password: '123456',
+#   created_at: '19950506',
+#   updated_at: '20200101',
+#   nickname: 'あいうえお',
+#   last_name: '愛',
+#   first_name: '飢えお',
+#   last_name_kana: 'アイ',
+#   first_name_kana: 'ウエオ',
+#   cell_phone: '08012345678'
+# )
 
 lady = Category.create(name: "レディース")
 
