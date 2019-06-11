@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
     let html = `<option value= ${id}>${name}</option>`
     return html;
   }
-  //カテゴリの値が空(---)の場合、子カテゴリの要素を初期化（削除）する関数
+  //カテゴリの値が空(---)の場合、子カテゴリを初期化（削除）する関数
   function removeChildrenCategory(targetInput){
     if(targetInput == '#first-category-input'){
       if($('#second-category').length){
@@ -54,10 +54,17 @@ $(document).on('turbolinks:load', function() {
         categories.forEach(function(category){
           html += buildOptionHTML(category.id, category.name);
         });
-      if(redoFlag == false ){
-        html = buildSelectHTML(html, id)
-      }
-      $(targetBlock).append(html);
+        if(redoFlag == false ){
+          html = buildSelectHTML(html, id)
+          console.log(html)
+          $(targetBlock).append(html);
+        }
+        else{
+          console.log("done")
+          console.log(html)
+          console.log(targetBlock)
+          $(targetBlock).append(html);
+        }
       }
     })
     .fail(function() {
@@ -74,17 +81,19 @@ $(document).on('turbolinks:load', function() {
       removeChildrenCategory('#first-category-input')
     }
     else{
-      //カテゴリー１を既に変更した場合、カテゴリー2のoptionを変更する
+      //カテゴリー１を変更し、カテゴリー２が既に存在した場合、カテゴリー2のoptionを変更する
       if($("#second-category").length){
         $("#second-category-input").empty();
-        appendCategory(valueSelect1, "#second-catogory-input", "", true)
+        appendCategory(valueSelect1, "#second-category-input", "", true)
+        $("#third-category").remove();
       }
+      //通常時
       else{
       appendCategory(valueSelect1, ".categories", "second-category");
       }
     }
   })
-  //カテゴリー2に値が入った場合
+  // カテゴリー2に値が入った場合
   $(document).on('change','#second-category-input', function() {
     let secondCategory = document.getElementById("second-category-input");
     let valueSelect2 = secondCategory.value;

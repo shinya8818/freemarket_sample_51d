@@ -9,12 +9,14 @@ $(document).on('turbolinks:load', function() {
     .done(function(ancestors) {
       if(ancestors.length !== 0){
         //
+        // console.log(ancestors.length)
         switch(ancestors.length){
           case 1:
             console.log(ancestors[0][name])
             break;
           case 2:
-            console.log(ancestors[0].id)
+            console.log(ancestors[0].name)
+            console.log(ancestors[1].name)
             break;
           $.ajax({
             type: 'GET',
