@@ -103,7 +103,13 @@ $(document).on('turbolinks:load', function() {
       removeChildrenCategory('#second-category-input')
     }
     else{
-    appendCategory(valueSelect2, ".categories", "third-category");
+      if($("#third-category").length){
+        $("#third-category-input").empty();
+        appendCategory(valueSelect2, "#third-category-input", "", true)
+      }
+      else{
+        appendCategory(valueSelect2, ".categories", "third-category");
+      }
     }
   })
   $('#item_shipping_fee').change(function() {
