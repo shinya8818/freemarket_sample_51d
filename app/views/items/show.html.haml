@@ -70,10 +70,7 @@
         = @item.description
     .item-button
       .item-button__left
-        %button.like-button{type: "button"}
-          %i.far.fa-heart
-          %span.favorite いいね！
-          %span.favorite 0
+        = render partial: 'likes/like', locals: { item: @item, items: @items, likes: @likes, like: @like}
         = link_to '',class: "item-report" do
           %i.far.fa-flag
           %span.report 不適切な商品の報告

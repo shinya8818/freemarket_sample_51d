@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create, :edit, :destroy, :show, :index] do
     resources :images, only: [:create]
     resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
   end
 
   resources :categories, only: [:create, :index, :new]
