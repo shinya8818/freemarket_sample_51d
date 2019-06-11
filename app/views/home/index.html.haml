@@ -11,7 +11,7 @@
         = link_to "/items/#{item.id}" do
           .items-box-content
             .items-box-content__box__photo
-              = image_tag item.images.first.image,class:"tops"
+              = image_tag item.images.first.image.url,class:"tops"
             .items-box-content__box__body
               %h3.items-name
                 = item.name
@@ -34,7 +34,7 @@
         = link_to "/items/#{item.id}" do
           .items-box-content
             .items-box-content__box__photo
-              = image_tag item.images.first.image,class:"tops"
+              = image_tag item.images.first.image.url,class:"tops"
             .items-box-content__box__body
               %h3.items-name
                 = item.name
@@ -48,4 +48,3 @@
       .items-all
         = link_to '',class: "items-all" do
           全ての商品を見る
-

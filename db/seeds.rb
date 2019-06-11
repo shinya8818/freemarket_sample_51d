@@ -56,7 +56,7 @@ Item.create!(
 
 Image.create!(
   id: 50,
-  image: open("#{Rails.root}/db/dummy_img/macbook.jpg"),
+  image: "/db/dummy_img/macbook.jpg",
   item_id: 50
 )
 
