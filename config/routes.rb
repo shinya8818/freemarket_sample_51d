@@ -26,7 +26,13 @@ Rails.application.routes.draw do
     resources :images, only: [:create]
     resources :comments, only: [:create]
   end
-  resources :categories, only: [:create, :index, :new]
+  resources :categories, only: [:create, :index, :new] do
+    collection do
+      get 'ancestors'
+      get 'children'
+      get 'shiblings'
+    end
+  end
   resources :users, only: [:index, :new, :show, :create]
   resource :user_info_keep, to: "sessions#user_info_keep", only: :create
   resource :phone_entrypage, to: "sessions#phone_entrypage", only: :new
@@ -40,6 +46,4 @@ Rails.application.routes.draw do
   resource :logout, to:"users#logout"
   resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
-  resource :listings, to:"users#listings"
-
 end

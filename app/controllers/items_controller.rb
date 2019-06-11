@@ -30,11 +30,18 @@ class ItemsController < ApplicationController
 
   def edit
     @parents = Category.where(ancestry: nil).order("id ASC")
+    @categories = Category.all
+    render layout: 'another_layout'
   end
 
   def update
+    @item = Item.find(params[:id])
     binding.pry
     if @item.update(item_params)
+      # Todo モデルに移す 画像保存処理
+      params[:item_images]['name'].each do |i|
+        @item_image =  @item.images.create!(image: i)
+      end
       redirect_to item_path(@item)
     end
   end
@@ -49,6 +56,7 @@ class ItemsController < ApplicationController
   def set_item
     #Todo itemのidがとれるようになったらコメントアウトのものに変更
     @item = Item.find(1)
+    @item.images = Image.where(item_id: 1)
     #@item = Item.find(params[:id])
   end
 

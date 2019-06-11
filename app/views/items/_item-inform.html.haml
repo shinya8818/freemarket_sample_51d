@@ -19,7 +19,7 @@
                 .sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
-                      = fimage.file_field :image,  multiple: true, name: "item_images[name][]"
+                      = fimage.file_field :image, {name: "item_images[name][]", multiple: true, accept:".jpg,.gif,.png,image/gif,image/jpeg,image/png"}
                     %pre.visible-pc
                       :preserve
                         ドラッグアンドドロップ
@@ -30,6 +30,9 @@
                   商品名
                   %span.form-require 必須
                 %div
+                -if local_assigns[:edit_flag].present?
+                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: item.name
+                -else
                   = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: ""
               .item-description__form-group
                 %label
@@ -44,9 +47,14 @@
                     カテゴリー
                     %span.form-require 必須
                   %div.categories
-                    #first-category.select-wrap
-                      = f.collection_select :category_id, @parents, :id, :name, { prompt: '---' }, {class:"select-default", id:"first-category-input"}
-                      %i.fas.fa-angle-down
+                    -if local_assigns[:edit_flag].present?
+                      #first-category.select-wrap
+                        = f.collection_select :category_id, @categories, :id, :name, {option: item.category_id}, {class:"select-default", id:"first-category-input"}
+                        %i.fas.fa-angle-down
+                    -else
+                      #first-category.select-wrap
+                        = f.collection_select :category_id, @parents, :id, :name, { prompt: "---"}, {class:"select-default", id:"first-category-input"}
+                        %i.fas.fa-angle-down 
                 .form-group
                   %label
                     商品の状態
@@ -105,6 +113,9 @@
                       .fee-right
                         %div
                           %p ¥
+                        -if local_assigns[:edit_flag].present?
+                          = f.text_field :fee, id: "fee-input", class: "input-default", placeholder: "例)300", value: item.fee
+                        -else
                           = f.text_field :fee, id: "fee-input", class: "input-default", placeholder: "例)300", value: ""
                   %li.clearfix
                     .display-left 販売手数料(10%)

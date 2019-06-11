@@ -13,6 +13,22 @@ $(document).on('turbolinks:load', function() {
     let html = `<option value= ${id}>${name}</option>`
     return html;
   }
+  //カテゴリの値が空(---)の場合、子カテゴリの要素を初期化（削除）する関数
+  function removeChildrenCategory(targetInput){
+    if(targetInput == '#first-category-input'){
+      if($('#second-category').length){
+        $('#second-category').remove();
+      }
+      if($('#third-category').length){
+        $('#third-category').remove();
+      }
+    }
+    else if(targetInput == '#second-category-input'){
+      if($('#third-category').length){
+        $('#third-category').remove();
+      }
+    }
+  }
   //表示と非表示の切り替え
   function blockDisplay(input, displayBlock){
     if(input !== "")
@@ -23,7 +39,8 @@ $(document).on('turbolinks:load', function() {
       document.getElementById(displayBlock).style.display = "none";
     }
   }
-  function appendCategory(value, targetBlock,  id){
+  //カテゴリーを追加する
+  function appendCategory(value, targetBlock, id, redoFlag = false){
     $.ajax({
       type: 'GET',
       url: `/categories/new`,
@@ -37,7 +54,9 @@ $(document).on('turbolinks:load', function() {
         categories.forEach(function(category){
           html += buildOptionHTML(category.id, category.name);
         });
-      html = buildSelectHTML(html, id)
+      if(redoFlag == false ){
+        html = buildSelectHTML(html, id)
+      }
       $(targetBlock).append(html);
       }
     })
@@ -49,13 +68,34 @@ $(document).on('turbolinks:load', function() {
   $('#first-category-input').change(function() {
     let firstCategory = document.getElementById("first-category-input");
     let valueSelect1 = firstCategory.value;
-    appendCategory(valueSelect1, ".categories", "second-category");
+    //「---」を選んだとき
+    if(!valueSelect1){
+      console.log("kara")
+      removeChildrenCategory('#first-category-input')
+    }
+    else{
+      //カテゴリー１を既に変更した場合、カテゴリー2のoptionを変更する
+      if($("#second-category").length){
+        $("#second-category-input").empty();
+        appendCategory(valueSelect1, "#second-catogory-input", "", true)
+      }
+      else{
+      appendCategory(valueSelect1, ".categories", "second-category");
+      }
+    }
   })
   //カテゴリー2に値が入った場合
   $(document).on('change','#second-category-input', function() {
     let secondCategory = document.getElementById("second-category-input");
     let valueSelect2 = secondCategory.value;
+    //「---」を選んだとき
+    if(!valueSelect2){
+      console.log("kara")
+      removeChildrenCategory('#second-category-input')
+    }
+    else{
     appendCategory(valueSelect2, ".categories", "third-category");
+    }
   })
   $('#item_shipping_fee').change(function() {
     let ShippingFee = document.getElementById("item_shipping_fee");
