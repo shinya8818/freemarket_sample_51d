@@ -5,7 +5,7 @@
     .item-content
       .item-content__photo
         .owl-carousel
-          = image_tag @item.images.first.image,class:'owl-lazy'
+          = image_tag @item.images.first.image.url,class:'owl-lazy'
         - if @images
           - @images.each do |image|
             .owl-dot

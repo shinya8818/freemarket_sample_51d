@@ -10,7 +10,7 @@
         %section.buy-content__buy-item
           .buy-content-inner
             %h3.buy-item-image
-              = image_tag(@item.images.first.image, class:"photo-link")
+              = image_tag(@item.images.first.image.url, class:"photo-link")
             %p.buy-item-name
               = @item.name
             %form.buy-form
