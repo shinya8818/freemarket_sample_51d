@@ -7,18 +7,58 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Userダミーデータ
-# User.create!(
-#   email: 'abc@gmail.com',
-#   password: '123456',
-#   created_at: '19950506',
-#   updated_at: '20200101',
-#   nickname: 'あいうえお',
-#   last_name: '愛',
-#   first_name: '飢えお',
-#   last_name_kana: 'アイ',
-#   first_name_kana: 'ウエオ',
-#   cell_phone: '08012345678'
-# )
+User.create!(
+  id: 100,
+  email: 'abc@gmail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  created_at: '19950506',
+  updated_at: '20200101',
+  nickname: 'あいうえお',
+  last_name: '愛',
+  first_name: '飢えお',
+  last_name_kana: 'アイ',
+  first_name_kana: 'ウエオ',
+  cell_phone: '08012345678',
+  birth_year: 1990,
+  birth_month: 1,
+  birth_day: 1
+)
+
+Address.create!(
+  last_name: '愛',
+  first_name: '飢えお',
+  last_name_kana: 'アイ',
+  first_name_kana: 'ウエオ',
+  postal_code: '08012345678',
+  prefecture: '東京都',
+  municipalities: '渋谷',
+  address_number: '1-1-1',
+  user_id: 100
+)
+
+Item.create!(
+  id: 50,
+  name: "Mac book",
+  description: "オススメ",
+  status: 0,
+  fee: 3000,
+  brand: "Apple",
+  condition: 0,
+  prefecture: 1,
+  days: 0,
+  user_id: 100,
+  shipping_fee: 0,
+  size: "なし",
+  category_id: 139,
+  delivery: 0
+)
+
+Image.create!(
+  id: 50,
+  image: open("#{Rails.root}/db/dummy_img/macbook.jpg"),
+  item_id: 50
+)
 
 lady = Category.create(name: "レディース")
 
