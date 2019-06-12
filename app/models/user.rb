@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one :address
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :comments
   has_many :items
   has_many :sns_credentials, dependent: :destroy

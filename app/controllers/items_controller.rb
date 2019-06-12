@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
+    @images = @item.images
   end
 
   def create
@@ -36,21 +37,21 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name,
-                              :description,
-                              :category_id,
-                              :size,
-                              :brand,
-                              :delivery,
-                              :status,
-                              :condition,
-                              :prefecture, 
-                              :shipping_fee,
-                              :days,  
-                              :fee,
-                              :user_id,
-                              images_attributes:[:image])
-                              # Todo ログイン機能実装後
-                              # .merge(user_id: current_user.id)
+    :description,
+    :category_id,
+    :size,
+    :brand,
+    :delivery,
+    :status,
+    :condition,
+    :prefecture, 
+    :shipping_fee,
+    :days,  
+    :fee,
+    :user_id,
+    images_attributes:[:image])
+    # Todo ログイン機能実装後
+    # .merge(user_id: current_user.id)
   end
 
 end

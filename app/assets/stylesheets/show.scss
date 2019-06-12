@@ -139,12 +139,31 @@ html, body {
         border-radius: 40px;
         .fa-heart {
           font-size: 14px;
-          vertical-align: middle;
+          color: #333
         }
         .favorite {
           font-size: 14px;
           display: inline-block;
           margin: 1px;
+          color: #333;
+        }
+      }
+      .like-button-dislike {
+        color: #333;
+        border: 1px solid #FF0033;
+        background: #fff;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 40px;
+        .fa-heart.dislike {
+        font-size: 14px;
+        color: #FF0033;
+        }
+        .favorite__dislike {
+          font-size: 14px;
+          display: inline-block;
+          margin: 1px;
+          color: #FF0033;
         }
       }
       .item-report {
