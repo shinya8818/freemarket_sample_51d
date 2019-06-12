@@ -8,6 +8,7 @@ class LikesController < ApplicationController
       @likes = Like.where(item_id: params[:item_id])
     else
       redirect_to item_path
+    end
   end
 
   def destroy
