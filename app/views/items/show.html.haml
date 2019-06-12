@@ -81,6 +81,13 @@
         = link_to '',class: "item-key" do
           %i.fas.fa-lock
           %span.key あんしん・あんぜんへの取り組み
+  - if user_signed_in? && current_user.id == @item.user_id
+    .principal
+      = link_to '商品の編集', edit_item_path(@item), class: 'principal__tab'
+      %p or
+      = link_to '出品を一旦停止する', '', class: 'principal__tab--gray'
+      = link_to 'この商品を削除する', item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'principal__tab--gray'
+
   .item-detail-message
     .message-container
       - if @comments

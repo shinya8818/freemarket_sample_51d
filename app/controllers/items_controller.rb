@@ -27,6 +27,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find params[:id]
+    @item.destroy
+    redirect_to exhibition_path
+  end
+
   def buy
     @item = Item.find(params[:id])
     @images = @item.images
@@ -43,9 +49,9 @@ class ItemsController < ApplicationController
                               :delivery,
                               :status,
                               :condition,
-                              :prefecture, 
+                              :prefecture,
                               :shipping_fee,
-                              :days,  
+                              :days,
                               :fee,
                               :user_id,
                               images_attributes:[:image])

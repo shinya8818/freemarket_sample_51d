@@ -37,10 +37,12 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
-  def card
+  def new_credit
   end
 
   def cardadd
   end
 
+  def exhibition
+  end
 end

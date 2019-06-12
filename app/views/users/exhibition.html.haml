@@ -1,0 +1,35 @@
+- breadcrumb :exhibition
+
+.exhibition
+  .mypage-tab-container
+    %h2.mypage-tab-head 出品した商品
+    %ul.listing-tabs
+      %li.active
+        %h3
+          %a{"data-toggle": "tab", href: "#mypage-tab-transaction-now"}
+            出品中
+      %li
+        %h3
+          %a{href: "/jp/mypage/listings/in_progress/"}
+            取引中
+      %li
+        %h3
+          %a{href: "/jp/mypage/listings/completed/"}
+            売却済み
+    .tab-content
+      %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+        %li
+          %a.mypage-item-link
+            %figure
+              %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+            .mypage-item-body
+              .mypage-item-text 《この通知を受け取ったあなた限定》¥1,000の商品を"実質1円"でご購入いただけます！
+
+  %ul.mypage-history
+    %li.mypage-history__left
+      %a{href: "/jp/mypage/listings/listing/"}
+        %i
+    %li.mypage-history__right
+      %a{href: "/jp/mypage/listings/listing/"}
+        %i
+  = render partial: 'shared/sidebar'
