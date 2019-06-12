@@ -14,12 +14,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def children
-    respond_to do |format|
-      format.json {@children = Category.find(params[:id]).children}
-    end
-  end  
-
   def shiblings
     respond_to do |format|
       format.json {@shiblings = Category.find(params[:id]).shiblings}

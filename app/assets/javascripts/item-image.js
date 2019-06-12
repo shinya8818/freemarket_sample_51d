@@ -45,14 +45,4 @@ $(document).on('turbolinks:load', function() {
     // クリックされたaタグが含まれるli要素をHTMLから削除する。
     $(this).parent().parent().remove();
   });
-  //
-  var fileArea = document.getElementById(".sell-upload__drop-box-0")
-  var inputArea = document.getElementById("#item_images_attributes_0_image")
-  $(document).on('drop', fileArea, function(e){
-    fileArea.addEventListener('drop', (e) => {
-      e.preventDefault();
-      body.classList.remove('dragging');
-      inputArea.files = e.dataTransfer.files;
-    });
-  })
 });

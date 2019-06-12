@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     if @item.save
       # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
@@ -56,7 +57,6 @@ class ItemsController < ApplicationController
   def set_item
     #Todo itemのidがとれるようになったらコメントアウトのものに変更
     @item = Item.find(1)
-    @item.images = Image.where(item_id: 1)
     #@item = Item.find(params[:id])
   end
 
@@ -73,9 +73,7 @@ class ItemsController < ApplicationController
                               :shipping_fee,
                               :days,  
                               :fee,
-                              :user_id,
                               images_attributes:[:image])
-                              # Todo ログイン機能実装後
-                              # .merge(user_id: current_user.id)
+                              .merge(user_id: current_user.id)
   end
 end

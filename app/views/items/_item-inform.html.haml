@@ -6,8 +6,6 @@
         .sell-inner__container
           %h2.sell-inner__container-title 商品の情報を入力
           = form_for(@item, html: {class:"sell-form", multipart: true}) do |f|
-            //Todo ログイン機能実装後削除
-            = f.hidden_field :user_id, value: 1
             .item-image__box
               %h3.item-image__box-title
                 出品画像
@@ -49,7 +47,13 @@
                   %div.categories
                     -if local_assigns[:edit_flag].present?
                       #first-category.select-wrap
-                        = f.collection_select :category_id, @categories, :id, :name, {option: item.category_id}, {class:"select-default", id:"first-category-input"}
+                        = f.collection_select :category_id, @parents, :id, :name, {option: item.category_id}, {class:"select-default", id:"first-category-input"}
+                        %i.fas.fa-angle-down
+                      #second-category.select-wrap
+                        = f.collection_select :category_id, @categories, :id, :name, {option: item.category_id}, {class:"select-default", id:"second-category-input"}
+                        %i.fas.fa-angle-down
+                      #third-category.select-wrap
+                        = f.collection_select :category_id, @categories, :id, :name, {option: item.category_id}, {class:"select-default", id:"third-category-input"}
                         %i.fas.fa-angle-down
                     -else
                       #first-category.select-wrap
