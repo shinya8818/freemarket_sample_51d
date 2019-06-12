@@ -98,8 +98,15 @@ class SessionsController < Devise::SessionsController
         cell_phone: session[:addr_cell_phone],
         user_id: user.id
       )
+      if session[:uid].present? && session[:provider].present?
+        SnsCredential.create(
+          uid: session[:uid],
+          provider: session[:provider],
+          user_id: user.id
+        )
+      end
+
       sign_in user
-  
       redirect_to new_card_path
     end
   end
@@ -113,5 +120,20 @@ class SessionsController < Devise::SessionsController
 
   def register_done
   end
+
+  # def sns
+  #   auth = request.env['omniauth.auth']
+  #   user = User.find_by(uid: auth[:uid])
+  #   if user.present? && auth.present?
+  #     session[:user_id] = user.id
+  #     redirect_to root_path
+  #   elsif auth.present?
+  #     session[:provider] = auth[:provider]
+  #     session[:uid] = auth[:uid]
+  #     redirect_to new_registration_path
+  #   else
+  #     redirect_to new_login_path, notice: 'Facebook認証に失敗しました。'
+  #   end
+  # end
 
 end

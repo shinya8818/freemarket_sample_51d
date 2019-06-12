@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: "sessions", registrations: "registrations" }
+  devise_for :users, controllers: { sessions: "sessions", registrations: "registrations",omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'purchase/index'
   get 'purchase/done'
   get 'card/new'
@@ -45,6 +45,5 @@ Rails.application.routes.draw do
   resource :logout, to:"users#logout"
   resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
-
 
 end
