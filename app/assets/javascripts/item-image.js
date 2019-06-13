@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   function build_image(alt, src){
     var html = `<li>
                   <img alt="${alt}" src="${src}">
-                  <div class="upload-btn">
+                  <div class="upload-image">
                     <a class="item-image__btn-edit">編集</a>
                     <a class="item-image__btn-delete">削除</a>
                   </div>
@@ -45,14 +45,4 @@ $(document).on('turbolinks:load', function() {
     // クリックされたaタグが含まれるli要素をHTMLから削除する。
     $(this).parent().parent().remove();
   });
-  //
-  var fileArea = document.getElementById(".sell-upload__drop-box-0")
-  var inputArea = document.getElementById("#item_images_attributes_0_image")
-  $(document).on('drop', fileArea, function(e){
-    fileArea.addEventListener('drop', (e) => {
-      e.preventDefault();
-      body.classList.remove('dragging');
-      inputArea.files = e.dataTransfer.files;
-    });
-  })
 });
