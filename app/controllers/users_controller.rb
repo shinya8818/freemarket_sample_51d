@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
-  def card
+  def new_credit
   end
 
   def cardadd
@@ -46,6 +46,10 @@ class UsersController < ApplicationController
 
   def listings
 
+  end
+
+  def exhibition
+    
   end
 
   private

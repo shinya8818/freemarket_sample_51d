@@ -1,0 +1,43 @@
+- breadcrumb :exhibition
+
+.exhibition
+  .mypage-tab-container
+    %h2.mypage-tab-head 出品した商品
+    %ul.listing-tabs
+      %li.active
+        %h3
+          = link_to "出品中"
+      %li
+        %h3
+          = link_to "取引中"
+      %li
+        %h3
+          = link_to "売却済み"
+      .tab-mypage
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item
+            = link_to "", {class: "mypage-item-link"} do
+              %figure
+                = image_tag("", class: "lazyloaded.is-higher-height")
+                .mypage-item-body.show-stock-item
+                  .mypage-item-text
+                    画像
+                    %div
+                      %span.listing-item-count
+                        %i.icon-like-border
+                        %span 0
+                      %span.listing-item-count
+                        %i.icon-message
+                        %span 0
+                      .mypage-item-status.bold.awaiting
+                        出品中
+                  %i.icon-arrow-right
+
+  %ul.mypage-history
+    %li.mypage-history__left
+      %a{href: "/jp/mypage/listings/listing/"}
+        %i
+    %li.mypage-history__right
+      %a{href: "/jp/mypage/listings/listing/"}
+        %i
+  = render partial: 'shared/sidebar'

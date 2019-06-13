@@ -209,6 +209,46 @@ html, body {
   }
 }
 
+.principal {
+  padding: 24px;
+  width: 732px;
+  margin: 8px auto;
+  background-color: #fff;
+  &__tab {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: #ea352d;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:last-of-type {
+      background-color: #aaa;
+      margin-bottom: 0;
+    }
+  }
+  &__tab--gray {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: #aaa;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    margin-bottom: 20px;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+  }
+}
+
 .item-detail-message {
   width: 780px;
   margin: 8px auto;
