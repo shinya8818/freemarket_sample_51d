@@ -21,11 +21,11 @@ $(document).on('turbolinks:load', function() {
   function getChildren(value){
     $.ajax({
       type: 'GET',
-      url:  '/categories/shiblings',
+      url:  '/categories/siblings',
       data: {id: value},
       dataType: 'json',
     })
-    .done(function(shiblings){
+    .done(function(siblings){
       $('#second-category-input').empty();
     })
   }

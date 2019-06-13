@@ -1,5 +1,5 @@
-json.array! @shiblings do |shibling|
-  json.id shibling.id
-  json.name shibling.name
-  json.ancestry shibling.ancestry
+json.array! @siblings do |sibling|
+  json.id sibling.id
+  json.name sibling.name
+  json.ancestry sibling.ancestry
 end

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     collection do
       get 'ancestors'
       get 'children'
-      get 'shiblings'
+      get 'siblings'
     end
   end
   resources :users, only: [:index, :new, :show, :create]
