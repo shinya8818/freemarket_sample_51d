@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :set_item, only: [:edit, :destroy]
+  before_action :set_item, only: [:edit, :destroy] 
 
   def new
     @item = Item.new
@@ -34,8 +34,12 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find params[:id]
-    @item.destroy
-    redirect_to exhibition_path
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to exhibition_path(current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
