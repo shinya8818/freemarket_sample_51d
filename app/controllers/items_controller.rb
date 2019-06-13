@@ -63,10 +63,8 @@ class ItemsController < ApplicationController
 
   private
   def set_item
-    #Todo itemのidがとれるようになったらコメントアウトのものに変更
-    @item = Item.find(2)
+    @item = Item.find(params[:id])
     @item.images.includes(:images).build
-    #@item = Item.find(params[:id])
   end
 
   def item_params

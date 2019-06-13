@@ -6,22 +6,19 @@
     %ul.listing-tabs
       %li.active
         %h3
-          %a{"data-toggle": "tab", href: "#mypage-tab-transaction-now"}
-            出品中
+          = link_to "出品中"
       %li
         %h3
-          %a{href: "/jp/mypage/listings/in_progress/"}
-            取引中
+          = link_to "取引中"
       %li
         %h3
-          %a{href: "/jp/mypage/listings/completed/"}
-            売却済み
+          = link_to "売却済み"
       .tab-mypage
         %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
           %li.mypage-item
-            %a.mypage-item-link{href: ""}
+            = link_to "", {class: "mypage-item-link"} do
               %figure
-                %img.lazyloaded.is-higher-height{alt: "", "data-src": "//static.mercdn.net/thumb/photos/m35149806245_1.jpg?1560404158", src: "//static.mercdn.net/thumb/photos/m35149806245_1.jpg?1560404158"}/
+                = image_tag("", class: "lazyloaded.is-higher-height")
                 .mypage-item-body.show-stock-item
                   .mypage-item-text
                     画像
