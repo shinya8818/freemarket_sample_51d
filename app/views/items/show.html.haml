@@ -86,7 +86,16 @@
       = link_to '商品の編集', edit_item_path(@item), class: 'principal__tab'
       %p or
       = link_to '出品を一旦停止する', '', class: 'principal__tab--gray'
-      = link_to 'この商品を削除する', item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'principal__tab--gray'
+      %button#modal-open-btn この商品を削除する
+      = link_to '', item_path(@item), method: :delete, id: 'item-delete-btn', class: 'principal__tab--gray'
+      #overlay
+        #modalWindow
+          .modal-message-box
+            %div 確認
+            %div 本当に削除しますか？
+          %button#modal-close-btn キャンセル
+          %button#delete-comformation-btn 削除する
+
 
   .item-detail-message
     .message-container

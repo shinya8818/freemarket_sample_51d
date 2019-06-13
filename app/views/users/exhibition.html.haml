@@ -16,14 +16,25 @@
         %h3
           %a{href: "/jp/mypage/listings/completed/"}
             売却済み
-    .tab-content
-      %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
-        %li
-          %a.mypage-item-link
-            %figure
-              %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-            .mypage-item-body
-              .mypage-item-text 《この通知を受け取ったあなた限定》¥1,000の商品を"実質1円"でご購入いただけます！
+      .tab-mypage
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item
+            %a.mypage-item-link{href: ""}
+              %figure
+                %img.lazyloaded.is-higher-height{alt: "", "data-src": "//static.mercdn.net/thumb/photos/m35149806245_1.jpg?1560404158", src: "//static.mercdn.net/thumb/photos/m35149806245_1.jpg?1560404158"}/
+                .mypage-item-body.show-stock-item
+                  .mypage-item-text
+                    画像
+                    %div
+                      %span.listing-item-count
+                        %i.icon-like-border
+                        %span 0
+                      %span.listing-item-count
+                        %i.icon-message
+                        %span 0
+                      .mypage-item-status.bold.awaiting
+                        出品中
+                  %i.icon-arrow-right
 
   %ul.mypage-history
     %li.mypage-history__left

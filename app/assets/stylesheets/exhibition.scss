@@ -48,14 +48,53 @@ li.active{
   li{
     border-bottom: 1px  solid #eee;
   }
+}
+.mypage-item{
   &-link{
   display: block;
   min-height: 80px;
   padding: 16px;
   color: #333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  }
+  &-body{
+    margin-right: 100px;
+    margin: 0 40px 0 68px;
+  }
+  &-text{
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    max-height: 4.4em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+  }
+  &-count{
+    vertical-align: 2px;
+    margin: 0 6px 0 0;
+  }
+  &-status{
+    background: #0099e8;
+    display: inline-block;
+    margin: 8px 0 0 0;
+    padding: 5px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #fff;
   }
 }
 
+.tab-content{
+  display: block;
+}
 
 .fa-chevron-left{
   margin: 40px 0 0;

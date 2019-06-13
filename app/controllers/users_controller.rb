@@ -43,6 +43,4 @@ class UsersController < ApplicationController
   def cardadd
   end
 
-  def exhibition
-  end
 end

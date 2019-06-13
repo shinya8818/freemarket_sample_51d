@@ -45,6 +45,5 @@ Rails.application.routes.draw do
   resource :logout, to:"users#logout"
   resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
-  resource :exhibition, to:"users#exhibition"
-
+  get 'exhibition', to: 'users#exhibition'
 end
