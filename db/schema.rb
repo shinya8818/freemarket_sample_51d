@@ -12,26 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_06_08_120144) do
 
-  create_table "Items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "description", null: false
-    t.string "brand"
-    t.integer "status", default: 0, null: false
-    t.integer "fee", null: false
-    t.integer "condition", null: false
-    t.integer "prefecture", null: false
-    t.integer "days", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "category_id"
-    t.string "size"
-    t.integer "delivery", null: false
-    t.integer "shipping_fee"
-    t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
     t.text "prefecture", null: false
@@ -83,6 +63,26 @@ ActiveRecord::Schema.define(version: 2019_06_08_120144) do
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "brand"
+    t.integer "status", default: 0, null: false
+    t.integer "fee", null: false
+    t.integer "condition", null: false
+    t.string "prefecture", null: false
+    t.integer "days", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.string "size"
+    t.integer "delivery", null: false
+    t.integer "shipping_fee"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "user_id", null: false
@@ -125,12 +125,12 @@ ActiveRecord::Schema.define(version: 2019_06_08_120144) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "Items", "categories"
-  add_foreign_key "Items", "users"
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "sns_credentials", "users"

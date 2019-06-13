@@ -22,14 +22,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:new, :create, :edit, :destroy, :show, :index] do
+  resources :items, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
     resources :images, only: [:create]
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
-
-  resources :categories, only: [:create, :index, :new]
-
+  resources :categories, only: [:create, :index, :new] do
+    collection do
+      get 'ancestors'
+      get 'children'
+      get 'siblings'
+    end
+  end
   resources :users, only: [:index, :new, :show, :create]
   
   devise_scope :user do
@@ -46,5 +50,4 @@ Rails.application.routes.draw do
   resource :logout, to:"users#logout"
   resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
-
 end
