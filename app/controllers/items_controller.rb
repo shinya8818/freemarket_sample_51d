@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+  before_action :set_item, only: [:edit, :destroy]
 
   def new
     @item = Item.new
@@ -12,6 +14,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
+    @images = @item.images
+    @prefecture = Prefecture.find(params[:id])
   end
 
   def create
@@ -26,6 +30,7 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
 
   def destroy
     @item = Item.find params[:id]
@@ -57,6 +62,13 @@ class ItemsController < ApplicationController
   end
 
   private
+  def set_item
+    #Todo itemのidがとれるようになったらコメントアウトのものに変更
+    @item = Item.find(2)
+    @item.images.includes(:images).build
+    #@item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:name,
                                 :description,
@@ -66,12 +78,11 @@ class ItemsController < ApplicationController
                                 :delivery,
                                 :status,
                                 :condition,
-                                :prefecture,
+                                :prefecture, 
                                 :shipping_fee,
-                                :days,
+                                :days,  
                                 :fee,
                                 images_attributes:[:image])
                                 .merge(user_id: current_user.id)
   end
-
 end

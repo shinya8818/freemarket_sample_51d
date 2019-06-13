@@ -3,7 +3,11 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
 
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
 

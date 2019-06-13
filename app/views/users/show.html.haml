@@ -47,7 +47,7 @@
         .user-details__items__content
           %section.my-item__box
             = link_to "/items/#{item.id}", class:"my-item__box__link" do
-              = image_tag item.images.first.image, class:"my-item-image"
+              = image_tag item.images.first.image.url, class:"my-item-image"
               .my-item-body
                 %h3.my-item-name
                   = item.name

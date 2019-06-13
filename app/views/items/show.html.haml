@@ -9,7 +9,7 @@
         - if @images
           - @images.each do |image|
             .owl-dot
-              = image_tag image.image, class:'sub-photo'
+              = image_tag image.image.url, class:'sub-photo'
     %table.item-detail
       %tbody
         %tr
@@ -53,7 +53,7 @@
         %tr
           %th 配送元地域
           %td
-            = @item.prefecture
+            = @prefecture.name
         %tr
           %th 配送日の目安
           %td
@@ -70,13 +70,7 @@
         = @item.description
     .item-button
       .item-button__left
-        %button.like-button{type: "button"}
-          %i.far.fa-heart
-          %span.favorite いいね！
-          %span.favorite 0
-        = link_to '',class: "item-report" do
-          %i.far.fa-flag
-          %span.report 不適切な商品の報告
+        = render partial: 'likes/like', locals: { item: @item, items: @items, likes: @likes, like: @like}
       .item-button__right
         = link_to '',class: "item-key" do
           %i.fas.fa-lock

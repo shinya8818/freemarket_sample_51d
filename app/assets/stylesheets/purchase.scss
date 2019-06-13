@@ -11,4 +11,23 @@ html, body {
   width: 600px;
   margin: 0 auto;
   text-align: center;
+  padding: 170px;
+  font-weight: bold;
+  font-size: 22px;
+  &__notice {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #FF3333;
+  }
+  &__thank {
+    margin-bottom: 20px;
+    color: #FF3333;
+  }
+  &__shop {
+    margin-bottom: 20px;
+    color: #FF3333;
+  }
+  &__text {
+    color: #FF3333
+  }
 }
