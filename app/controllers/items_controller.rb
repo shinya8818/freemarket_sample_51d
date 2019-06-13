@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :set_item, only: [:edit, :destroy]
+  before_action :set_item, only: [:edit, :destroy] 
 
   def new
     @item = Item.new
@@ -31,6 +31,17 @@ class ItemsController < ApplicationController
     end
   end
 
+
+  def destroy
+    @item = Item.find params[:id]
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to exhibition_path(current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
+
   def edit
     @parents = Category.where(ancestry: nil).order("id ASC")
     @categories = Category.all
@@ -56,10 +67,8 @@ class ItemsController < ApplicationController
 
   private
   def set_item
-    #Todo itemのidがとれるようになったらコメントアウトのものに変更
-    @item = Item.find(2)
+    @item = Item.find(params[:id])
     @item.images.includes(:images).build
-    #@item = Item.find(params[:id])
   end
 
   def item_params
