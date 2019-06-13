@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
   //価格表示
   function displayFee(){
     var input = $("#fee-input").val();
-    console.log(input)
     //300円以上9,999,999円以下の場合のみ表示
     if(300 <= input &&  input <= 9999999){
       //販売手数料
@@ -27,7 +26,6 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json',
     })
     .done(function(shiblings){
-      console.log(shiblings);
       $('#second-category-input').empty();
     })
   }
@@ -41,14 +39,10 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(ancestors) {
       if(ancestors.length !== 0){
-        console.log(ancestors.length)
         switch(ancestors.length){
           case 1:
-            console.log(ancestors[0][name])
             break;
           case 2:
-            console.log(ancestors[0].id)
-            console.log(ancestors[1].name)
             $("#first-category-input").val(ancestors[0].id);
             $("#second-category-input").val(ancestors[1].id);
             break;

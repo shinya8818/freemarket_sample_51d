@@ -56,13 +56,9 @@ $(document).on('turbolinks:load', function() {
         });
         if(redoFlag == false ){
           html = buildSelectHTML(html, id)
-          console.log(html)
           $(targetBlock).append(html);
         }
         else{
-          console.log("done")
-          console.log(html)
-          console.log(targetBlock)
           $(targetBlock).append(html);
         }
       }
@@ -77,7 +73,6 @@ $(document).on('turbolinks:load', function() {
     let valueSelect1 = firstCategory.value;
     //「---」を選んだとき
     if(!valueSelect1){
-      console.log("kara")
       removeChildrenCategory('#first-category-input')
     }
     else{
@@ -99,7 +94,6 @@ $(document).on('turbolinks:load', function() {
     let valueSelect2 = secondCategory.value;
     //「---」を選んだとき
     if(!valueSelect2){
-      console.log("kara")
       removeChildrenCategory('#second-category-input')
     }
     else{
