@@ -31,5 +31,3 @@
 vendor/bundle/*
 config/secrets.yml
 /.env
-
-/Gemfile.lock
