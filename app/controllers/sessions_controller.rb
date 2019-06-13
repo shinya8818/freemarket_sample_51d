@@ -83,7 +83,7 @@ class SessionsController < Devise::SessionsController
         birth_day: session[:birth_day],
         cell_phone: session[:cell_phone]
       )
-  
+
       user = User.find_by(email: session[:email])
       Address.create(
         last_name: session[:addr_last_name],
