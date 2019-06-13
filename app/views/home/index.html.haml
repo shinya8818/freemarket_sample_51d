@@ -20,7 +20,8 @@
                   ¥ #{item.fee}
                 .items-num__likes
                   %i.far.fa-heart
-                  %span.like 1
+                  %span.like
+                    = item.likes_count
                 %p (税込)
       .items-all
         = link_to '',class: "items-all" do
@@ -43,9 +44,9 @@
                   ¥ #{item.fee}
                 .items-num__likes
                   %i.far.fa-heart
-                  %span.like 1
+                  %span.like 
+                    = item.likes_count
                 %p (税込)
       .items-all
         = link_to '',class: "items-all" do
           全ての商品を見る
-
