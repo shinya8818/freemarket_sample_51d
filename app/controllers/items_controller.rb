@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
     @images = @item.images
+    @prefecture = Prefecture.find(params[:id])
   end
 
   def create
