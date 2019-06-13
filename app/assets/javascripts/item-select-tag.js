@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function() {
   }
 //   //selectタグ以下にappendするoptionタグ
   function buildOptionHTML(id, name){
-    let html = `<option value= ${id}>${name}</option>`
+    let html = '<option value= ${id}>${name}</option>'
     return html;
   }
   //カテゴリの値が空(---)の場合、子カテゴリを初期化（削除）する関数
@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function() {
   function appendCategory(value, targetBlock, id, redoFlag = false){
     $.ajax({
       type: 'GET',
-      url: `/categories/new`,
+      url: '/categories/new',
       data: {id: value},
       dataType: 'json',
     })

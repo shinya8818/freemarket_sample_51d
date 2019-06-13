@@ -15,11 +15,11 @@
   &__bottom {
     border-top: solid 1px #eeeeee;
     background-color: white;
-    height: 1559px;
-    padding-top: 40px;
+    height: auto;
     padding-left: 183px;
     &__box {
       &--title {
+        padding-top: 40px;
         &--text{
           font-size: 14px;
           font-weight: bold;
@@ -31,7 +31,7 @@
         &--notice {
           font-size: 14px;
           width: 320px;
-          margin: 8px 0 40px;
+          margin-top: 8px;
         }
       }
       &--require {
@@ -45,7 +45,7 @@
         &--name {
           width: 320px;
           height: 48px;
-          margin: 8px 0 40px 0;
+          margin-top: 8px;
           padding-left: 16px;
           border-radius: 4px;
           border: 1px solid #ccc;

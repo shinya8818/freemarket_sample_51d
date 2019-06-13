@@ -1,0 +1,30 @@
+- if user_signed_in?
+  - if item.like_user(current_user.id)
+    %button.like-button-dislike
+      =link_to  "/items/#{@item.id}/likes/:id", method: "DELETE", remote: true do
+        %i.fas.fa-heart.dislike
+        %span.favorite__dislike いいね！
+        %span.favorite__dislike
+          = item.likes_count
+    = link_to '#',class: "item-report" do
+      %i.far.fa-flag
+      %span.report 不適切な商品の報告
+  - else
+    %button.like-button
+      =link_to "/items/#{@item.id}/likes", method: "POST", remote: true do
+        %i.fas.fa-heart
+        %span.favorite いいね！
+        %span.favorite
+          = item.likes_count
+    = link_to '#',class: "item-report" do
+      %i.far.fa-flag
+      %span.report 不適切な商品の報告
+-else
+  %button.like-button
+    %i.fas.fa-heart
+    %span.favorite いいね！
+    %span.favorite
+    = item.likes_count
+  = link_to '#',class: "item-report" do
+    %i.far.fa-flag
+    %span.report 不適切な商品の報告

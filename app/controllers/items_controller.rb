@@ -14,6 +14,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
+    @images = @item.images
+    @prefecture = Prefecture.find(params[:id])
   end
 
   def create
@@ -62,18 +64,18 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name,
-                              :description,
-                              :category_id,
-                              :size,
-                              :brand,
-                              :delivery,
-                              :status,
-                              :condition,
-                              :prefecture, 
-                              :shipping_fee,
-                              :days,  
-                              :fee,
-                              images_attributes:[:image])
-                              .merge(user_id: current_user.id)
+                                :description,
+                                :category_id,
+                                :size,
+                                :brand,
+                                :delivery,
+                                :status,
+                                :condition,
+                                :prefecture, 
+                                :shipping_fee,
+                                :days,  
+                                :fee,
+                                images_attributes:[:image])
+                                .merge(user_id: current_user.id)
   end
 end
