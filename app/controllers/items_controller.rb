@@ -33,6 +33,23 @@ class ItemsController < ApplicationController
     redirect_to exhibition_path
   end
 
+  def edit
+    @parents = Category.where(ancestry: nil).order("id ASC")
+    @categories = Category.all
+    render layout: 'another_layout'
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      # Todo モデルに移す 画像保存処理
+      params[:item_images]['name'].each do |i|
+        @item_image =  @item.images.create!(image: i)
+      end
+      redirect_to item_path(@item)
+    end
+  end
+
   def buy
     @item = Item.find(params[:id])
     @images = @item.images
@@ -42,21 +59,19 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name,
-                              :description,
-                              :category_id,
-                              :size,
-                              :brand,
-                              :delivery,
-                              :status,
-                              :condition,
-                              :prefecture,
-                              :shipping_fee,
-                              :days,
-                              :fee,
-                              :user_id,
-                              images_attributes:[:image])
-                              # Todo ログイン機能実装後
-                              # .merge(user_id: current_user.id)
+                                :description,
+                                :category_id,
+                                :size,
+                                :brand,
+                                :delivery,
+                                :status,
+                                :condition,
+                                :prefecture,
+                                :shipping_fee,
+                                :days,
+                                :fee,
+                                images_attributes:[:image])
+                                .merge(user_id: current_user.id)
   end
 
 end
