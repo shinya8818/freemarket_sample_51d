@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   function build_image(alt, src){
     var html = `<li>
                   <img alt="${alt}" src="${src}">
-                  <div class="upload-btn">
+                  <div class="upload-image">
                     <a class="item-image__btn-edit">編集</a>
                     <a class="item-image__btn-delete">削除</a>
                   </div>

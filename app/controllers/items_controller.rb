@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  # before_action :authenticate_user!, only: [:new]
   before_action :set_item, only: [:edit, :destroy]
 
   def new
@@ -17,7 +18,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
     if @item.save
       # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
@@ -37,7 +37,6 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    binding.pry
     if @item.update(item_params)
       # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
@@ -56,7 +55,8 @@ class ItemsController < ApplicationController
   private
   def set_item
     #Todo itemのidがとれるようになったらコメントアウトのものに変更
-    @item = Item.find(1)
+    @item = Item.find(2)
+    @item.images.includes(:images).build
     #@item = Item.find(params[:id])
   end
 

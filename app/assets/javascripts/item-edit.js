@@ -1,4 +1,24 @@
 $(document).on('turbolinks:load', function() {
+  //価格表示
+  function displayFee(){
+    var input = $("#fee-input").val();
+    console.log(input)
+    //300円以上9,999,999円以下の場合のみ表示
+    if(300 <= input &&  input <= 9999999){
+      //販売手数料
+      var handlingFee = Math.floor(input/10);
+      //販売利益
+      var profit = (input - handlingFee);
+      //カンマ区切り
+      handlingFee = "¥" + handlingFee.toString().replace(/(\d)(?=(\d{3})+$)/g , '$1,');
+      profit = "¥" + profit.toString().replace(/(\d)(?=(\d{3})+$)/g , '$1,');
+      //表示
+      $("#handling-fee__input").text(handlingFee); 
+      $("#profit__input").text(profit);
+    }
+    else{
+    }
+  }
   function getChildren(value){
     $.ajax({
       type: 'GET',
@@ -47,6 +67,7 @@ $(document).on('turbolinks:load', function() {
       let categoryId = $("#third-category-input").val();
       getAncestor(categoryId);
       //画像表示処理
+      displayFee()
     }
   }
 });
