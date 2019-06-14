@@ -35,13 +35,13 @@
                   %br/
                   .choice-wrap
                     = form_tag(action: :index, method: :post) do
-                      = select :page, :select_default, options_for_select(1..12), selected: "", autofocus: 'true'
+                      = select :exp, :month, options_for_select(1..12), selected: "", autofocus: 'true'
                       %i.fa.fa-chevron-down
                   %span 月
                   %ul.expire-mm-error-wrapper.has-error-text
                   .choice-wrap
                     = form_tag(action: :index, method: :post) do
-                      = select :page, :select_default, options_for_select(19..29), selected: "", autofocus: 'true'
+                      = select :exp, :year, options_for_select(19..29), selected: "", autofocus: 'true'
                       %i.fa.fa-chevron-down
                   %span 年
                   %ul.expire-mm-error-wrapper.has-error-text
