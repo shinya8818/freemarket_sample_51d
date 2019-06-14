@@ -5,17 +5,17 @@
       新規会員登録
   .new-user-content__bottom
     .new-user-content__bottom--link__box--mail
-      = link_to new_user_registration_path, class:"new-user-content__bottom--link" do
+      = link_to new_user_registration_path, class:"new-user-content__bottom--link",method: :post do
         %p.new-user-content__bottom--link__box--mail-register
           =fa_icon 'envelope-o'
           メールアドレスで登録
     .new-user-content__bottom--link__box--fb
-      = link_to user_facebook_omniauth_authorize_path, class:"new-user-content__bottom--link" do
+      = link_to user_facebook_omniauth_authorize_path, class:"new-user-content__bottom--link",method: :post do
         %p.new-user-content__bottom--link__box--fb-register
           =fa_icon 'facebook-square'
           Facebookで登録
     .new-user-content__bottom--link__box--google
-      = link_to user_google_oauth2_omniauth_authorize_path, class:"new-user-content__bottom--link" do
+      = link_to user_google_oauth2_omniauth_authorize_path, class:"new-user-content__bottom--link",method: :post do
         %p.new-user-content__bottom--link__box--google-register
           = image_tag "https://img.icons8.com/color/48/000000/google-logo.png", class: "new-user-content__bottom--link__box--google-register-icon"
           Googleで登録
