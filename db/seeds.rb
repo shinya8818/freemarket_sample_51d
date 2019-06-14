@@ -37,29 +37,6 @@ Address.create!(
   user_id: 100
 )
 
-Item.create!(
-  id: 50,
-  name: "Mac book",
-  description: "オススメ",
-  status: 0,
-  fee: 3000,
-  brand: "Apple",
-  condition: 0,
-  prefecture: 1,
-  days: 0,
-  user_id: 100,
-  shipping_fee: 0,
-  size: "なし",
-  category_id: 139,
-  delivery: 0
-)
-
-Image.create!(
-  id: 50,
-  image: "/db/dummy_img/macbook.jpg",
-  item_id: 50
-)
-
 lady = Category.create(name: "レディース")
 
 lady_tops = lady.children.create(name: "トップス")
