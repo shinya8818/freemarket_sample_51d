@@ -76,7 +76,7 @@
           %i.fas.fa-lock
           %span.key あんしん・あんぜんへの取り組み
   - if user_signed_in? && current_user.id == @item.user_id
-    .principal
+    .principal{"data-turbolinks": "false"}
       = link_to '商品の編集', edit_item_path(@item), class: 'principal__tab'
       %p or
       = link_to '出品を一旦停止する', '', class: 'principal__tab--gray'
