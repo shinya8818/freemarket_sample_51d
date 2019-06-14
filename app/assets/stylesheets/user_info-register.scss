@@ -112,7 +112,7 @@
   margin: 30px 0;
 }
 
-.fas.fa-angle-down{
+.fas.fa-angle-down {
   position: absolute;
   right: 32px;
   top: 11px;
@@ -120,7 +120,11 @@
   font-size: 25px;
 }
 
-#birth_year, #birth_month, #birth_day{
+.fas.fa-chevron-right {
+  color: #0099e8;
+}
+
+#birth_year, #birth_month, #birth_day {
   width: 76px;
   height:48px;
   padding-left: 10px;
