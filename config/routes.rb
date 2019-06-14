@@ -51,4 +51,5 @@ Rails.application.routes.draw do
   resource :credit, to:"users#card"
   resource :cardadd, to:"users#cardadd"
   resource :exhibition, to:"users#exhibition"
+  resource :identity, to:"users#identity"
 end

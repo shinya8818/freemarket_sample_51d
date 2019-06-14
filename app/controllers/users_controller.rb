@@ -49,7 +49,10 @@ class UsersController < ApplicationController
   end
 
   def exhibition
-    
+  end
+
+  def identity
+    @user = User.select(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day)
   end
 
   private

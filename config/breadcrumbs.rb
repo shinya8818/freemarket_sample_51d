@@ -22,3 +22,8 @@ crumb :exhibition do
   link "出品した商品 - 出品中", exhibition_path
   parent :users
 end
+
+crumb :identity do
+  link "本人情報の登録", identity_path
+  parent :users
+end
