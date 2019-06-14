@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:index, :new, :show, :create]
-  
+
   devise_scope :user do
     resource :user_info_keep, to: "sessions#user_info_keep", only: :create
     resource :phone_entrypage, to: "sessions#phone_entrypage", only: :new
