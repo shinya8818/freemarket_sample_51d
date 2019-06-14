@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 2019_06_14_011742) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
-    t.string "size"
+    t.integer "shipping_fee", null: false
     t.integer "delivery", null: false
-    t.integer "shipping_fee"
+    t.string "size"
+    t.bigint "category_id"
     t.integer "likes_count", default: 0
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
