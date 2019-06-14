@@ -36,7 +36,7 @@
                   %span.form-require 必須
                 %div
                 -if local_assigns[:edit_flag].present?
-                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: ""
+                  = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: item.name
                 -else
                   = f.text_field :name, class: "input-default", placeholder: "商品名(必須４０文字まで)", value: ""
               .item-description__form-group
