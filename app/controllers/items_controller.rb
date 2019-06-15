@@ -1,13 +1,11 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   before_action :set_item, only: [:edit, :destroy] 
+  before_action :set_parents, only: [:new]
 
   def new
     @item = Item.new
     @item.images.build
-    @parents = Category.where(ancestry: nil).order("id ASC")
-    # Todo 以下インスタンスは仮決めのため後ほど削除
-    @children = Category.where(id: 30..32)
     render layout: 'another_layout'
   end
 
@@ -68,7 +66,11 @@ class ItemsController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:id])
-    @item.images.includes(:images).build
+    @images = @item.images
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def item_params

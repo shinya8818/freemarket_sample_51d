@@ -15,9 +15,9 @@
                 .sell-upload__dropbox-container
                   %ul.sell-upload__images-0
                     -if local_assigns[:edit_flag].present?
-                      - item.images.each do |image|
+                      - images.each do |i|
                         %li
-                          -# = image_tag image.url
+                          = image_tag i.image.url
                           .upload-image
                             = link_to "編集" , class:"item-image__btn-edit"
                             %a.item-image__btn-delete 削除
@@ -109,7 +109,6 @@
                   %div
                     .select-wrap
                       = f.select :days, Item.days.keys, { prompt: '---' }, {class:"select-default"}
-                      -# = f.select :days, Item.days.keys, {}, {class:"select-default"}
                       %i.fas.fa-angle-down
             .sell-content.clearfix
               %h3.sell-sub__head 販売価格(300~9,999,999)
