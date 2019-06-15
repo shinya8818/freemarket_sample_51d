@@ -2,3 +2,30 @@
   %section.advertisement
     .advertisement__header
       = image_tag "/mercari-body.jpg", class: "advertisement__header__image"
+  %section.pickup-container
+    %h2.pickup-head
+      ピックアップカテゴリー
+    %section.items-box-container
+      %h3.text-center
+        = link_to "新着アイテム", "", class:"new-item"
+      .items-box-container__box
+        - @items.each do |item|
+          %section.items-box
+            = link_to "/items/#{item.id}" do
+              .items-box__photo
+                = image_tag  item.images.first.image.url, class: "items-image"
+              .items-box__body
+                %h3.items-box__body__name
+                  = item.name
+                .items-box__num
+                  .items-box-price
+                    ¥ #{item.fee}
+                  .items-box-like
+                    %i.far.fa-heart
+                    %span.like
+                      = item.likes_count
+                %p.items-box-tax
+                  (税込)
+      .view-all-footer
+        = link_to '',class: "items-all" do
+          全ての商品を見る
