@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
         return function (e) {
           // imgタグ追加
           image_tag = build_image(count, e.target.result);
-          $('.sell-upload__images-0').append(image_tag);
+          $('#sell-upload__images-0').append(image_tag);
           // ファイル数カウント
           count += 1;
         };

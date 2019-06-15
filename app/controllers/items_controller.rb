@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
         @item_image =  @item.images.create!(image: i)
       end
@@ -49,9 +48,10 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      # Todo モデルに移す 画像保存処理
-      params[:item_images]['name'].each do |i|
-        @item_image =  @item.images.create!(image: i)
+      if params[:item_images].present?
+        params[:item_images]['name'].each do |i|
+          @item_image =  @item.images.create!(image: i)
+        end
       end
       redirect_to item_path(@item)
     end
