@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     # Todo 以下インスタンスは仮決めのため後ほど削除
     @children = Category.where(id: 30..32)
     render layout: 'another_layout'
+    @users = User.all
   end
 
   def show

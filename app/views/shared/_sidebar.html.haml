@@ -14,7 +14,7 @@
       = link_to "いいね一覧","#",class:"sideber__list__item"
       %i.fa.fa-angle-right
     %li
-      = link_to "出品する","#",class:"sideber__list__item"
+      = link_to "出品する",new_item_path,class:"sideber__list__item"
       %i.fa.fa-angle-right
     %li
       = link_to "出品した商品 - 出品中",exhibition_path,class:"sideber__list__item"
@@ -23,7 +23,7 @@
       = link_to "出品した商品 - 取引中","#",class:"sideber__list__item"
       %i.fa.fa-angle-right
     %li
-      = link_to "出品した商品 - 売却済み","#",class:"sideber__list__item"
+      = link_to "出品した商品 - 売却済み",complete_path,class:"sideber__list__item"
       %i.fa.fa-angle-right
     %li
       = link_to "購入した商品 - 取引中","#",class:"sideber__list__item"
@@ -56,7 +56,7 @@
   %h3.sideber__head 設定
   %ul.sideber__list
     %li
-      = link_to "プロフィール","#",class:"sideber__list__item"
+      = link_to "プロフィール",profile_path,class:"sideber__list__item"
       %i.fa.fa-angle-right
     %li
       = link_to "住所変更","#",class:"sideber__list__item"

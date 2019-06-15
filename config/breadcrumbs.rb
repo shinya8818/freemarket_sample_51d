@@ -23,7 +23,17 @@ crumb :exhibition do
   parent :users
 end
 
+crumb :complete do
+  link "出品した商品 - 売却済み", complete_path
+  parent :users
+end
+
 crumb :identity do
   link "本人情報の登録", identity_path
+  parent :users
+end
+
+crumb :profile do
+  link "プロフィール", profile_path
   parent :users
 end

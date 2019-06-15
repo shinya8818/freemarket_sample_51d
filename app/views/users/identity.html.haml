@@ -5,32 +5,38 @@
     .mypage-main__right
       %main.address
         %section.address-container
-          %h2.address-head
+          %h2.address-head#identity-head
             本人情報の登録
-          = form_with url: address_info_keep_path, class: "address-inner" do |f|
+          .identity__description
+            お客さまの本人情報をご登録本人情報の登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %br
+            .identity__description-link
+              = link_to "#" do
+                %span{style: "color: #0099e8;"} 本人確認書類のアップロードについて
+                %i.fa.fa-chevron-right{style: "color: #0099e8;"}
+          = form_with url: address_info_keep_path, class: "address-inner", id: "identity-inner" do |f|
             .address-box
               .form-group
-                =f.label :お名前 ,class:"form-group__name"
-                %br/
-                - @user.each do |user|
-                  = user.last_name
-                  = user.first_name
-                  %br/
+                %h2.form-group__name
+                  お名前
+                .form-group__current
+                  = @user.last_name
+                  = @user.first_name
               .form-group
-                =f.label :お名前カナ ,class:"form-group__name"
-                %br/
-                - @user.each do |user|
-                  = user.last_name_kana
-                  = user.first_name_kana
-                  %br/
+                %h2.form-group__name
+                  お名前カナ
+                .form-group__current
+                  = @user.last_name_kana
+                  = @user.first_name_kana
               .form-group
-                =f.label :生年月日 ,class:"form-group__name"
-                %br/
-                - @user.each do |user|
-                  = user.birth_year
-                  = user.birth_month
-                  = user.birth_day
-                  %br/
+                %h2.form-group__name
+                  生年月日
+                .form-group__current
+                  = @user.birth_year
+                  = @user.birth_month
+                  = @user.birth_day
               .form-group
                 =f.label :郵便番号 ,class:"form-group__name"
                 %span.form-group__free 任意

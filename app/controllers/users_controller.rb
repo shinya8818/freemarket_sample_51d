@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:listings]
+  before_action :authenticate_user!
 
   def index
     @user = User.find(current_user.id)
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
   end
 
   def new_credit
+    @card = current_user.card
   end
 
   def cardadd
@@ -52,12 +54,14 @@ class UsersController < ApplicationController
   end
 
   def identity
-    @user = User.select(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day)
+    @user = User.find(current_user.id)
+  end
+
+  def profile
   end
 
   private
   def set_user
     @user = User.find(params[id])
   end
-
 end

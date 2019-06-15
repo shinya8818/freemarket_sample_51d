@@ -52,4 +52,6 @@ Rails.application.routes.draw do
   resource :cardadd, to:"users#cardadd"
   resource :exhibition, to:"users#exhibition"
   resource :identity, to:"users#identity"
+  resource :profile, to:"users#profile"
+  resource :complete, to:"users#complete"
 end
