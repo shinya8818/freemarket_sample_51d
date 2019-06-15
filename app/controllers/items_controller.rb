@@ -1,13 +1,11 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   before_action :set_item, only: [:edit, :destroy] 
+  before_action :set_parents, only: [:new]
 
   def new
     @item = Item.new
     @item.images.build
-    @parents = Category.where(ancestry: nil).order("id ASC")
-    # Todo 以下インスタンスは仮決めのため後ほど削除
-    @children = Category.where(id: 30..32)
     render layout: 'another_layout'
   end
 
@@ -21,7 +19,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      # Todo モデルに移す 画像保存処理
       params[:item_images]['name'].each do |i|
         @item_image =  @item.images.create!(image: i)
       end
@@ -51,9 +48,10 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      # Todo モデルに移す 画像保存処理
-      params[:item_images]['name'].each do |i|
-        @item_image =  @item.images.create!(image: i)
+      if params[:item_images].present?
+        params[:item_images]['name'].each do |i|
+          @item_image =  @item.images.create!(image: i)
+        end
       end
       redirect_to item_path(@item)
     end
@@ -68,7 +66,11 @@ class ItemsController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:id])
-    @item.images.includes(:images).build
+    @images = @item.images
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def item_params
