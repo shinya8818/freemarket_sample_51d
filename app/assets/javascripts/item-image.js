@@ -12,10 +12,10 @@ $(document).on('turbolinks:load', function() {
   var files_array= []
   var count = 1;
   var image_tag;
-  var inputId = "#item_images_attributes_0_image"
+  var inputBlock = ".sell-upload__drop-box-0-input"
 
   // プレビュー
-  $(inputId).change( $('inputId').children('input[name="images[name][' + count + ']"]'), function (e) {
+  $(inputBlock).change( $('inputBlock').children('input[name="images[name][' + count + ']"]'), function (e) {
     // ファイルオブジェクト取得
     var files = $(this).prop('files');
     for (var i=0; i<files.length; i++) {

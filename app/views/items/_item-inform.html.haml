@@ -24,7 +24,7 @@
                 .sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
-                      = fimage.file_field :image, {name: "item_images[name][]", multiple: true, accept:".jpg,.gif,.png,image/gif,image/jpeg,image/png"}
+                      = fimage.file_field :image, {name: "item_images[name][]", multiple: true, accept:".jpg,.gif,.png,image/gif,image/jpeg,image/png", class:"sell-upload__drop-box-0-input"}
                     %pre.visible-pc
                       :preserve
                         ドラッグアンドドロップ
