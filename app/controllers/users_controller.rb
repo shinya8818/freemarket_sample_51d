@@ -39,8 +39,11 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
+  def mypage
+  end
+
   def new_credit
-    @card = current_user.card
+    @card = Card.find(current_user.id)
   end
 
   def cardadd

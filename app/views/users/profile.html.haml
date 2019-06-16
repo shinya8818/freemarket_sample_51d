@@ -1,13 +1,18 @@
 - breadcrumb :profile
 
-.main-container
-  .profile
-    %h2.profile__header
-      プロフィール
-    .profile__main
-      = image_tag '/mercari.icon.png',class:'icon'
-      %input.profile-name{placeholder: "例)AYA☆セール中", type: "text"}/
-    .profile__content
-      %textarea.profile-introduction{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-    .profile__footer
-      %button.profile-btn{type: "submit"}  変更する
+.main
+  .mypage-main
+    .mypage-main__right
+      .main-container
+        .profile
+          %h2.profile__header
+            プロフィール
+          .profile__main
+            = image_tag '/mercari.icon.png',class:'icon'
+            %input.profile-name{placeholder: "例)AYA☆セール中", type: "text"}/
+          .profile__content
+            %textarea.profile-introduction{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          .profile__footer
+            %button.profile-btn{type: "submit"}  変更する
+
+    = render partial: 'shared/sidebar'
