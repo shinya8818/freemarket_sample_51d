@@ -114,5 +114,9 @@
                 .card-main__content
                   = link_to "users",class:"btn-red" do
                     %span 登録する
+            .identity__description-link#identity-sub
+              = link_to "#" do
+                %span{style: "color: #0099e8;"} 本人情報登録について
+                %i.fa.fa-chevron-right{style: "color: #0099e8;"}
 
     = render partial: 'shared/sidebar'
