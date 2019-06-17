@@ -67,6 +67,32 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def  card
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to  card_new_users_path
+    else
+      Payjp.api_key = "sk_test_543d657d3b55ce90bfcb0bc8"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+
+  def delete
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+    else
+      Payjp.api_key = "sk_test_543d657d3b55ce90bfcb0bc8"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to card_new_users_path
+  end
+
+  def  card_new
+  end
+
   private
   def set_user
     @user = User.find(params[id])
