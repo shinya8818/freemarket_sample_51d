@@ -81,7 +81,10 @@
     .principal{"data-turbolinks": "false"}
       = link_to '商品の編集', edit_item_path(@item), class: 'principal__tab'
       %p or
-      = link_to '出品を一旦停止する', '', class: 'principal__tab--gray'
+      - if @item.status == "出品停止"
+        = link_to '出品を再開する', resale_item_path(@item), class: 'principal__tab'
+      - else
+        = link_to '出品を一旦停止する', stop_item_path(@item), class: 'principal__tab--gray'
       %button#modal-open-btn この商品を削除する
       = link_to '', item_path(@item), method: :delete, id: 'item-delete-btn', class: 'principal__tab--gray'
       #overlay
