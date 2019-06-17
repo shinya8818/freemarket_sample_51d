@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
+    member do
+      get :resale
+      get :stop
+    end
     resources :images, only: [:create]
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
@@ -34,8 +38,17 @@ Rails.application.routes.draw do
       get 'siblings'
     end
   end
-  resources :users, only: [:index, :new, :show, :create]
-  
+
+  resources :users, only: [:index, :new, :show, :create] do
+    collection do
+      get 'card_new', to: 'users#card_new'
+      post 'card', to: 'users#card'
+      post 'pay', to: 'users#pay'
+      post 'delete', to: 'users#delete'
+      get 'cardedd', to: 'users#cardadd' ,only: :new
+    end
+  end
+
   devise_scope :user do
     resource :user_info_keep, to: "sessions#user_info_keep", only: :create
     resource :phone_entrypage, to: "sessions#phone_entrypage", only: :new
@@ -48,10 +61,10 @@ Rails.application.routes.draw do
   end
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
-  resource :credit, to:"users#card"
-  resource :cardadd, to:"users#cardadd"
   resource :exhibition, to:"users#exhibition"
+
   resource :identity, to:"users#identity"
   resource :profile, to:"users#profile"
   resource :complete, to:"users#complete"
+
 end

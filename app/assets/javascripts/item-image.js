@@ -1,7 +1,9 @@
 $(document).on('turbolinks:load', function() {
   function build_image(alt, src){
     var html = `<li>
-                  <img alt="${alt}" src="${src}">
+                  <figure class="sell-upload-figure">
+                    <img alt="${alt}" src="${src}">
+                  </figure>
                   <div class="upload-image">
                     <a class="item-image__btn-edit">編集</a>
                     <a class="item-image__btn-delete">削除</a>
@@ -12,10 +14,10 @@ $(document).on('turbolinks:load', function() {
   var files_array= []
   var count = 1;
   var image_tag;
-  var inputId = "#item_images_attributes_0_image"
+  var inputBlock = ".sell-upload__drop-box-0-input"
 
   // プレビュー
-  $(inputId).change( $('inputId').children('input[name="images[name][' + count + ']"]'), function (e) {
+  $(inputBlock).change( $('inputBlock').children('input[name="images[name][' + count + ']"]'), function (e) {
     // ファイルオブジェクト取得
     var files = $(this).prop('files');
     for (var i=0; i<files.length; i++) {
@@ -28,7 +30,7 @@ $(document).on('turbolinks:load', function() {
         return function (e) {
           // imgタグ追加
           image_tag = build_image(count, e.target.result);
-          $('.sell-upload__images-0').append(image_tag);
+          $('#sell-upload__images-0').append(image_tag);
           // ファイル数カウント
           count += 1;
         };
@@ -36,7 +38,7 @@ $(document).on('turbolinks:load', function() {
     file_reader.readAsDataURL(file);
     }
   });
-//削除機能
+  //削除機能
   $(document).on('click','.item-image__btn-delete', function(){
     // index関数を利用して、クリックされたaタグが、div内で何番目のものか特定する。
     var index = $(".item-image__btn-delete").index(this);

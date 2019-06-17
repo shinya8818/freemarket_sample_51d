@@ -7,6 +7,9 @@
       .form-content__top--text
         会員情報入力
       .form-content__bottom
+        - if flash[:same_email]
+          .form-content__bottom--err-sameemail
+            = flash[:same_email]
         -# ニックネーム
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -29,6 +32,7 @@
             = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "text", class: "form-content__bottom__box--input--name"
             -# エラーメッセージ表示
             .err_email
+            .err_email_format
         -# パスワード
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -37,9 +41,10 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.password_field :password, placeholder: "6文字以上", type: "text", class: "form-content__bottom__box--input--name"
+            = f.password_field :password, placeholder: "6文字以上", type: "password", class: "form-content__bottom__box--input--name"
             -# エラーメッセージ表示
             .err_password
+            .err_passwordlength
         -# パスワード(確認)
         .form-content__bottom__box
           .form-content__bottom__box--title
@@ -48,9 +53,10 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.password_field :password_confirmation, placeholder: "6文字以上", type: "text", class: "form-content__bottom__box--input--name"  
+            = f.password_field :password_confirmation, placeholder: "6文字以上", type: "password", class: "form-content__bottom__box--input--name"  
             -# エラーメッセージ表示
             .err_password_confirmation
+            .err_password_confirmation_unmatch
         -# 本人確認メッセージ
         .form-content__bottom__box
           .form-content__bottom__box--title

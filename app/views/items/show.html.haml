@@ -65,8 +65,10 @@
         ¥ #{@item.fee}
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    = link_to "/purchase/index/items/#{@item.id}", class:"item-btn" do
-      購入画面に進む
+    - if user_signed_in? && current_user.id != @item.user_id
+      %div{"data-turbolinks" => "false"}
+        = link_to "/purchase/index/items/#{@item.id}", class:"item-btn" do
+          購入画面に進む
     .item-description
       %p.item-description__inner
         = @item.description
@@ -81,7 +83,10 @@
     .principal{"data-turbolinks": "false"}
       = link_to '商品の編集', edit_item_path(@item), class: 'principal__tab'
       %p or
-      = link_to '出品を一旦停止する', '', class: 'principal__tab--gray'
+      - if @item.status == "出品停止"
+        = link_to '出品を再開する', resale_item_path(@item), class: 'principal__tab'
+      - else
+        = link_to '出品を一旦停止する', stop_item_path(@item), class: 'principal__tab--gray'
       %button#modal-open-btn この商品を削除する
       = link_to '', item_path(@item), method: :delete, id: 'item-delete-btn', class: 'principal__tab--gray'
       #overlay
@@ -91,7 +96,6 @@
             %div 本当に削除しますか？
           %button#modal-close-btn キャンセル
           %button#delete-comformation-btn 削除する
-
 
   .item-detail-message
     .message-container
