@@ -131,20 +131,4 @@ class SessionsController < Devise::SessionsController
 
   def register_done
   end
-
-  # def sns
-  #   auth = request.env['omniauth.auth']
-  #   user = User.find_by(uid: auth[:uid])
-  #   if user.present? && auth.present?
-  #     session[:user_id] = user.id
-  #     redirect_to root_path
-  #   elsif auth.present?
-  #     session[:provider] = auth[:provider]
-  #     session[:uid] = auth[:uid]
-  #     redirect_to new_registration_path
-  #   else
-  #     redirect_to new_login_path, notice: 'Facebook認証に失敗しました。'
-  #   end
-  # end
-
 end
