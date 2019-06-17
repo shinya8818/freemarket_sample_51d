@@ -38,18 +38,13 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
-  def new_credit
-  end
-
   def cardadd
   end
 
   def listings
-
   end
 
   def exhibition
-    
   end
 
   private
