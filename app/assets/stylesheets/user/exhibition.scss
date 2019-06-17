@@ -44,18 +44,35 @@ li.active{
   background-color: #fff;
 }
 
+.tab-mypage{
+  background-color: #fff;
+  &:hover {
+    background-color: #fafafa;
+    transition: padding-right 0.25s;
+  }
+}
+
+.image-exhibition{
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+}
+
 .mypage-item-list active{
   li{
     border-bottom: 1px  solid #eee;
   }
 }
-.mypage-item{
+.mypage-item {
+  &-box{
+  padding: 16px;
+  }
   &-link{
   display: block;
-  min-height: 80px;
-  padding: 16px;
   color: #333;
-  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -92,18 +109,21 @@ li.active{
   }
 }
 
+
 .tab-content{
   display: block;
 }
+.fa-heart{
+  color: rgb(169, 169, 169);
+}
+.fa-commenting{
+  color: rgb(169, 169, 169);
+}
+#fa-chevron-right{
+  float: right;
+}
 
 .fa-chevron-left{
-  margin: 40px 0 0;
-  height: 44px;
-  color: #333;
-  position: relative;
-  top: .15em;
-}
-.fa-chevron-right{
   margin: 40px 0 0;
   height: 44px;
   color: #333;

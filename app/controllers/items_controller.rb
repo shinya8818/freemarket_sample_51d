@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     render layout: 'another_layout'
+    @users = User.all
   end
 
   def show
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item = Item.find params[:id]
+    @item = Item.find(params[:id])
     if @item.user_id == current_user.id
       @item.destroy
       redirect_to exhibition_path(current_user.id)

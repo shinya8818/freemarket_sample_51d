@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   require "payjp"
   before_action :set_user, only: [:listings]
+  before_action :authenticate_user!
 
   def index
     @user = User.find(current_user.id)
@@ -39,6 +40,15 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
+
+  def mypage
+  end
+
+  def new_credit
+  end
+
+
+
   def cardadd
     card = Card.where(user_id: current_user.id)
   end
@@ -65,6 +75,20 @@ class UsersController < ApplicationController
   end
 
   def exhibition
+
+    @items = current_user.items.where(status: 0)
+  end
+
+  def complete
+    @items = current_user.items.where(status: 2)
+  end
+
+  def identity
+    @user = User.find(current_user.id)
+  end
+
+  def profile
+
   end
 
   def  card
@@ -97,5 +121,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[id])
   end
-
 end

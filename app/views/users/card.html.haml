@@ -12,6 +12,8 @@
             %ul.sets-pay-list
           %section.sets-add__card
             .card-main__content
+
+
               %p.buy-user-info-text
                 = "**** **** **** " + @default_card_information.last4
                 %br/
@@ -26,6 +28,6 @@
           .sets-not-regist
             = link_to "#" do
               %span 支払い方法について
-              %i.fa.fa-chevron-right
+              %i.fa.fa-chevron-right#fa-chevron-right
 
     = render partial: 'shared/sidebar'

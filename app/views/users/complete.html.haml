@@ -1,18 +1,18 @@
-- breadcrumb :exhibition
+- breadcrumb :complete
 
 .exhibition
   .mypage-tab-container
     %h2.mypage-tab-head 出品した商品
     %ul.listing-tabs
-      %li.active
+      %li
         %h3
-          = link_to "出品中"
+          = link_to "出品中",exhibition_path
       %li
         %h3
           = link_to "取引中"
-      %li
+      %li.active
         %h3
-          = link_to "売却済み",complete_path
+          = link_to "売却済み"
     .tab-mypage
       %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
         - @items.each do |item|

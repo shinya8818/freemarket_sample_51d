@@ -18,7 +18,7 @@ class User < ApplicationRecord
             :birth_month,
             :birth_day, presence: true
   validates :email, uniqueness: true
-  
+
   # *****電話認証画面*****
   validates :cell_phone, presence: true
 
