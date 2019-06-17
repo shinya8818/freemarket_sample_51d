@@ -17,6 +17,12 @@
     background-color: white;
     height: auto;
     padding-left: 183px;
+    &--err-sameemail {
+      color:red;
+      font-size: 14px;
+      padding-top: 40px;
+      width: 340px;
+    }
     &__box {
       &--title {
         padding-top: 40px;

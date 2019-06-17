@@ -14,6 +14,9 @@ class SessionsController < Devise::SessionsController
     session[:birth_month] = params[:birth_month]
     session[:birth_day] = params[:birth_day]
 
+    user = User.find_by(email: params[:email])
+    email_format_check = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
     if session[:nickname].blank? || 
        session[:email].blank? || 
        session[:password].blank? ||
@@ -26,6 +29,14 @@ class SessionsController < Devise::SessionsController
        session[:birth_month].blank? ||
        session[:birth_day].blank?
        # JSで入力エラー表示
+    elsif params[:email] =~ email_format_check
+       # JSでメールアドレスの不適切フォーマットエラーの表示
+    elsif params[:password] != params[:password_confirmation]
+      #  JSでパスワード不一致エラー表示
+    elsif user
+       # 重複エラーはリロードで表示
+      flash[:same_email] = 'メールアドレスに誤りがあります。ご確認いただき、正しく変更してください。' 
+      redirect_to new_user_registration_path
     else
       redirect_to new_phone_entrypage_path
     end
