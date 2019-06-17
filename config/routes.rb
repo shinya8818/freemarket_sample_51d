@@ -34,7 +34,16 @@ Rails.application.routes.draw do
       get 'siblings'
     end
   end
-  resources :users, only: [:index, :new, :show, :create]
+
+  resources :users, only: [:index, :new, :show, :create] do
+    collection do
+      get 'card_new', to: 'users#card_new'
+      post 'card', to: 'users#card'
+      post 'pay', to: 'users#pay'
+      post 'delete', to: 'users#delete'
+      get 'cardedd', to: 'users#cardadd' ,only: :new
+    end
+  end
 
   devise_scope :user do
     resource :user_info_keep, to: "sessions#user_info_keep", only: :create
@@ -48,7 +57,6 @@ Rails.application.routes.draw do
   end
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
-  resource :credit, to:"users#card"
-  resource :cardadd, to:"users#cardadd"
   resource :exhibition, to:"users#exhibition"
+
 end
