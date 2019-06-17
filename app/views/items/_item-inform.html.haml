@@ -19,9 +19,9 @@
                         %li
                           %figure.sell-upload-figure
                             = image_tag i.image.url
-                            .upload-image
-                              = link_to "編集" , class:"item-image__btn-edit"
-                              %a.item-image__btn-delete 削除
+                          .upload-image
+                            = link_to "編集" , class:"item-image__btn-edit"
+                            %a.item-image__btn-delete 削除
                 .sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
@@ -72,6 +72,11 @@
                       #first-category.select-wrap
                         = f.collection_select :category_id, @parents, :id, :name, { prompt: "---"}, {class:"select-default", id:"first-category-input"}
                         %i.fas.fa-angle-down
+                #brand.form-group
+                  %label
+                    ブランド
+                    %span.form-any 任意
+                  = f.text_field :brand,  class:"input-default", placeholder: "例）Supreme"
                 .form-group
                   %label
                     商品の状態

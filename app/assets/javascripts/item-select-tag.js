@@ -105,6 +105,7 @@ $(document).on('turbolinks:load', function() {
         appendCategory(valueSelect2, ".categories", "third-category");
       }
     }
+    $("#brand").css("display", "block")
   })
   $('#item_shipping_fee').change(function() {
     let ShippingFee = document.getElementById("item_shipping_fee");
