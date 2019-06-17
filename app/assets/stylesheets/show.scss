@@ -37,15 +37,16 @@ html, body {
             content: "";
             top: 0;
             left: 0;
-            border-bottom: 6em solid transparent;
-            border-left: 6em solid gray;
+            border-bottom: 7em solid transparent;
+            border-left: 7em solid gray;
             position: absolute;
             z-index: 100
         }
         &::after {
-            content: "公開停止";
+            content: "公開停止中";
+            font-weight: bold;
             display: block;
-            top: 20px;
+            top: 30px;
             transform: rotate(-45deg);
             color: #fff;
             left: 0;
