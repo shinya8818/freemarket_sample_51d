@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'card/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
-  # get 'buy/items/:id' => 'items#buy'
 
   resources :card, only: [:new, :show] do
     collection do
@@ -62,7 +61,6 @@ Rails.application.routes.draw do
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
   resource :exhibition, to:"users#exhibition"
-
   resource :identity, to:"users#identity"
   resource :profile, to:"users#profile"
   resource :complete, to:"users#complete"
