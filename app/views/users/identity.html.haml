@@ -22,21 +22,17 @@
                 %h2.form-group__name
                   お名前
                 .form-group__current
-                  = @user.last_name
-                  = @user.first_name
+                  = @user.last_name + " " + @user.first_name
               .form-group
                 %h2.form-group__name
                   お名前カナ
                 .form-group__current
-                  = @user.last_name_kana
-                  = @user.first_name_kana
+                  = @user.last_name_kana + " " + @user.first_name_kana
               .form-group
                 %h2.form-group__name
                   生年月日
                 .form-group__current
-                  = @user.birth_year
-                  = @user.birth_month
-                  = @user.birth_day
+                  = @user.birth_year + "/" + @user.birth_month + "/" + @user.birth_day
               .form-group
                 =f.label :郵便番号 ,class:"form-group__name"
                 %span.form-group__free 任意

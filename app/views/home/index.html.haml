@@ -8,21 +8,22 @@
       %h3.category
         = link_to "新着アイテム", "", class:"index"
       - @items.each do |item|
-        = link_to "/items/#{item.id}" do
-          .items-box-content
-            .items-box-content__box__photo
-              = image_tag item.images.first.image.url,class:"tops"
-            .items-box-content__box__body
-              %h3.items-name
-                = item.name
-              .items-num
-                .items-num__price
-                  ¥ #{item.fee}
-                .items-num__likes
-                  %i.far.fa-heart
-                  %span.like
-                    = item.likes_count
-                %p (税込)
+        %div{"data-turbolinks": "false"}
+          = link_to "/items/#{item.id}" do
+            .items-box-content
+              .items-box-content__box__photo
+                = image_tag item.images.first.image.url,class:"tops"
+              .items-box-content__box__body
+                %h3.items-name
+                  = item.name
+                .items-num
+                  .items-num__price
+                    ¥ #{item.fee}
+                  .items-num__likes
+                    %i.far.fa-heart
+                    %span.like
+                      = item.likes_count
+                  %p (税込)
       .items-all
         = link_to '',class: "items-all" do
           全ての商品を見る

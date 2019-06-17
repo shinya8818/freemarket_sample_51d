@@ -13,25 +13,28 @@
       %li.active
         %h3
           = link_to "売却済み"
-      .tab-mypage
-        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
-          %li.mypage-item
-            = link_to "", {class: "mypage-item-link"} do
-              %figure
-                = image_tag("", class: "lazyloaded.is-higher-height")
+    .tab-mypage
+      %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+        - @items.each do |item|
+          %li.mypage-item-box
+            = link_to "/items/#{item.id}" do
+              .mypage-item-link
+                %figure.image-exhibition
+                  = image_tag item.images.first.image.url, class: "lazyloaded.is-higher-height"
                 .mypage-item-body.show-stock-item
                   .mypage-item-text
-                    画像
+                    = item.name
                     %div
                       %span.listing-item-count
-                        %i.icon-like-border
-                        %span 0
+                        %i.fas.fa-heart
+                        %span
+                        = item.likes_count
                       %span.listing-item-count
-                        %i.icon-message
+                        %i.fa.fa-commenting
                         %span 0
                       .mypage-item-status.bold.awaiting
                         出品中
-                  %i.icon-arrow-right
+                      %i.fa.fa-chevron-right#fa-chevron-right{style: "color: #333;"}
 
   %ul.mypage-history
     %li.mypage-history__left

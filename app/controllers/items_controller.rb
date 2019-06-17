@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item = Item.find params[:id]
+    @item = Item.find(params[:id])
     if @item.user_id == current_user.id
       @item.destroy
       redirect_to exhibition_path(current_user.id)

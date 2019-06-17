@@ -43,7 +43,6 @@ class UsersController < ApplicationController
   end
 
   def new_credit
-    @card = Card.find(current_user.id)
   end
 
   def cardadd
@@ -54,6 +53,11 @@ class UsersController < ApplicationController
   end
 
   def exhibition
+    @items = current_user.items.where(status: 0)
+  end
+
+  def complete
+    @items = current_user.items.where(status: 2)
   end
 
   def identity

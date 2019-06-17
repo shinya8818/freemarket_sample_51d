@@ -37,3 +37,8 @@ crumb :profile do
   link "プロフィール", profile_path
   parent :users
 end
+
+crumb :item do |item|
+  link "#{item.name}", item_path
+  parent :root
+end
