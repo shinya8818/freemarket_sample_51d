@@ -18,12 +18,12 @@
         %ul.search-menu-list
           %li
             %h2
-              =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
+              =link_to categories_path, class:"search-menu__list-parent" do
                 %i.fa.fa-bars
                 %span.search-menu__list-parent-text カテゴリーから探す
           %li
             %h2
-              =link_to "https://www.mercari.com/jp/brand/", class:"search-menu__list-parent" do
+              =link_to categories_path, class:"search-menu__list-parent" do
                 %i.fa.fa-tag
                 %span ブランドから探す
       -if user_signed_in?

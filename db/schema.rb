@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_14_011742) do
 
+<<<<<<< Updated upstream
   create_table "Items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -33,6 +34,8 @@ ActiveRecord::Schema.define(version: 2019_06_14_011742) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+=======
+>>>>>>> Stashed changes
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
     t.text "prefecture", null: false
@@ -84,9 +87,6 @@ ActiveRecord::Schema.define(version: 2019_06_14_011742) do
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
-
-
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -107,9 +107,6 @@ ActiveRecord::Schema.define(version: 2019_06_14_011742) do
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
-
-
-
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
@@ -153,12 +150,12 @@ ActiveRecord::Schema.define(version: 2019_06_14_011742) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "Items", "categories"
-  add_foreign_key "Items", "users"
   add_foreign_key "addresses", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "sns_credentials", "users"

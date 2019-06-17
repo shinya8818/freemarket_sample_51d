@@ -59,10 +59,10 @@ Rails.application.routes.draw do
     resource :register, to: "sessions#register", only: :create
     resource :register_done, to: "sessions#register_done", only: :new
   end
+
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
   resource :exhibition, to:"users#exhibition"
-
   resource :identity, to:"users#identity"
   resource :profile, to:"users#profile"
   resource :complete, to:"users#complete"
