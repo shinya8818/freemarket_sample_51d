@@ -1,0 +1,23 @@
+- breadcrumb :card
+
+.card
+  %main.card-main
+    .card-main__right
+      %section.card-main__container
+        %h2.card-main__head 支払い方法
+        .card-main__inner
+          %section
+            .card-main__content
+              %h3.card-main__sub-head クレジットカード一覧
+            %ul.sets-pay-list
+          %section.sets-add__card
+            .card-main__content
+              = link_to cardedd_users_path,class:"btn-red" do
+                %i.fa.fa-credit-card-alt
+                %span クレジットカードを追加する
+          .sets-not-regist
+            = link_to "#" do
+              %span 支払い方法について
+              %i.fa.fa-chevron-right
+
+    = render partial: 'shared/sidebar'

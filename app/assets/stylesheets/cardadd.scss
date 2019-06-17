@@ -35,6 +35,19 @@
   &__content{
     max-width: 320px;
     margin: 0 auto;
+    .credit-image {
+      width: 26px;
+      height: 20px;
+      position: relative;
+      right: 40px;
+    }
+    .credit-remove {
+      padding: 4px 6px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ea352d;
+      color: #ea352d;
+    }
   }
 }
 

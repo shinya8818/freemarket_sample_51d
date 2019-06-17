@@ -9,12 +9,12 @@ crumb :users do
 end
 
 crumb :card do
-  link "支払い方法", new_credit_path
+  link "支払い方法", card_users_path, method: :post
   parent :users
 end
 
 crumb :cardadd do
-  link "クレジットカード情報入力", cardadd_path
+  link "クレジットカード情報入力", cardedd_users_path
   parent :card
 end
 

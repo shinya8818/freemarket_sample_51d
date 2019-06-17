@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-
+  layout 'another_layout'
   require "payjp"
 
   def new

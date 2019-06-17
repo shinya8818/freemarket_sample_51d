@@ -1,53 +1,33 @@
-.container
-  %div
-  .advertisement
-    = image_tag '/メルカリ2.jpg',class:'advertisement__1'
-  .pickup-container
-    %h2 ピックアップカテゴリー
-    .pickup-container__items-container
-      %h3.category
-        = link_to "新着アイテム", "", class:"index"
-      - @items.each do |item|
-        %div{"data-turbolinks": "false"}
-          = link_to "/items/#{item.id}" do
-            .items-box-content
-              .items-box-content__box__photo
-                = image_tag item.images.first.image.url,class:"tops"
-              .items-box-content__box__body
-                %h3.items-name
+
+%main.container
+  %section.advertisement
+    .advertisement__header
+      = image_tag "/mercari-body.jpg", class: "advertisement__header__image"
+  %section.pickup-container
+    %h2.pickup-head
+      ピックアップカテゴリー
+    %section.items-box-container
+      %h3.text-center
+        = link_to "新着アイテム", "", class:"new-item"
+      .items-box-container__box
+        - @items.each do |item|
+          %section.items-box
+            = link_to "/items/#{item.id}" do
+              .items-box__photo
+                = image_tag  item.images.first.image.url, class: "items-image"
+              .items-box__body
+                %h3.items-box__body__name
                   = item.name
-                .items-num
-                  .items-num__price
+                .items-box__num
+                  .items-box-price
                     ¥ #{item.fee}
-                  .items-num__likes
+                  .items-box-like
                     %i.far.fa-heart
                     %span.like
                       = item.likes_count
-                  %p (税込)
-      .items-all
-        = link_to '',class: "items-all" do
-          全ての商品を見る
-  .pickup-container
-    %h2 ピックアップブランド
-    .pickup-container__items-container
-      %h3.category
-        = link_to "新着アイテム", "", class:"index"
-      - @items.each do |item|
-        = link_to "/items/#{item.id}" do
-          .items-box-content
-            .items-box-content__box__photo
-              = image_tag item.images.first.image.url,class:"tops"
-            .items-box-content__box__body
-              %h3.items-name
-                = item.name
-              .items-num
-                .items-num__price
-                  ¥ #{item.fee}
-                .items-num__likes
-                  %i.far.fa-heart
-                  %span.like 
-                    = item.likes_count
-                %p (税込)
-      .items-all
+                %p.items-box-tax
+                  (税込)
+      .view-all-footer
+
         = link_to '',class: "items-all" do
           全ての商品を見る
