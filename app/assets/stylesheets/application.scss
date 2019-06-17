@@ -10,6 +10,10 @@
 @import "user/logout";
 @import "user/exhibition";
 @import "user/cardadd";
+@import "user/index";
+@import "user/new";
+@import "user/card";
+@import "user/user_info-register";
 @import "shared/common-header";
 @import "shared/common-footer";
 @import "shared/sidebar";
@@ -19,14 +23,10 @@
 @import "session/signup-header";
 @import "session/address";
 @import "session/new_number";
-@import "./sessions";
-@import "users";
-@import "user_new";
-@import "user_info-register";
+@import "session/register_done";
+@import "devise/sessions";
 @import "breadcrumbs";
 @import "modal";
-@import "card";
-@import "register_done";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
