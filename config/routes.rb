@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
+    member do
+      get :resale
+      get :stop
+    end
     resources :images, only: [:create]
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]

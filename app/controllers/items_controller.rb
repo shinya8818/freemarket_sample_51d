@@ -63,6 +63,26 @@ class ItemsController < ApplicationController
     @users = @item.user
   end
 
+  def stop
+    @item = Item.find params[:id]
+    if @item.user_id == current_user.id
+      @item.update(status: 3)
+      redirect_to item_path(@item)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def resale
+    @item = Item.find params[:id]
+    if @item.user_id == current_user.id
+      @item.update(status: 1)
+      redirect_to item_path(@item)
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   def set_item
     @item = Item.find(params[:id])

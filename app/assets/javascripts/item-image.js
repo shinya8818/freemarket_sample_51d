@@ -1,7 +1,9 @@
 $(document).on('turbolinks:load', function() {
   function build_image(alt, src){
     var html = `<li>
-                  <img alt="${alt}" src="${src}">
+                  <figure class="sell-upload-figure">
+                    <img alt="${alt}" src="${src}">
+                  </figure>
                   <div class="upload-image">
                     <a class="item-image__btn-edit">編集</a>
                     <a class="item-image__btn-delete">削除</a>
@@ -36,7 +38,7 @@ $(document).on('turbolinks:load', function() {
     file_reader.readAsDataURL(file);
     }
   });
-//削除機能
+  //削除機能
   $(document).on('click','.item-image__btn-delete', function(){
     // index関数を利用して、クリックされたaタグが、div内で何番目のものか特定する。
     var index = $(".item-image__btn-delete").index(this);

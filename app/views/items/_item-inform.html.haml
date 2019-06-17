@@ -17,10 +17,11 @@
                     -if local_assigns[:edit_flag].present?
                       - images.each do |i|
                         %li
-                          = image_tag i.image.url
-                          .upload-image
-                            = link_to "編集" , class:"item-image__btn-edit"
-                            %a.item-image__btn-delete 削除
+                          %figure.sell-upload-figure
+                            = image_tag i.image.url
+                            .upload-image
+                              = link_to "編集" , class:"item-image__btn-edit"
+                              %a.item-image__btn-delete 削除
                 .sell-upload__drop-box-0
                   = f.fields_for :images do |fimage|
                     = fimage.label :image do
