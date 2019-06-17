@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_item, only: [:edit, :destroy] 
   before_action :set_parents, only: [:new]
 
@@ -40,9 +40,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @parents = Category.where(ancestry: nil).order("id ASC")
-    @categories = Category.all
-    render layout: 'another_layout'
+    if @item.user_id == current_user.id
+      @parents = Category.where(ancestry: nil).order("id ASC")
+      @categories = Category.all
+      render layout: 'another_layout'
+    else
+      redirect_to root_path
+    end
   end
 
   def update
