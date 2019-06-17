@@ -1,35 +1,36 @@
-@import "reset";
-@import "home";
-@import "user_edit";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "home";
-@import "buy";
-@import "./common-header";
-@import "./common-footer";
+@import "home/index";
+@import "home/header";
+@import "home/footer";
+@import "purchase/index";
+@import "purchase/done";
+@import "user/edit";
+@import "user/show";
+@import "user/logout";
+@import "user/exhibition";
+@import "user/cardadd";
+@import "shared/common-header";
+@import "shared/common-footer";
+@import "shared/sidebar";
+@import "shared/reset";
+@import "item/show";
+@import "item/sell";
+@import "session/signup-header";
+@import "session/address";
+@import "session/new_number";
 @import "./sessions";
-@import "show";
 @import "users";
-@import "sidebar";
-@import "logout";
-@import "new_number";
-@import "address";
 @import "user_new";
-@import "header";
-@import "footer";
-@import "sell";
-@import "done";
 @import "user_info-register";
-@import "cardadd";
-@import "users/show";
-@import "cardadd";
-@import "signup-header";
 @import "breadcrumbs";
-@import "exhibition";
 @import "modal";
-@import "purchase";
 @import "card";
+
 @import "identity";
+
+@import "register_done";
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
