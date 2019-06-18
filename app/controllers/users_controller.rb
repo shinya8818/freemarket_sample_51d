@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   require "payjp"
   before_action :set_user, only: [:listings]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:login]
 
   def index
     @user = User.find(current_user.id)

@@ -8,6 +8,8 @@
       .item-content__photo
         .owl-carousel
           = image_tag @item.images.first.image.url,class:'owl-lazy'
+          - if @item.status == "出品停止"
+            .stop-selling__image
         - if @images
           - @images.each do |image|
             .owl-dot
