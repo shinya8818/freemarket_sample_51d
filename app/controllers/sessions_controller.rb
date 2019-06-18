@@ -5,9 +5,7 @@ class SessionsController < Devise::SessionsController
     session[:nickname] = params[:nickname]
     session[:email] = params[:email]
     if session[:uid].present? && session[:provider].present?
-      # SNS認証(mniauthCallbacksController)で自動生成したパスワードを使用
-      # flash[:sns] = "have_password_with_sns"
-      @tester = "have_password_with_sns"
+      # SNS認証(omniauthCallbacksController)で自動生成したパスワードを使用
     else
       session[:password] = params[:password]
       session[:password_confirmation] = params[:password_confirmation]
