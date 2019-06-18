@@ -1,7 +1,4 @@
 
-
-
-
 %main.container
   %section.advertisement
     .advertisement__header
@@ -15,25 +12,22 @@
       .items-box-container__box
         - @items.each do |item|
           %section.items-box
-            = link_to "/items/#{item.id}" do
-              .items-box__photo
-                = image_tag  item.images.first.image.url, class: "items-image"
-              .items-box__body
-                %h3.items-box__body__name
-                  = item.name
-                .items-box__num
-                  .items-box-price
-                    ¥ #{item.fee}
-                  .items-box-like
-                    %i.far.fa-heart
-                    %span.like
-                      = item.likes_count
-                %p.items-box-tax
-                  (税込)
+            %div{"data-turbolinks": "false"}
+              = link_to "/items/#{item.id}" do
+                .items-box__photo
+                  = image_tag  item.images.first.image.url, class: "items-image"
+                .items-box__body
+                  %h3.items-box__body__name
+                    = item.name
+                  .items-box__num
+                    .items-box-price
+                      ¥ #{item.fee}
+                    .items-box-like
+                      %i.far.fa-heart
+                      %span.like
+                        = item.likes_count
+                  %p.items-box-tax
+                    (税込)
       .view-all-footer
-
-
-
-
         = link_to '',class: "items-all" do
           全ての商品を見る
