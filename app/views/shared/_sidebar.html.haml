@@ -2,77 +2,100 @@
   %ul.sideber__list
     /サイドバー上
     %li
-      = link_to "マイページ",users_path,class:"sideber__list__item active"
-      %i.fa.fa-angle-right
+      = link_to users_path,class:"sideber__list__item active" do
+        マイページ
+        %i.fa.fa-angle-right
     %li
-      = link_to "お知らせ","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        お知らせ
+        %i.fa.fa-angle-right
     %li
-      = link_to "やることリスト","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        やることリスト
+        %i.fa.fa-angle-right
     %li
-      = link_to "いいね一覧","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        いいね一覧
+        %i.fa.fa-angle-right
     %li
-      = link_to "出品する",new_item_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to new_item_path,class:"sideber__list__item" do
+        出品する
+        %i.fa.fa-angle-right
     %li
-      = link_to "出品した商品 - 出品中",exhibition_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to exhibition_path,class:"sideber__list__item" do
+        出品した商品 - 出品中
+        %i.fa.fa-angle-right
     %li
-      = link_to "出品した商品 - 取引中","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        出品した商品 - 取引中
+        %i.fa.fa-angle-right
     %li
-      = link_to "出品した商品 - 売却済み",complete_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to complete_path,class:"sideber__list__item" do
+        出品した商品 - 売却済み
+        %i.fa.fa-angle-right
     %li
-      = link_to "購入した商品 - 取引中", purchaselist_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to purchaselist_path,class:"sideber__list__item" do
+        購入した商品 - 取引中
+        %i.fa.fa-angle-right
     %li
-      = link_to "購入した商品 - 過去の取引", purchasedlist_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to purchasedlist_path,class:"sideber__list__item" do
+        購入した商品 - 過去の取引
+        %i.fa.fa-angle-right
     %li
-      = link_to "ニュース一覧","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        ニュース一覧
+        %i.fa.fa-angle-right
     %li
-      = link_to "評価一覧","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        評価一覧
+        %i.fa.fa-angle-right
     %li
-      = link_to "ガイド","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        ガイド
+        %i.fa.fa-angle-right
     %li
-      = link_to "お問い合わせ","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        お問い合わせ
+        %i.fa.fa-angle-right
   / サイドバー中
   %h3.sideber__head メルペイ
   %ul.sideber__list
     %li
-      = link_to "売上・振込申請","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        売上・振込申請
+        %i.fa.fa-angle-right
     %li
-      = link_to "ポイント","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        ポイント
+        %i.fa.fa-angle-right
   / サイドバーshita
   %h3.sideber__head 設定
   %ul.sideber__list
     %li
-      = link_to "プロフィール",profile_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to profile_path,class:"sideber__list__item" do
+        プロフィール
+        %i.fa.fa-angle-right
     %li
-      = link_to "住所変更","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        住所変更
+        %i.fa.fa-angle-right
     %li
-      = link_to "支払い方法",card_users_path, class:"sideber__list__item", method: :post
-      %i.fa.fa-angle-right
+      = link_to card_users_path, class:"sideber__list__item", method: :post do
+        支払い方法
+        %i.fa.fa-angle-right
     %li
-      = link_to "メール/パスワード","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        メール/パスワード
+        %i.fa.fa-angle-right
     %li
-      = link_to "本人情報",identity_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to identity_path,class:"sideber__list__item" do
+        本人情報
+        %i.fa.fa-angle-right
     %li
-      = link_to "電話番号の確認","#",class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to "#",class:"sideber__list__item" do
+        電話番号の確認
+        %i.fa.fa-angle-right
     %li
-      = link_to "ログアウト",logout_path,class:"sideber__list__item"
-      %i.fa.fa-angle-right
+      = link_to logout_path,class:"sideber__list__item" do
+        ログアウト
+        %i.fa.fa-angle-right

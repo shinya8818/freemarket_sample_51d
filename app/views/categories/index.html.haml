@@ -15,6 +15,8 @@
       .category-list-box__inner
         %p
           = link_to "すべて"
+        .category-list-box__inner-child
           - parent.children.each do |child|
             - child.name
-            %h4.category-list-box__child #{child.name}
+            %h4.category-list-box-child #{child.name}
+        .category-list-box__inner-grandchild

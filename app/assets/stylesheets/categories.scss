@@ -73,5 +73,12 @@
         text-decoration: none;
       }
     }
+    &-child{
+      padding-top: 15px;
+      padding-bottom: 5px;
+      h4 {
+        font-weight: bold;
+      }
+    }
   }
 }

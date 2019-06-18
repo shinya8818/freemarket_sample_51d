@@ -14,6 +14,7 @@
       background-color: white;
       display: block;
       padding-left: 16px;
+      position: relative;
       &:hover{
         background-color: #f9f9f9;
       }
@@ -38,9 +39,10 @@
   display: block;
   position: absolute;
   top: 25%;
-  right: 16px;
-  padding-left: 260px;
-  padding-bottom: 10px;
+  text-align: right;
+  right: auto;
+  height: 80%;
+  width: 87%;
   color: #ccc;
   font-size: 25px !important;
   font-weight: bold;
