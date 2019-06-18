@@ -63,6 +63,8 @@ Rails.application.routes.draw do
   resource :login, to:"users#login",only: :create
   resource :logout, to:"users#logout"
   resource :exhibition, to:"users#exhibition"
+  resource :purchaselist, to:"users#purchaselist"
+  resource :purchasedlist, to:"users#purchased"
   resource :identity, to:"users#identity"
   resource :profile, to:"users#profile"
   resource :complete, to:"users#complete"
