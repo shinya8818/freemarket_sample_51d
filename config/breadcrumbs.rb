@@ -3,8 +3,18 @@ crumb :root do
   link "メルカリ", root_path
 end
 
+crumb :categories do
+  link "カテゴリー一覧", categories_path
+  parent :root
+end
+
 crumb :users do
   link "マイページ", users_path
+  parent :root
+end
+
+crumb :item do |item|
+  link "#{item.name}", item_path
   parent :root
 end
 
@@ -36,9 +46,4 @@ end
 crumb :profile do
   link "プロフィール", profile_path
   parent :users
-end
-
-crumb :item do |item|
-  link "#{item.name}", item_path
-  parent :root
 end

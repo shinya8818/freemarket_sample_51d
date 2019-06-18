@@ -5,14 +5,18 @@
   &__list{
     margin-top: 8px;
     &__item{
+      font-size: 14px;
       color: black;
       text-align: left;
       font-family: sans-serif;
       min-height: 48px;
-      margin: 0;
       line-height: 48px;
-      padding-left: 20px;
       background-color: white;
+      display: block;
+      padding-left: 16px;
+      &:hover{
+        background-color: #f9f9f9;
+      }
     }
     & li{
       background-color: white;
@@ -21,26 +25,29 @@
       width: 280px;
       height: 48px;
       position: relative;
-      & a {
-        text-decoration: none;
-        background-color: white;
-      }
     }
   }
 }
 
-.sideber__list li:hover{
-  background-color: #f9f9f9;
-}
-
 .sideber__head{
   margin-top: 40px;
-  margin-left: 40px;
+  font-weight: bold;
 }
+
 .fa.fa-angle-right{
+  display: block;
   position: absolute;
   top: 25%;
   right: 16px;
-  float: right;
-  font-size: 22px !important;
+  padding-left: 260px;
+  padding-bottom: 10px;
+  color: #ccc;
+  font-size: 25px !important;
+  font-weight: bold;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  &:hover{
+    transform: translateX(5px);
+    color: #575757;
+  }
 }
