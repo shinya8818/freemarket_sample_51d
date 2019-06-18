@@ -66,7 +66,7 @@
   &__inner{
     padding: 24px 30px 10px 30px;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     p {
       font-size: 16px;
       margin-top: 8px;
@@ -81,14 +81,15 @@
       padding-bottom: 5px;
       h4 {
         font-weight: bold;
+        margin-top: 10px;
       }
     }
   }
   &-grandchild{
+    float: left;
     width: 50%;
     color: #0099e8;
     font-size: 16px;
-    margin: 20px 20px;
   }
 }
 
