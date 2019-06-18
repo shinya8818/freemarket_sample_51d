@@ -40,14 +40,21 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
-
   def mypage
   end
 
   def new_credit
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
+  def update
+    user = User.find(params[:id])
+    user.update(nickname: params[:nickname], profile: params[:profile])
+    redirect_to edit_user_path
+  end
 
   def cardadd
     card = Card.where(user_id: current_user.id)
@@ -87,10 +94,6 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def profile
-
-  end
-
   def  card
     card = Card.where(user_id: current_user.id).first
     if card.blank?
@@ -118,7 +121,12 @@ class UsersController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(params[id])
+  def user_params
+    params.permit(:nickname, :nickname)
   end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end

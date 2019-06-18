@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :new, :show, :create] do
+  resources :users, only: [:index, :new, :show, :create, :edit, :update] do
     collection do
       get 'card_new', to: 'users#card_new'
       post 'card', to: 'users#card'
@@ -62,7 +62,6 @@ Rails.application.routes.draw do
   resource :logout, to:"users#logout"
   resource :exhibition, to:"users#exhibition"
   resource :identity, to:"users#identity"
-  resource :profile, to:"users#profile"
   resource :complete, to:"users#complete"
 
 end
