@@ -1,22 +1,26 @@
 - breadcrumb :categories
 
-.category
-  %category-index
-    %h2.category-index--gray カテゴリー一覧
-  .category-list-nav
-    - @parents.each_with_index do |parent, i|
+.category-main
+  .category
+    %category-index
+      %h2.category-index--gray カテゴリー一覧
+    .category-list-nav
+      - @parents.each_with_index do |parent, i|
+        - parent.name
+        = link_to "#{parent.name}", "##{i + 1}", class: "category-list-name"
+    .category-list-box
+      - @parents.each_with_index do |parent, i|
       - parent.name
-      = link_to "#{parent.name}", "##{i + 1}", class: "category-list-name"
-  .category-list-box
-    - @parents.each_with_index do |parent, i|
-    - parent.name
-      .category-list-box--red-block
-        %h3{id: "#{i + 1}", class: "category-list-box__parent"} #{parent.name}
-      .category-list-box__inner
-        %p
-          = link_to "すべて"
-        .category-list-box__inner-child
-          - parent.children.each do |child|
-            - child.name
-            %h4.category-list-box-child #{child.name}
-        .category-list-box__inner-grandchild
+        .category-list-box--red-block
+          %h3{id: "#{i + 1}", class: "category-list-box__parent"} #{parent.name}
+        .category-list-box__inner
+          %p
+            = link_to "すべて"
+          .category-list-box__inner-child
+            - parent.children.each do |child|
+              - child.name
+              %h4.category-list-box-child #{child.name}
+              - child.children.each do |grandchild|
+                - grandchild.name
+                = link_to "", class: "category-list-box-grandchild" do
+                  #{grandchild.name}

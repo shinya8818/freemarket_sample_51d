@@ -2,6 +2,7 @@
   margin: 40px auto;
   width: 700px;
   height: 100%;
+  overflow: scroll;
   &-index{
     display: block;
     &--gray{
@@ -64,6 +65,8 @@
   }
   &__inner{
     padding: 24px 30px 10px 30px;
+    background-color: #fff;
+    margin-bottom: 20px;
     p {
       font-size: 16px;
       margin-top: 8px;
@@ -81,4 +84,16 @@
       }
     }
   }
+  &-grandchild{
+    width: 50%;
+    color: #0099e8;
+    font-size: 16px;
+    margin: 20px 20px;
+  }
+}
+
+.category-main{
+  overflow: scroll;
+  width: auto;
+  height: auto;
 }
