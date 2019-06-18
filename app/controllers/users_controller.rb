@@ -53,9 +53,6 @@ class UsersController < ApplicationController
     card = Card.where(user_id: current_user.id)
   end
 
-  def listings
-  end
-
   def pay
     Payjp.api_key = "sk_test_543d657d3b55ce90bfcb0bc8"
     if params['payjp-token'].blank?
@@ -82,6 +79,14 @@ class UsersController < ApplicationController
   def complete
     @items = current_user.items.where(status: 2)
   end
+
+  def purchase
+  end
+
+  def purchased
+    # @items = items.where(buyer: current_user).where(stasus: 2)
+  end
+
 
   def identity
     @user = User.find(current_user.id)
