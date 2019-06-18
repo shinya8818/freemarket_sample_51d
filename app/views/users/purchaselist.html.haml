@@ -1,0 +1,36 @@
+- breadcrumb :exhibition
+
+.purchase-tab
+  .mypage-tab-container
+    %h2.mypage-tab-head 購入した商品
+    %ul.listing-tabs
+      %li.active
+        %h3
+          = link_to "取引中"
+      %li
+        %h3
+          = link_to "過去の取引"
+    -# .tab-mypage
+    -#   %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+    -#     - @items.each do |item|
+    -#       %li.mypage-item-box
+    -#         = link_to "/items/#{item.id}" do
+    -#           .mypage-item-link
+    -#             %figure.image-exhibition
+    -#               = image_tag item.images.first.image.url, class: "lazyloaded.is-higher-height"
+    -#             .mypage-item-body.show-stock-item
+    -#               .mypage-item-text
+    -#                 = item.name
+    -#                 %div
+    -#                   %span.listing-item-count
+    -#                     %i.fas.fa-heart
+    -#                     %span
+    -#                     = item.likes_count
+    -#                   %span.listing-item-count
+    -#                     %i.fa.fa-commenting
+    -#                     %span 0
+    -#                   .mypage-item-status.bold.awaiting
+    -#                     出品中
+    -#                   %i.fa.fa-chevron-right#fa-chevron-right{style: "color: #333;"}
+
+  = render partial: 'shared/sidebar'
