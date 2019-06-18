@@ -29,7 +29,7 @@ class SessionsController < Devise::SessionsController
        session[:birth_month].blank? ||
        session[:birth_day].blank?
        # JSで入力エラー表示
-    elsif (params[:email] =~ email_format_check) != 0
+    elsif params[:email] !~ email_format_check
        # JSでメールアドレスの不適切フォーマットエラーの表示
     elsif params[:password] != params[:password_confirmation]
       #  JSでパスワード不一致エラー表示
