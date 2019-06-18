@@ -18,7 +18,7 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.text_field :nickname, placeholder: "例)メルカリ太郎", type: "text",class: "form-content__bottom__box--input--name"
+            = f.text_field :nickname, placeholder: "例)メルカリ太郎", type: "text",class: "form-content__bottom__box--input--name", value: flash[:nickname]
             -# エラーメッセージ表示
             .err_nickname
         -# メールアドレス
@@ -29,12 +29,13 @@
             %span.form-content__bottom__box--require
               必須
           .form-content__bottom__box--input
-            = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "text", class: "form-content__bottom__box--input--name"
+            = f.email_field :email, placeholder: "PC・携帯どちらでも可", type: "text", class: "form-content__bottom__box--input--name", value: flash[:email]
             -# エラーメッセージ表示
             .err_email
             .err_email_format
         -# パスワード
         .form-content__bottom__box
+        - if flash[:sns].nil? # SNS認証はパスワード表示なし
           .form-content__bottom__box--title
             = f.label :password, class: "form-content__bottom__box--title--text" do
               パスワード
@@ -47,6 +48,7 @@
             .err_passwordlength
         -# パスワード(確認)
         .form-content__bottom__box
+        - if flash[:sns].nil? # SNS認証はパスワード表示なし
           .form-content__bottom__box--title
             = f.label :password, class: "form-content__bottom__box--title--text" do
               パスワード(確認)

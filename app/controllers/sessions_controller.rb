@@ -4,8 +4,14 @@ class SessionsController < Devise::SessionsController
   def user_info_keep
     session[:nickname] = params[:nickname]
     session[:email] = params[:email]
-    session[:password] = params[:password]
-    session[:password_confirmation] = params[:password_confirmation]
+    if session[:uid].present? && session[:provider].present?
+      # SNS認証(mniauthCallbacksController)で自動生成したパスワードを使用
+      # flash[:sns] = "have_password_with_sns"
+      @tester = "have_password_with_sns"
+    else
+      session[:password] = params[:password]
+      session[:password_confirmation] = params[:password_confirmation]
+    end
     session[:last_name] = params[:last_name]
     session[:first_name] = params[:first_name]
     session[:last_name_kana] = params[:last_name_kana]
@@ -80,6 +86,7 @@ class SessionsController < Devise::SessionsController
       session[:address_number].blank?
       # JSで入力エラー表示
     else
+      
       User.create!(
         nickname: session[:nickname],
         email: session[:email],
