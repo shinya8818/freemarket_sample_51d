@@ -8,9 +8,13 @@ crumb :categories do
   parent :root
 end
 
-
 crumb :users do
   link "マイページ", users_path
+  parent :root
+end
+
+crumb :item do |item|
+  link "#{item.name}", item_path
   parent :root
 end
 
@@ -42,9 +46,4 @@ end
 crumb :profile do
   link "プロフィール", profile_path
   parent :users
-end
-
-crumb :item do |item|
-  link "#{item.name}", item_path
-  parent :root
 end

@@ -1,0 +1,20 @@
+- breadcrumb :categories
+
+.category
+  %category-index
+    %h2.category-index--gray カテゴリー一覧
+  .category-list-nav
+    - @parents.each_with_index do |parent, i|
+      - parent.name
+      = link_to "#{parent.name}", "##{i + 1}", class: "category-list-name"
+  .category-list-box
+    - @parents.each_with_index do |parent, i|
+    - parent.name
+      .category-list-box--red-block
+        %h3{id: "#{i + 1}", class: "category-list-box__parent"} #{parent.name}
+      .category-list-box__inner
+        %p
+          = link_to "すべて"
+          - parent.children.each do |child|
+            - child.name
+            %h4.category-list-box__child #{child.name}
