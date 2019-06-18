@@ -1,0 +1,19 @@
+- breadcrumb :profile
+
+.main
+  .mypage-main
+    .mypage-main__right
+      .main-container
+        .profile
+          = form_for current_user, url: {action: 'profile_update'} do |f|
+            %h2.profile__header
+              プロフィール
+            .profile__main
+              = image_tag '/mercari.icon.png',class:'icon'
+              = f.text_field :nickname,class:"profile-name"
+            .profile__content
+              = f.text_area :profile,class:"profile-introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+            .profile__footer
+              = f.submit "変更する", class:"profile-btn" 
+
+    = render partial: 'shared/sidebar'

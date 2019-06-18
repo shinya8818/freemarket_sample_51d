@@ -43,4 +43,5 @@ class User < ApplicationRecord
     end
     return { user: user, sns: snscredential, uid: uid, provider:provider }
   end
+
 end

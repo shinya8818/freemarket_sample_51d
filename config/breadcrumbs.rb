@@ -34,7 +34,7 @@ crumb :identity do
 end
 
 crumb :profile do
-  link "プロフィール", profile_path
+  link "プロフィール", edit_user_registration_path
   parent :users
 end
 
