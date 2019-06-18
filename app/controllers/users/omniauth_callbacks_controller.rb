@@ -9,7 +9,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def callback_for(provider)
     @user = User.find_oauth(request.env["omniauth.auth"]) #userモデルに飛ぶ
-
     if @user[:sns].present?
       # SNS経由で会員登録済
       sign_in_and_redirect @user[:user][0]
