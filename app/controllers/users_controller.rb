@@ -80,10 +80,10 @@ class UsersController < ApplicationController
     @items = current_user.items.where(status: 2)
   end
 
-  def purchase
+  def purchaselist
   end
 
-  def purchased
+  def purchasedlist
     # @items = items.where(buyer: current_user).where(stasus: 2)
   end
 
