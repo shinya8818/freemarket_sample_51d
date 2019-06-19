@@ -42,16 +42,16 @@ $(document).on('turbolinks:load', function() {
     for (var i = year; i >= 1900; i--) {
       createOptionElements(i,'birth_year');
     }
-  }
-  //月: 年が切り替わったタイミングで表示する
-  $('#birth_year').change(function(){
-    $('#birth_month option').remove();
-    formSetMonth();
-  });
-  //日: 年と月が切り替わったタイミングで存在する日にちを表示する
-  $('#birth_year, #birth_month').change(function(){
-    $('#birth_day option').remove();
-    var month = $('#birth_month').val()
-    formSetDay(month);
-  });
+    //月: 年が切り替わったタイミングで表示する
+    $('#birth_year').change(function(){
+      $('#birth_month option').remove();
+      formSetMonth();
+    });
+    //日: 年と月が切り替わったタイミングで存在する日にちを表示する
+    $('#birth_year, #birth_month').change(function(){
+      $('#birth_day option').remove();
+      var month = $('#birth_month').val()
+      formSetDay(month);
+    });
+  } 
 });
