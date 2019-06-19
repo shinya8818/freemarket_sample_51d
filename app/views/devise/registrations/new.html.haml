@@ -120,17 +120,20 @@
           %br
           .form-content__bottom__box--birthday
             .form-content__bottom__box--birthday__select
-              =f.select :birth_year, options_for_select(1900..2019), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
+              -# 選択肢はJSで実装
+              = f.select :birth_year, options_for_select(""), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 年
             .form-content__bottom__box--birthday__select
-              =f.select :birth_month, options_for_select(1..12), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
+              -# 選択肢はJSで実装
+              = f.select :birth_month, options_for_select(""), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 月
             .form-content__bottom__box--birthday__select
-              =f.select :birth_day, options_for_select(1..31), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
+              -# 選択肢はJSで実装
+              =f.select :birth_day, options_for_select(""), {prompt: "--", autofocus: "true", class: "form-content__bottom__box--birthday__select--box"}
               %i.fas.fa-angle-down
               %span.form-content__bottom__box--birthday__select--text
                 日
