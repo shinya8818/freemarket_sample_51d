@@ -39,12 +39,8 @@ document.addEventListener(
   var time = new Date();
   var year = time.getFullYear();
   //年：現在の年から1900年までを表示する
-  console.log("aaa");
   if(document.URL.match('users/sign_up')){
-    console.log("bbb");
     for (var i = year; i >= 1900; i--) {
-    console.log("bbb");
-
       createOptionElements(i,'birth_year');
     }
     //月: 年が切り替わったタイミングで表示する
