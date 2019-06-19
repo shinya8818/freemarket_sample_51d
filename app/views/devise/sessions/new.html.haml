@@ -32,12 +32,12 @@
       -# エラーメッセージ表示
       .err_email-login
       .form__box
-        = f.password_field :password, placeholder: "パスワード", type: "text", name: "password", value: "", class: "form__box--input-password"
+        = f.password_field :password, placeholder: "パスワード", type: "password", name: "password", value: "", class: "form__box--input-password"
       -# エラーメッセージ表示
       .err_password-login
       -# = recaptcha_tags
       %button.form__btn{type: "submit"} ログイン
-      = link_to "#", class: "form__link" do
+      = link_to "", class: "form__link" do
         %p.form__link--text
           パスワードをお忘れの方
 
