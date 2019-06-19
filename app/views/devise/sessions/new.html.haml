@@ -1,7 +1,7 @@
 = render './shared/common-header';
 
 .account
-  .account__top
+  .account__top{"data-turbolinks": "false"}
     %p.account__top--text
       アカウントをお持ちでない方はこちら
     = link_to new_user_registration_path, class:"account__top--text--link" do
