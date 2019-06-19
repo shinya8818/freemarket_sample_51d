@@ -35,7 +35,7 @@
         = f.password_field :password, placeholder: "パスワード", type: "text", name: "password", value: "", class: "form__box--input-password"
       -# エラーメッセージ表示
       .err_password-login
-      = recaptcha_tags
+      -# = recaptcha_tags
       %button.form__btn{type: "submit"} ログイン
       = link_to "#", class: "form__link" do
         %p.form__link--text
