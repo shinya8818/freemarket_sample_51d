@@ -17,30 +17,24 @@
       %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
         - @items.each do |item|
           %li.mypage-item-box
-            = link_to "/items/#{item.id}" do
-              .mypage-item-link
-                %figure.image-exhibition
-                  = image_tag item.images.first.image.url, class: "lazyloaded.is-higher-height"
-                .mypage-item-body.show-stock-item
-                  .mypage-item-text
-                    = item.name
-                    %div
-                      %span.listing-item-count
-                        %i.fas.fa-heart
-                        %span
-                        = item.likes_count
-                      %span.listing-item-count
-                        %i.fa.fa-commenting
-                        %span 0
-                      .mypage-item-status.bold.awaiting
-                        出品中
-                      %i.fa.fa-chevron-right#fa-chevron-right{style: "color: #333;"}
+            %div{"data-turbolinks": "false"}
+              = link_to "/items/#{item.id}" do
+                .mypage-item-link
+                  %figure.image-exhibition
+                    = image_tag item.images.first.image.url, class: "lazyloaded.is-higher-height"
+                  .mypage-item-body.show-stock-item
+                    .mypage-item-text
+                      = item.name
+                      %div
+                        %span.listing-item-count
+                          %i.fas.fa-heart
+                          %span
+                          = item.likes_count
+                        %span.listing-item-count
+                          %i.fa.fa-commenting
+                          %span 0
+                        .mypage-item-status.bold.awaiting
+                          出品中
+                        %i.fa.fa-chevron-right#fa-chevron-right{style: "color: #333;"}
 
-  %ul.mypage-history
-    %li.mypage-history__left
-      %a{href: "/jp/mypage/listings/listing/"}
-        %i
-    %li.mypage-history__right
-      %a{href: "/jp/mypage/listings/listing/"}
-        %i
   = render partial: 'shared/sidebar'
