@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
         $(".err_passwordlength").text("");
       }
       // メールアドレスのフォーマットチェック
-      email_format_check = /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/
+      email_format_check = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
       if($("#email").val().match(email_format_check)){
         $("#email").css('border-color','');
         $(".err_email_format").text("");

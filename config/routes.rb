@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     resource :credit_entrypage, to: "sessions#credit_entrypage", only: :new
     resource :register, to: "sessions#register", only: :create
     resource :register_done, to: "sessions#register_done", only: :new
+    resource :home, to: "sessions#home", only: :new
   end
 
   resource :login, to:"users#login",only: :create

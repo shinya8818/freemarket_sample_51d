@@ -136,4 +136,7 @@ class SessionsController < Devise::SessionsController
 
   def register_done
   end
+
+  def home
+  end
 end
