@@ -15,7 +15,7 @@
               = @item.name
             %form.buy-form
               %p.buy-form__price
-                ¥ #{@item.fee}
+                = converting_to_jpy(@item.fee)
                 %span.buy-form__tax
                   = @item.shipping_fee
               %ul.buy-point

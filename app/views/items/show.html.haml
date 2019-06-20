@@ -64,7 +64,7 @@
             = @item.days
     .item-price-box
       %span.item-fee
-        ¥ #{@item.fee}
+        = converting_to_jpy(@item.fee)
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     - if user_signed_in? && current_user.id != @item.user_id

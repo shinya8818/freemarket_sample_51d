@@ -21,7 +21,7 @@
                     = item.name
                   .items-box__num
                     .items-box-price
-                      ¥ #{item.fee}
+                      = converting_to_jpy(item.fee)
                     .items-box-like
                       %i.far.fa-heart
                       %span.like
